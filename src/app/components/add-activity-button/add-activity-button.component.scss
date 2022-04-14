@@ -1,0 +1,31 @@
+$gray: #8b8b8b;
+$bright-pink: rgb(245, 65, 98);
+
+#add-button {
+  border: none;
+  box-sizing: border-box;
+  font-weight: bold;
+  line-height: 80%;
+}
+
+.day-add-button {
+  fill: $gray;
+  background: none;
+  padding: 0;
+}
+
+.general-add-button {
+  background: $bright-pink;
+  fill: white;
+  border-radius: 50%;
+  padding: 1.5em;
+}
+
+.day-add-button:hover,
+.general-add-button:hover {
+  cursor: pointer;
+}
+
+.general-add-button:hover {
+  opacity: 0.6;
+}
