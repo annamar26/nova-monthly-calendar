@@ -1,0 +1,29 @@
+import { Story, Meta } from '@storybook/angular/types-6-0';
+import { ItemDiaComponent } from 'src/app/components/item-dia/item-dia.component';
+
+export default {
+  title: 'Item Día component',
+  component: ItemDiaComponent,
+ 
+} as Meta;
+
+
+const Template: Story<ItemDiaComponent> = (args :ItemDiaComponent) => ({
+  props: args,
+});
+
+export const data = Template.bind({});
+// More on args: https://storybook.js.org/docs/angular/writing-stories/args
+data.args = {
+    data: {
+          "project": "iTexico - Talent Management",
+          "category": "category",
+          "color":"blue"
+      }
+    
+    
+  
+    
+   
+ 
+};
