@@ -10,6 +10,9 @@ import en from '@angular/common/locales/en';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { CardFooterHiddenItemsComponent } from './components/card-footer-hidden-items/card-footer-hidden-items.component';
+
 import { NumberDayComponent } from './components/number-day/number-day.component';
 import { CardFooterHoursComponent } from './components/card-footer-hours/card-footer-hours.component';
 
@@ -19,10 +22,10 @@ registerLocaleData(en);
 @NgModule({
   declarations: [
     AppComponent,
+    CardFooterHiddenItemsComponent,
+    NumberDayComponent,
+    CardFooterHoursComponent,
 
-    NumberDayComponent
-
-    CardFooterHoursComponent
 
   ],
   imports: [
