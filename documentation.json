@@ -64,12 +64,16 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');\n$fontGray: rgb(74, 74, 74);\n$gray: #8B8B8B;\n$red: #D1230A;\n$blue: #3555C3;\n$green: #4CAF50;\n$yellow: #FFDD42;\n$lightgreen: #5DDC26;\n$lightpink: #F97F98;\n$pink: rgb(245, 65, 98);\n$fontFamily: Poppins, sans-serif;\n$boxShadow: rgb(0 0 0 / 50%) 0px 2px 4px 0px;\n\n\n\n",
+
+                    "data": "@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');\n\n$gray: #8B8B8B;\n$red: #D1230A;\n$blue: #3555C3;\n$green: #4CAF50;\n$yellow: #FFDD42;\n$lightgreen: #5DDC26;\n$lightpink: #F97F98;\n$pink: rgb(245, 65, 98);\n$fontFamily: Poppins, sans-serif;\n$boxShadow: rgb(0 0 0 / 50%) 0px 2px 4px 0px;\n\n\n\n",
+
                     "styleUrl": "./app.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<router-outlet>\n    <app-number-day [dayNumber]=\"8\"></app-number-day>\n</router-outlet>"
+
+            "templateData": "<router-outlet></router-outlet>"
+
         },
         {
             "name": "ButtonComponent",
@@ -194,6 +198,77 @@
                     }
                 }
             }
+        },
+        {
+            "name": "CardFooterHoursComponent",
+            "id": "component-CardFooterHoursComponent-4d8f39aae4504e128310fd2ba04fdf8928db2b9f7f17fd805a2bab463a24298e35fac1d46f4b066d7a4bc738a558547d5f9cef2d559f38d3a65f2be6f41b15b1",
+            "file": "src/app/components/card-footer-hours/card-footer-hours.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "card-footer-hours",
+            "styleUrls": [
+                "./card-footer-hours.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./card-footer-hours.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "totalHours",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "number",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 13,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'card-footer-hours',\n  templateUrl: './card-footer-hours.component.html',\n  styleUrls: ['./card-footer-hours.component.scss'],\n})\nexport class CardFooterHoursComponent implements OnInit {\n  @Input() 'totalHours': number;\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../../app.component.scss\";\n\n.total-hours {\n  color: $gray;\n}\n",
+                    "styleUrl": "./card-footer-hours.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 9
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<footer *ngIf=\"totalHours\" class=\"total-hours\">{{ totalHours }} hrs</footer>\n"
         },
         {
             "name": "HeaderComponent",
@@ -402,13 +477,17 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-3bcb7a1c217aedc1fbff4f2334be987e7e4e565eebdbbb394dde833a14e7699524bb0f48ddfc5e8a8b1524d2cb8eab88cac16ed898c06263359f41be4637e4f1",
+
+            "id": "module-AppModule-00acef6c0947919724755c21c8f4a3567e5c3ed9ac3da6732ac8cb20a096d0e34a1dc1dad1b29fdef203b5f7c299735af6af15b2f2bb874b74f767a4220fe54e",
+
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport { NZ_I18N } from 'ng-zorro-antd/i18n';\nimport { en_US } from 'ng-zorro-antd/i18n';\nimport { registerLocaleData } from '@angular/common';\nimport en from '@angular/common/locales/en';\nimport { FormsModule } from '@angular/forms';\nimport { HttpClientModule } from '@angular/common/http';\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\nimport { NumberDayComponent } from './components/number-day/number-day.component';\n\nregisterLocaleData(en);\n\n@NgModule({\n  declarations: [\n    AppComponent,\n    NumberDayComponent\n  ],\n  imports: [\n    BrowserModule,\n    AppRoutingModule,\n    FormsModule,\n    HttpClientModule,\n    BrowserAnimationsModule\n  ],\n  providers: [{ provide: NZ_I18N, useValue: en_US }],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
+
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport { NZ_I18N } from 'ng-zorro-antd/i18n';\nimport { en_US } from 'ng-zorro-antd/i18n';\nimport { registerLocaleData } from '@angular/common';\nimport en from '@angular/common/locales/en';\nimport { FormsModule } from '@angular/forms';\nimport { HttpClientModule } from '@angular/common/http';\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\nimport { CardFooterHoursComponent } from './components/card-footer-hours/card-footer-hours.component';\n\nregisterLocaleData(en);\n\n@NgModule({\n  declarations: [\n    AppComponent,\n    CardFooterHoursComponent\n  ],\n  imports: [\n    BrowserModule,\n    AppRoutingModule,\n    FormsModule,\n    HttpClientModule,\n    BrowserAnimationsModule\n  ],\n  providers: [{ provide: NZ_I18N, useValue: en_US }],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
+
             "children": [
                 {
                     "type": "providers",
@@ -421,7 +500,9 @@
                             "name": "AppComponent"
                         },
                         {
-                            "name": "NumberDayComponent"
+
+                            "name": "CardFooterHoursComponent"
+
                         }
                     ]
                 },
@@ -653,11 +734,23 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/number-day.stories.ts",
+
+                "file": "src/stories/card-footer/Hours.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<NumberDayComponent>",
-                "defaultValue": "(args: NumberDayComponent) => ({\n    props: args,\n})"
+                "type": "Story",
+                "defaultValue": "(args) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "TotalHours",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/card-footer/Hours.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+
             }
         ],
         "functions": [],
@@ -846,6 +939,28 @@
                     "type": "Story<Page>",
                     "defaultValue": "(args: Page) => ({\n  props: args,\n})"
                 }
+            ],
+            "src/stories/card-footer/Hours.stories.ts": [
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/card-footer/Hours.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "(args) => ({\n  props: args,\n})"
+                },
+                {
+                    "name": "TotalHours",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/card-footer/Hours.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                }
             ]
         },
         "groupedFunctions": {},
@@ -880,12 +995,14 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/components/number-day/number-day.component.ts",
+
+                "filePath": "src/app/components/card-footer-hours/card-footer-hours.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "NumberDayComponent",
+                "name": "CardFooterHoursComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/2",
+                "coverageCount": "0/4",
+
                 "status": "low"
             },
             {
@@ -1035,6 +1152,26 @@
                 "coveragePercent": 83,
                 "coverageCount": "5/6",
                 "status": "very-good"
+            },
+            {
+                "filePath": "src/stories/card-footer/Hours.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/card-footer/Hours.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "TotalHours",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
             },
             {
                 "filePath": "src/stories/header.component.ts",
