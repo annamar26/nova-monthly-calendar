@@ -1,0 +1,30 @@
+*{
+    box-sizing: border-box;
+}
+
+.warning-day{
+    width: fit-content;
+    position: relative;
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.warning-day:hover .tooltip-box{
+    display: inline-block;
+}
+
+.tooltip-box{
+    position:absolute;
+    display:none;
+    width:max-content;
+    background: black;
+    line-height: 20px;
+    z-index:5;
+    text-align: center;
+    color:white;
+    font-size: 0.7em;
+    padding: 6px 8px;
+    border-radius: 5px;
+    left: 0;
+    top: 20px;
+}
