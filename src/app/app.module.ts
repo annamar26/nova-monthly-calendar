@@ -10,14 +10,20 @@ import en from '@angular/common/locales/en';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NumberDayComponent } from './components/number-day/number-day.component';
 import { CardFooterHoursComponent } from './components/card-footer-hours/card-footer-hours.component';
+
 
 registerLocaleData(en);
 
 @NgModule({
   declarations: [
     AppComponent,
+
+    NumberDayComponent
+
     CardFooterHoursComponent
+
   ],
   imports: [
     BrowserModule,

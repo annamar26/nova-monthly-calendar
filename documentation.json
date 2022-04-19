@@ -64,12 +64,16 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
+
                     "data": "@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');\n\n$gray: #8B8B8B;\n$red: #D1230A;\n$blue: #3555C3;\n$green: #4CAF50;\n$yellow: #FFDD42;\n$lightgreen: #5DDC26;\n$lightpink: #F97F98;\n$pink: rgb(245, 65, 98);\n$fontFamily: Poppins, sans-serif;\n$boxShadow: rgb(0 0 0 / 50%) 0px 2px 4px 0px;\n\n\n\n",
+
                     "styleUrl": "./app.component.scss"
                 }
             ],
             "stylesData": "",
+
             "templateData": "<router-outlet></router-outlet>"
+
         },
         {
             "name": "ButtonComponent",
@@ -340,6 +344,56 @@
             "stylesData": ""
         },
         {
+            "name": "NumberDayComponent",
+            "id": "component-NumberDayComponent-b99420e6a98267f85dc5d7ec604f322cb7e5c0ab2da8e5d2cd8c7bac59f6c952eeb07aa62a1db1c9bdf34e09350d2e944dc7f2be0183666d2430b13ae256ae2a",
+            "file": "src/app/components/number-day/number-day.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-number-day",
+            "styleUrls": [
+                "./number-day.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./number-day.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "dayNumber",
+                    "defaultValue": "1",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "number | undefined",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'app-number-day',\n  templateUrl: './number-day.component.html',\n  styleUrls: ['./number-day.component.scss']\n})\nexport class NumberDayComponent {\n  @Input() dayNumber: number | undefined = 1;\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800&display=swap');\n$gray: #8B8B8B;\n$fontWork: 'Work Sans', sans-serif;\n\n.day-number{\n    margin:0;\n    width: fit-content;\n    font-family: $fontWork;\n    font-size: 25.5px;\n    color: $gray;\n}",
+                    "styleUrl": "./number-day.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<p class=\"day-number\">{{dayNumber}}</p>\n"
+        },
+        {
             "name": "PageComponent",
             "id": "component-PageComponent-7126d8c2607c946741c651482413b43feb72b2d63cac9d3ac173fde206a5e635eb4cdbf7ca7ac9327c7d4d05cf7ef619144c34c11609ad677081d0ee4e855064",
             "file": "src/stories/page.component.ts",
@@ -423,13 +477,17 @@
     "modules": [
         {
             "name": "AppModule",
+
             "id": "module-AppModule-00acef6c0947919724755c21c8f4a3567e5c3ed9ac3da6732ac8cb20a096d0e34a1dc1dad1b29fdef203b5f7c299735af6af15b2f2bb874b74f767a4220fe54e",
+
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
+
             "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport { NZ_I18N } from 'ng-zorro-antd/i18n';\nimport { en_US } from 'ng-zorro-antd/i18n';\nimport { registerLocaleData } from '@angular/common';\nimport en from '@angular/common/locales/en';\nimport { FormsModule } from '@angular/forms';\nimport { HttpClientModule } from '@angular/common/http';\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\nimport { CardFooterHoursComponent } from './components/card-footer-hours/card-footer-hours.component';\n\nregisterLocaleData(en);\n\n@NgModule({\n  declarations: [\n    AppComponent,\n    CardFooterHoursComponent\n  ],\n  imports: [\n    BrowserModule,\n    AppRoutingModule,\n    FormsModule,\n    HttpClientModule,\n    BrowserAnimationsModule\n  ],\n  providers: [{ provide: NZ_I18N, useValue: en_US }],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
+
             "children": [
                 {
                     "type": "providers",
@@ -442,7 +500,9 @@
                             "name": "AppComponent"
                         },
                         {
+
                             "name": "CardFooterHoursComponent"
+
                         }
                     ]
                 },
@@ -520,6 +580,16 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+            },
+            {
+                "name": "DayNumber",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/number-day.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "environment",
@@ -664,6 +734,7 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+
                 "file": "src/stories/card-footer/Hours.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -679,6 +750,7 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "Template.bind({})"
+
             }
         ],
         "functions": [],
@@ -704,6 +776,28 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "literal type"
+                }
+            ],
+            "src/stories/number-day.stories.ts": [
+                {
+                    "name": "DayNumber",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/number-day.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/number-day.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<NumberDayComponent>",
+                    "defaultValue": "(args: NumberDayComponent) => ({\n    props: args,\n})"
                 }
             ],
             "src/environments/environment.prod.ts": [
@@ -901,12 +995,14 @@
                 "status": "low"
             },
             {
+
                 "filePath": "src/app/components/card-footer-hours/card-footer-hours.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "CardFooterHoursComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/4",
+
                 "status": "low"
             },
             {
@@ -1084,6 +1180,26 @@
                 "name": "HeaderComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/number-day.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DayNumber",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/number-day.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
