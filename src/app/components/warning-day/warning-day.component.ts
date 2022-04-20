@@ -5,12 +5,12 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './warning-day.component.html',
   styleUrls: ['./warning-day.component.scss']
 })
-export class WarningDayComponent implements OnInit{
+export class WarningDayComponent{
   @Input() hoursDay:number= 0;
 
-  missingHours: number = 8;
+  /*missingHours: number = 8;
 
   ngOnInit(): void {
     this.missingHours = 8 - this.hoursDay;
-  }
+  }*/
 }
