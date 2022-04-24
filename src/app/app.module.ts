@@ -13,6 +13,8 @@ import { WarningDayComponent } from './components/warning-day/warning-day.compon
 import { CardFooterHiddenItemsComponent } from './components/card-footer-hidden-items/card-footer-hidden-items.component';
 import { NumberDayComponent } from './components/number-day/number-day.component';
 import { CardFooterHoursComponent } from './components/card-footer-hours/card-footer-hours.component';
+import { TooltipCalendarComponent } from './components/tooltip-calendar/tooltip-calendar.component';
+import { AddActivityButtonComponent } from './components/add-activity-button/add-activity-button.component';
 
 
 registerLocaleData(en);
@@ -24,7 +26,8 @@ registerLocaleData(en);
     CardFooterHiddenItemsComponent,
     NumberDayComponent,
     CardFooterHoursComponent,
-
+    TooltipCalendarComponent,
+    AddActivityButtonComponent
 
 
   ],
