@@ -14,6 +14,8 @@ import { CardFooterHiddenItemsComponent } from './components/card-footer-hidden-
 import { NumberDayComponent } from './components/number-day/number-day.component';
 import { CardFooterHoursComponent } from './components/card-footer-hours/card-footer-hours.component';
 import { TooltipCalendarComponent } from './components/tooltip-calendar/tooltip-calendar.component';
+import { CardFooterComponent } from './components/card-footer/card-footer.component';
+
 
 
 registerLocaleData(en);
@@ -26,6 +28,8 @@ registerLocaleData(en);
     NumberDayComponent,
     CardFooterHoursComponent,
     TooltipCalendarComponent,
+    CardFooterComponent,
+
 
 
 
