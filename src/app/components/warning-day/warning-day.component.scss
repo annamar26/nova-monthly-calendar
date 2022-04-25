@@ -1,4 +1,6 @@
 *{
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -9,22 +11,10 @@
     font-weight: bold;
 }
 
-.warning-day:hover .tooltip-box{
+.warning-day:hover app-tooltip-calendar{
     display: inline-block;
 }
 
-.tooltip-box{
-    position:absolute;
-    display:none;
-    width:max-content;
-    background: black;
-    line-height: 20px;
-    z-index:5;
-    text-align: center;
-    color:white;
-    font-size: 0.7em;
-    padding: 6px 8px;
-    border-radius: 5px;
-    left: 0;
-    top: 20px;
+app-tooltip-calendar{
+    display: none;
 }

@@ -62,4 +62,31 @@ describe('AddActiityButtonComponent', () => {
 
     expect(styles.backgroundColor).toBe('rgba(0, 0, 0, 0)');
   });
+
+  it('should display the tooltip if input type is general', () => {
+    component.type = 'general';
+    const element = fixture.debugElement.nativeElement.querySelector('#tooltip-button');
+    fixture.detectChanges();
+    expect(element).toBeTruthy();
+
+    const styles = window.getComputedStyle(element);
+    expect(styles.display).toBe('none');
+  });
+
+  it('should display the tooltip even if the input type is not given', () => {
+    const element = fixture.debugElement.nativeElement.querySelector('#tooltip-button');
+    fixture.detectChanges();
+    expect(element).toBeTruthy();
+
+    const styles = window.getComputedStyle(element);
+    expect(styles.display).toBe('none');
+  });
+    
+  it('should not display the tooltip if input type is day', () => {
+    component.type = 'day';
+    fixture.detectChanges();
+    const element = fixture.debugElement.nativeElement.querySelector('#tooltip-button')
+    expect(element).toBeNull();
+  });
+  
 });

@@ -15,7 +15,8 @@ export class HeaderPopoverComponent {
   @Input() data: ItemDay = {
     AccountName: "iTexico",
     ProjectName: "Project",
-    CategoryName: "Category"
+    CategoryName: "Category",
+    ProjectColor: "red"
    
   }
 }

@@ -1,0 +1,19 @@
+*{
+    box-sizing: border-box;
+}
+
+
+.tooltip-box{
+    position:absolute;
+    width:max-content;
+    background: black;
+    line-height: 20px;
+    z-index:5;
+    text-align: center;
+    color:white;
+    font-size: 0.7em;
+    padding: 6px 8px;
+    border-radius: 5px;
+    left: 0;
+    top: 20px;
+}

@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+
+$fontGray: rgb(74, 74, 74);
+$gray: rgb(139, 139, 139);//#8b8b8b;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.comment-text,
+.task-text {
+  font-family: "Roboto", sans-serif;
+}
+
+.comment-text {
+  color: $fontGray;
+  font-size: 1em;
+}
+.task-text {
+  color: $gray;
+  font-size: 0.9em;
+}
