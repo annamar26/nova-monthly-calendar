@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.day-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+app-add-activity-button{
+    line-height: 0;
+}
+
+.right-elements-dh > app-warning-day {
+  padding: auto 0;
+  margin-right: 1em;
+}
+
+.right-elements-dh{
+  display:flex;
+  align-items: center;
+}
