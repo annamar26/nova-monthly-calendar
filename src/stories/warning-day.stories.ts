@@ -4,7 +4,7 @@ import { TooltipCalendarComponent } from 'src/app/components/tooltip-calendar/to
 import { WarningDayComponent } from '../app/components/warning-day/warning-day.component';
 
 export default {
-    title: 'Warning Day',
+    title: 'Card Warning Day',
     component: WarningDayComponent,
     decorators: [
         moduleMetadata({
@@ -18,7 +18,7 @@ const Template: Story<WarningDayComponent> = (args: WarningDayComponent) => ({
     props: args,
 });
 
-export const Warning_Day = Template.bind({});
-Warning_Day.args = {
+export const Card_Warning_Day = Template.bind({});
+Card_Warning_Day.args = {
     hoursDay: 6,
 };

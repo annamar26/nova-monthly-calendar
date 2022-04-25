@@ -3,7 +3,7 @@ import { HeaderPopoverComponent } from 'src/app/components/header-popover/header
 
 
 export default {
-  title: 'Header Popover',
+  title: 'Popover Header ',
   component: HeaderPopoverComponent,
  
 } as Meta;
@@ -13,9 +13,9 @@ const Template: Story<HeaderPopoverComponent> = (args :HeaderPopoverComponent) =
   props: args,
 });
 
-export const Header_Popover = Template.bind({});
+export const Popover_Header= Template.bind({});
 // More on args: https://storybook.js.org/docs/angular/writing-stories/args
-Header_Popover.args = {
+Popover_Header.args = {
     data: {
           "AccountName": "iTexico",
           "ProjectName": "Delivery",

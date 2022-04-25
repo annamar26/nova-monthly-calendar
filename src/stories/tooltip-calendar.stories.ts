@@ -2,7 +2,7 @@ import { Meta, Story } from '@storybook/angular';
 import { TooltipCalendarComponent } from '../app/components/tooltip-calendar/tooltip-calendar.component';
 
 export default {
-    title: 'Tooltip Calendar',
+    title: 'Calendar Tooltip',
     component: TooltipCalendarComponent,
 } as Meta;
 
