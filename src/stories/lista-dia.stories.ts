@@ -3,7 +3,7 @@ import { ListaDiaComponent } from 'src/app/components/lista-dia/lista-dia.compon
 
 
 export default {
-  title: 'Lista día component',
+  title: 'Card Day List',
   component: ListaDiaComponent,
 
 } as Meta;
@@ -13,9 +13,9 @@ const Template: Story<ListaDiaComponent> = (args: ListaDiaComponent) => ({
   props: args,
 });
 
-export const data = Template.bind({});
+export const Card_Day_List = Template.bind({});
 
-data.args = {
+Card_Day_List.args = {
  arrayDia: [	{
     "project": 'Project1',
     "category": 'categorya',

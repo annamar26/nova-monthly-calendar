@@ -1,8 +1,8 @@
 import { Story, Meta } from '@storybook/angular/types-6-0';
-import { AddActivityButtonComponent } from '../../app/components/add-activity-button/add-activity-button.component';
+import { AddActivityButtonComponent } from '../app/components/add-activity-button/add-activity-button.component';
 
 export default {
-  title: 'Add activity buttton',
+  title: 'Calendar Add activity buttton',
   component: AddActivityButtonComponent,
 } as Meta;
 
