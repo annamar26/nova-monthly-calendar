@@ -15,20 +15,17 @@ import { NumberDayComponent } from './components/number-day/number-day.component
 import { CardFooterHoursComponent } from './components/card-footer-hours/card-footer-hours.component';
 import { TooltipCalendarComponent } from './components/tooltip-calendar/tooltip-calendar.component';
 import { AddActivityButtonComponent } from './components/add-activity-button/add-activity-button.component';
-
-
-registerLocaleData(en);
+import { CardFooterComponent } from './components/card-footer/card-footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WarningDayComponent,
-    CardFooterHiddenItemsComponent,
     NumberDayComponent,
     CardFooterHoursComponent,
     TooltipCalendarComponent,
-    AddActivityButtonComponent
-
+    AddActivityButtonComponent,
+    CardFooterComponent,
 
   ],
   imports: [
