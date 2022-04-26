@@ -1,3 +1,4 @@
+import { PopoverBodyTextComponent } from './components/popover-body-text/popover-body-text.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -17,6 +18,8 @@ import { TooltipCalendarComponent } from './components/tooltip-calendar/tooltip-
 import { CardFooterComponent } from './components/card-footer/card-footer.component';
 import { PopoverButtonComponent } from './components/popover-button/popover-button.component';
 import { DayHeaderComponent } from './components/day-header/day-header.component';
+import { PopoverBodyComponent } from './components/popover-body/popover-body.component';
+import { AddActivityButtonComponent } from './components/add-activity-button/add-activity-button.component';
 
 registerLocaleData(en);
 
@@ -32,7 +35,10 @@ registerLocaleData(en);
     CardFooterComponent,
     PopoverButtonComponent,
     DayHeaderComponent,
-  
+    AddActivityButtonComponent,
+    PopoverBodyComponent,
+    PopoverBodyTextComponent,
+    CardFooterHiddenItemsComponent,
   ],
   imports: [
     BrowserModule,
