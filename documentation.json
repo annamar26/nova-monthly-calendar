@@ -1,0 +1,1561 @@
+<<<<<<< HEAD
+{
+    "pipes": [],
+    "interfaces": [
+        {
+            "name": "ItemDia",
+            "id": "interface-ItemDia-a0fa6b5523092530dc07781de1e77ba3e6838d3689fbb09c07c4789e8ae85af624bbc6bccbe4ae135471803f993caffa25cf19a71beacd975ab4a1ad4041a7cc",
+            "file": "src/app/components/item-dia/item-dia.component.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { AfterViewInit, Component, ElementRef, EventEmitter, Input, Output, Renderer2, ViewChild } from '@angular/core';\n\n\ninterface ItemDia{\n  project: string;\n  category: string;\n  color?: string\n  }\n@Component({\n  selector: 'app-item-dia',\n  templateUrl: './item-dia.component.html',\n  styleUrls: ['./item-dia.component.scss']\n})\nexport class ItemDiaComponent implements AfterViewInit {\n\n  @Input() data: ItemDia = {\n    project: \"Project\",\n    category: \"Category\",\n   \n  }\n  @ViewChild(\"colorFlag\") flag!: ElementRef\n\n  flagColorElement = undefined\n\n  constructor(private renderer: Renderer2) {\n  }\n\n  ngAfterViewInit(): void {\n    this.flagColorElement = this.flag.nativeElement\n\n    if (this.data.color) {\n      this.renderer.removeStyle(this.flagColorElement, \"background-color\")\n      this.renderer.setStyle(this.flagColorElement, \"background-color\", `${this.data.color}`)\n    } else {\n      this.setColor()\n    }\n  }\n\n  setColor():void {\n    if (this.data.project === \"iTexico - Delivery\") {\n      this.renderer.removeStyle(this.flagColorElement, \"background-color\")\n\n      this.renderer.addClass(this.flagColorElement, \"red\")\n    } else if (this.data.project == \"iTexico - Talent Management\") {\n      this.renderer.removeStyle(this.flagColorElement, \"background-color\")\n      this.renderer.addClass(this.flagColorElement, \"green\")\n\n    } else {\n      this.renderer.removeStyle(this.flagColorElement, \"background-color\")\n      this.renderer.addClass(this.flagColorElement, \"lightgreen\")\n\n    }\n  }\n \n}\n",
+            "properties": [
+                {
+                    "name": "category",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "color",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 7
+                },
+                {
+                    "name": "project",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 165,
+            "methods": []
+        },
+        {
+            "name": "itemDia",
+            "id": "interface-itemDia-3f3bc9a63399c994ded7a96611db41449408653aacc30ddf7faf55226552ad90edc76af723f22e655b954598c9bcd0c37667b324f3fc99d2bc0d97dcc476e51d",
+            "file": "src/app/components/lista-dia/lista-dia.component.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\ninterface itemDia {\n\tproject: string;\n\tcategory: string;\n\tcolor?: string;\n}\n@Component({\n\tselector: 'app-lista-dia',\n\ttemplateUrl: './lista-dia.component.html',\n\tstyleUrls: [ './lista-dia.component.scss' ]\n})\nexport class ListaDiaComponent {\n\t@Input()\n\tarrayDia: Array<itemDia> = [\n\t\t{\n\t\t\tproject: 'Project',\n\t\t\tcategory: 'category',\n\t\t\tcolor: ''\n\t\t},\n\t\t{\n\t\t\tproject: 'Project',\n\t\t\tcategory: 'category',\n\t\t\tcolor: ''\n\t\t},\n\t\t{\n\t\t\tproject: 'Project',\n\t\t\tcategory: 'category',\n\t\t\tcolor: ''\n\t\t}\n\t];\n\t@Output() itemDia = new EventEmitter()\n\t\n}\n",
+            "properties": [
+                {
+                    "name": "category",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "color",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "project",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 165,
+            "methods": []
+        }
+    ],
+    "injectables": [],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "AddActivityButtonComponent",
+            "id": "component-AddActivityButtonComponent-3daab3a3c5709b886d24dc691293d37e89cf935abfa28629f1a4f9f1711038d46c5e56d2310361d0ec3e930c4123e1ad3ce6b864a5d4d463ac7b9f96d78656f1",
+            "file": "src/app/components/add-activity-button/add-activity-button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-add-activity-button",
+            "styleUrls": [
+                "./add-activity-button.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./add-activity-button.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "type",
+                    "defaultValue": "'general'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "isPublished",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                },
+                {
+                    "name": "modalObservable",
+                    "defaultValue": "new Observable('addActivityModal')",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Observable",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "handleClick",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 14,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Observable } from 'windowed-observable';\nimport { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'app-add-activity-button',\n  templateUrl: './add-activity-button.component.html',\n  styleUrls: ['./add-activity-button.component.scss'],\n})\nexport class AddActivityButtonComponent {\n  @Input () type: string = 'general';\n  modalObservable: Observable = new Observable('addActivityModal');\n  isPublished: boolean = false;\n\n  handleClick() {\n    this.modalObservable.publish(true);\n    this.isPublished = true;\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "$gray: #8b8b8b;\n$bright-pink: rgb(245, 65, 98);\n\n#add-button {\n  border: none;\n  box-sizing: border-box;\n  font-weight: bold;\n  line-height: 80%;\n}\n\n.day-add-button {\n  fill: $gray;\n  background: none;\n  padding: 0;\n}\n\n.general-add-button {\n  background: $bright-pink;\n  fill: white;\n  border-radius: 50%;\n  padding: 1.5em;\n}\n\n.day-add-button:hover,\n.general-add-button:hover {\n  cursor: pointer;\n}\n\n.general-add-button:hover {\n  opacity: 0.6;\n}\n",
+                    "styleUrl": "./add-activity-button.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<button\n  id=\"add-button\"\n  (click)=\"handleClick()\"\n  class=\"{{ type }}-add-button\"\n  aria-label=\"Add an activity for one or more days\"\n>\n  <svg\n    xmlns=\"http://www.w3.org/2000/svg\"\n    width=\"24\"\n    height=\"24\"\n    viewBox=\"0 0 24 24\"\n  >\n    <path d=\"M24 10h-10v-10h-4v10h-10v4h10v10h4v-10h10z\" />\n  </svg>\n</button>\n"
+        },
+        {
+            "name": "AppComponent",
+            "id": "component-AppComponent-ac0c4ad8e8b8466dbeb605c8d60420e04c19a375ac189bd8e70864d90663bb706acf47f1cc1f80f69927b39c9b520cc01847b13cdbab0a4c055d4b5de0fe78a0",
+            "file": "src/app/app.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-root",
+            "styleUrls": [
+                "./app.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./app.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "title",
+                    "defaultValue": "'nova-monthly-calendar'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.scss']\n})\nexport class AppComponent {\n  title = 'nova-monthly-calendar';\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');\n\n$fontGray: rgb(74, 74, 74);\n$gray: #8B8B8B;\n$red: #D1230A;\n$blue: #3555C3;\n$green: #4CAF50;\n$yellow: #FFDD42;\n$lightgreen: #5DDC26;\n$lightpink: #F97F98;\n$pink: rgb(245, 65, 98);\n$fontFamily: Poppins, sans-serif;\n$boxShadow: rgb(0 0 0 / 50%) 0px 2px 4px 0px;\n\n\n\n",
+                    "styleUrl": "./app.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<router-outlet>\n   <app-tooltip-calendar tooltipText=\"there are 3 hours missing\"></app-tooltip-calendar>\n</router-outlet>\n"
+        },
+        {
+            "name": "CardFooterHiddenItemsComponent",
+            "id": "component-CardFooterHiddenItemsComponent-c41293b83936428688cc4775a048a9bd29770242746cfb2fbede26d5d0164235b78d7a41b361a036a8aafbd2f90397c7c6915e68931754a579938c4d36959879",
+            "file": "src/app/components/card-footer-hidden-items/card-footer-hidden-items.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "card-footer-hidden-items",
+            "styleUrls": [
+                "./card-footer-hidden-items.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./card-footer-hidden-items.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "hiddenItems",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "number",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'card-footer-hidden-items',\n  templateUrl: './card-footer-hidden-items.component.html',\n  styleUrls: ['./card-footer-hidden-items.component.scss'],\n})\nexport class CardFooterHiddenItemsComponent {\n  @Input() 'hiddenItems': number;\n\n  constructor() {}\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../../app.component.scss\";\n\n.hidden-items {\n  color: $gray;\n  padding: 3px;\n}\n",
+                    "styleUrl": "./card-footer-hidden-items.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 9
+            },
+            "templateData": "<div *ngIf=\"hiddenItems\" class=\"hidden-items\">{{ hiddenItems }} more</div>\n"
+        },
+        {
+            "name": "CardFooterHoursComponent",
+            "id": "component-CardFooterHoursComponent-4d884b876b106cd1db284ee4b5c4d5921a4fb970c7c5514c770628dca31314b7e8e9eb1f49aa0f3922383288a79783564bd7abed912e83d193685460f2239a78",
+            "file": "src/app/components/card-footer-hours/card-footer-hours.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "card-footer-hours",
+            "styleUrls": [
+                "./card-footer-hours.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./card-footer-hours.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "totalHours",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "number",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'card-footer-hours',\n  templateUrl: './card-footer-hours.component.html',\n  styleUrls: ['./card-footer-hours.component.scss'],\n})\nexport class CardFooterHoursComponent {\n  @Input() 'totalHours': number;\n\n  constructor() {}\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../../app.component.scss\";\n\n.total-hours {\n  color: $gray;\n  padding: 1px;\n}\n",
+                    "styleUrl": "./card-footer-hours.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 9
+            },
+            "templateData": "<div *ngIf=\"totalHours\" class=\"total-hours\">{{ totalHours }} hrs</div>\n"
+        },
+        {
+            "name": "ItemDiaComponent",
+            "id": "component-ItemDiaComponent-a0fa6b5523092530dc07781de1e77ba3e6838d3689fbb09c07c4789e8ae85af624bbc6bccbe4ae135471803f993caffa25cf19a71beacd975ab4a1ad4041a7cc",
+            "file": "src/app/components/item-dia/item-dia.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-item-dia",
+            "styleUrls": [
+                "./item-dia.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./item-dia.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "data",
+                    "defaultValue": "{\n    project: \"Project\",\n    category: \"Category\",\n   \n  }",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "ItemDia",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "flag",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ElementRef",
+                    "optional": false,
+                    "description": "",
+                    "line": 21,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'colorFlag'"
+                        }
+                    ]
+                },
+                {
+                    "name": "flagColorElement",
+                    "defaultValue": "undefined",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 23
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngAfterViewInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 28,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "setColor",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 39,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { AfterViewInit, Component, ElementRef, EventEmitter, Input, Output, Renderer2, ViewChild } from '@angular/core';\n\n\ninterface ItemDia{\n  project: string;\n  category: string;\n  color?: string\n  }\n@Component({\n  selector: 'app-item-dia',\n  templateUrl: './item-dia.component.html',\n  styleUrls: ['./item-dia.component.scss']\n})\nexport class ItemDiaComponent implements AfterViewInit {\n\n  @Input() data: ItemDia = {\n    project: \"Project\",\n    category: \"Category\",\n   \n  }\n  @ViewChild(\"colorFlag\") flag!: ElementRef\n\n  flagColorElement = undefined\n\n  constructor(private renderer: Renderer2) {\n  }\n\n  ngAfterViewInit(): void {\n    this.flagColorElement = this.flag.nativeElement\n\n    if (this.data.color) {\n      this.renderer.removeStyle(this.flagColorElement, \"background-color\")\n      this.renderer.setStyle(this.flagColorElement, \"background-color\", `${this.data.color}`)\n    } else {\n      this.setColor()\n    }\n  }\n\n  setColor():void {\n    if (this.data.project === \"iTexico - Delivery\") {\n      this.renderer.removeStyle(this.flagColorElement, \"background-color\")\n\n      this.renderer.addClass(this.flagColorElement, \"red\")\n    } else if (this.data.project == \"iTexico - Talent Management\") {\n      this.renderer.removeStyle(this.flagColorElement, \"background-color\")\n      this.renderer.addClass(this.flagColorElement, \"green\")\n\n    } else {\n      this.renderer.removeStyle(this.flagColorElement, \"background-color\")\n      this.renderer.addClass(this.flagColorElement, \"lightgreen\")\n\n    }\n  }\n \n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');\n\n$gray: #8b8b8b;\n$red: #d1230a;\n$blue: #3555c3;\n$green: #4caf50;\n$yellow: hsl(49, 100%, 63%);\n$lightgreen: #5ddc26;\n$lightpink: #f97f98;\n$pink: rgb(245, 65, 98);\n$fontFamily: Poppins,\nsans-serif;\n$boxShadow: rgb(0 0 0 / 50%) 0px 2px 4px 0px;\n$font-size:12px;\n\n\n.itemDia {\n\tfont-size: $font-size;\n\tdisplay: flex;\n\tflex-direction: row;\n\talign-items: baseline;\n\tjustify-content: flex-start;\n\n\twidth: 100%;\n\theight: 1.5em;\n\toverflow: hidden;\n\tfloat: left;\n\n\tbox-sizing: border-box;\n\n\n\n\n\n}\n\n.itemDia p {\n\tposition: relative;\n\twhite-space: nowrap;\n\theight: 1.5em;\n\tmargin: 0;\n\ttop: 0;\n\tleft: 0px;\n\t-webkit-transition: 1s ease-in;\n\t-moz-transition: 1s ease-in;\n\t-o-transition: 1s ease-in;\n\ttransition: 1s ease-in;\n\ttext-align: left;\n\tfont-weight: 400;\n\tcursor: pointer;\n\n\tspan {\n\t\tpadding-left: 8px;\n\t\tfont-weight: 600;\n\t}\n}\n\n.itemDia p:hover {\n\tposition: relative;\n\tleft: -65px;\n\t-webkit-transition: 2s ease-in;\n\t-moz-transition: 2s ease-in;\n\t-o-transition: 2s ease-in;\n\ttransition: 2s ease-in;\n\tcursor: pointer;\n}\n\n.colorFlag {\n\tposition: absolute;\n\tz-index: 1;\n\twidth: 5px;\n\theight: 1.25em;\n\tbox-sizing: border-box;\n\tdisplay: inline-block;\n\n}\n\n.container {\n\n\twidth: 100%;\n\tmargin: 0 auto;\n\n\n\tfont-family: sans-serif;\n\theight: 1.5em;\n\n\n\n\n\n\n\n\n}\n\n\n.red {\n\tbackground-color: $red;\n}\n\n.green {\n\tbackground-color: $green;\n}\n\n.lightgreen {\n\tbackground-color: $lightgreen;\n}",
+                    "styleUrl": "./item-dia.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "renderer",
+                        "type": "Renderer2",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 23,
+                "jsdoctags": [
+                    {
+                        "name": "renderer",
+                        "type": "Renderer2",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "AfterViewInit"
+            ],
+            "templateData": "    <div class=\"container\">\n   <div class=\"colorFlag\" #colorFlag>\n    </div> <div class=\"itemDia\"> \n       <p><span> {{data.project}}</span> - {{data.category}}\n      </p></div>\n \n  </div>\n\n\n\n"
+        },
+        {
+            "name": "ListaDiaComponent",
+            "id": "component-ListaDiaComponent-3f3bc9a63399c994ded7a96611db41449408653aacc30ddf7faf55226552ad90edc76af723f22e655b954598c9bcd0c37667b324f3fc99d2bc0d97dcc476e51d",
+            "file": "src/app/components/lista-dia/lista-dia.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-lista-dia",
+            "styleUrls": [
+                "./lista-dia.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./lista-dia.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "arrayDia",
+                    "defaultValue": "[\n\t\t{\n\t\t\tproject: 'Project',\n\t\t\tcategory: 'category',\n\t\t\tcolor: ''\n\t\t},\n\t\t{\n\t\t\tproject: 'Project',\n\t\t\tcategory: 'category',\n\t\t\tcolor: ''\n\t\t},\n\t\t{\n\t\t\tproject: 'Project',\n\t\t\tcategory: 'category',\n\t\t\tcolor: ''\n\t\t}\n\t]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "Array<itemDia>",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "itemDia",
+                    "defaultValue": "new EventEmitter()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 31,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\ninterface itemDia {\n\tproject: string;\n\tcategory: string;\n\tcolor?: string;\n}\n@Component({\n\tselector: 'app-lista-dia',\n\ttemplateUrl: './lista-dia.component.html',\n\tstyleUrls: [ './lista-dia.component.scss' ]\n})\nexport class ListaDiaComponent {\n\t@Input()\n\tarrayDia: Array<itemDia> = [\n\t\t{\n\t\t\tproject: 'Project',\n\t\t\tcategory: 'category',\n\t\t\tcolor: ''\n\t\t},\n\t\t{\n\t\t\tproject: 'Project',\n\t\t\tcategory: 'category',\n\t\t\tcolor: ''\n\t\t},\n\t\t{\n\t\t\tproject: 'Project',\n\t\t\tcategory: 'category',\n\t\t\tcolor: ''\n\t\t}\n\t];\n\t@Output() itemDia = new EventEmitter()\n\t\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');\n\n$gray: #8b8b8b;\n$red: #d1230a;\n$blue: #3555c3;\n$green: #4caf50;\n$yellow: hsl(49, 100%, 63%);\n$lightgreen: #5ddc26;\n$lightpink: #f97f98;\n$pink: rgb(245, 65, 98);\n$fontFamily: Poppins, sans-serif;\n$boxShadow: rgb(0 0 0 / 50%) 0px 2px 4px 0px;\n$font-size: 12px;\n\n#listCointainer {\n\twidth: 100%;\n\tmargin: 0 auto;\n\tbox-sizing: border-box;\n    padding: 3px;\n\n\tul {\n\t\tmargin: 0;\n\t\tpadding: 0 1px;\n\t\tli {\n\t\t\tlist-style: none;\n\t\t\ttext-align: start;\n            white-space: nowrap;\n            overflow: hidden;\n\t\t}\n\t}\n}\n\n\n",
+                    "styleUrl": "./lista-dia.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div id=\"listCointainer\">\n    <ul *ngFor=\"let dia of arrayDia\">\n        <li>{{dia.project}} - {{dia.category}}</li>\n    </ul>\n</div>\n\n"
+        },
+        {
+            "name": "NumberDayComponent",
+            "id": "component-NumberDayComponent-b99420e6a98267f85dc5d7ec604f322cb7e5c0ab2da8e5d2cd8c7bac59f6c952eeb07aa62a1db1c9bdf34e09350d2e944dc7f2be0183666d2430b13ae256ae2a",
+            "file": "src/app/components/number-day/number-day.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-number-day",
+            "styleUrls": [
+                "./number-day.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./number-day.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "dayNumber",
+                    "defaultValue": "1",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "number | undefined",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'app-number-day',\n  templateUrl: './number-day.component.html',\n  styleUrls: ['./number-day.component.scss']\n})\nexport class NumberDayComponent {\n  @Input() dayNumber: number | undefined = 1;\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800&display=swap');\n$gray: #8B8B8B;\n$fontWork: 'Work Sans', sans-serif;\n\n.day-number{\n    margin:0;\n    width: fit-content;\n    font-family: $fontWork;\n    font-size: 25.5px;\n    color: $gray;\n}",
+                    "styleUrl": "./number-day.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<p class=\"day-number\">{{dayNumber}}</p>\n"
+        },
+        {
+            "name": "TooltipCalendarComponent",
+            "id": "component-TooltipCalendarComponent-33fa17da6c42bbb817bcd868a11d6aafb1033a1a9cb41544156daf32b1d34cad524914e5d42d4467057ba7da4564d3473d08d529b86fcae2983943dfc78d0ced",
+            "file": "src/app/components/tooltip-calendar/tooltip-calendar.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-tooltip-calendar",
+            "styleUrls": [
+                "./tooltip-calendar.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./tooltip-calendar.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "tooltipText",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'app-tooltip-calendar',\n  templateUrl: './tooltip-calendar.component.html',\n  styleUrls: ['./tooltip-calendar.component.scss']\n})\nexport class TooltipCalendarComponent{\n  @Input() tooltipText:string = '';\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "*{\n    box-sizing: border-box;\n}\n\n\n.tooltip-box{\n    position:absolute;\n    \n    width:max-content;\n    background: black;\n    line-height: 20px;\n    z-index:5;\n    text-align: center;\n    color:white;\n    font-size: 0.7em;\n    padding: 6px 8px;\n    border-radius: 5px;\n    left: 0;\n    top: 20px;\n}",
+                    "styleUrl": "./tooltip-calendar.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<span class=\"tooltip-box\">{{tooltipText}}</span>"
+        },
+        {
+            "name": "WarningDayComponent",
+            "id": "component-WarningDayComponent-c22bd5dd4d44915763a0dcdc20154dc320789b3724de3cfe25412426858b394412099d6a7a0f2c283d700c3ee93a5ab4d28513b23474ea5c5df4d7bd8ab20b8f",
+            "file": "src/app/components/warning-day/warning-day.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-warning-day",
+            "styleUrls": [
+                "./warning-day.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./warning-day.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "hoursDay",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "number",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-warning-day',\n  templateUrl: './warning-day.component.html',\n  styleUrls: ['./warning-day.component.scss']\n})\nexport class WarningDayComponent{\n  @Input() hoursDay:number= 0;\n\n  /*missingHours: number = 8;\n\n  ngOnInit(): void {\n    this.missingHours = 8 - this.hoursDay;\n  }*/\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "*{\n    box-sizing: border-box;\n}\n\n.warning-day{\n    width: fit-content;\n    position: relative;\n    font-size: 1em;\n    font-weight: bold;\n}\n\n.warning-day:hover .tooltip-box{\n    display: inline-block;\n}\n\n.tooltip-box{\n    position:absolute;\n    display:none;\n    width:max-content;\n    background: black;\n    line-height: 20px;\n    z-index:5;\n    text-align: center;\n    color:white;\n    font-size: 0.7em;\n    padding: 6px 8px;\n    border-radius: 5px;\n    left: 0;\n    top: 20px;\n}",
+                    "styleUrl": "./warning-day.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<p class=\"warning-day\" *ngIf=\"hoursDay>=0 && hoursDay<8\">!<span class=\"tooltip-box\">You have {{8-hoursDay}} missing hours</span></p>\n\n"
+        }
+    ],
+    "modules": [
+        {
+            "name": "AppModule",
+            "id": "module-AppModule-ec3aa50a78880e3ec327640d44aae4971356950714346e9ec566b5729850c55f90778e6e11a8dd8dcb05f8afc0ef419360ee69b5605f4be2ce805cf2aea70317",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/app.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport { NZ_I18N } from 'ng-zorro-antd/i18n';\nimport { en_US } from 'ng-zorro-antd/i18n';\nimport { registerLocaleData } from '@angular/common';\nimport en from '@angular/common/locales/en';\nimport { FormsModule } from '@angular/forms';\nimport { HttpClientModule } from '@angular/common/http';\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\nimport { WarningDayComponent } from './components/warning-day/warning-day.component';\nimport { CardFooterHiddenItemsComponent } from './components/card-footer-hidden-items/card-footer-hidden-items.component';\nimport { NumberDayComponent } from './components/number-day/number-day.component';\nimport { CardFooterHoursComponent } from './components/card-footer-hours/card-footer-hours.component';\nimport { TooltipCalendarComponent } from './components/tooltip-calendar/tooltip-calendar.component';\n\n\nregisterLocaleData(en);\n\n@NgModule({\n  declarations: [\n    AppComponent,\n    WarningDayComponent,\n    CardFooterHiddenItemsComponent,\n    NumberDayComponent,\n    CardFooterHoursComponent,\n    TooltipCalendarComponent,\n\n\n\n  ],\n  imports: [\n    BrowserModule,\n    AppRoutingModule,\n    FormsModule,\n    HttpClientModule,\n    BrowserAnimationsModule\n  ],\n  providers: [{ provide: NZ_I18N, useValue: en_US }],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        },
+                        {
+                            "name": "CardFooterHiddenItemsComponent"
+                        },
+                        {
+                            "name": "CardFooterHoursComponent"
+                        },
+                        {
+                            "name": "NumberDayComponent"
+                        },
+                        {
+                            "name": "TooltipCalendarComponent"
+                        },
+                        {
+                            "name": "WarningDayComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "AppRoutingModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "AppRoutingModule",
+            "id": "module-AppRoutingModule-78922b3ae99d2c5249b333980bd5afde1b120b2cc6fedfd41b8b2cc90f279797cb4b22e183bf7e1d1dfab8c6100e77e7812c110234d81f866f544f28a3e18b15",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/app-routing.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\n\nconst routes: Routes = [];\n\n@NgModule({\n  imports: [RouterModule.forRoot(routes)],\n  exports: [RouterModule]\n})\nexport class AppRoutingModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "context",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/test.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+            },
+            {
+                "name": "data",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/itemDía.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "data",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/lista-dia.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "DayButton",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/AddActivityButton/AddActivityButton.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "DayNumber",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/number-day.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.prod.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n  production: true\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n  production: false\n}"
+            },
+            {
+                "name": "GeneralButton",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/AddActivityButton/AddActivityButton.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "HiddenItems",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/card-footer/hidden-items.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "HoursDay",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/warning-day.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "require",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/test.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "literal type"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/itemDía.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<ItemDiaComponent>",
+                "defaultValue": "(args :ItemDiaComponent) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/lista-dia.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<ListaDiaComponent>",
+                "defaultValue": "(args: ListaDiaComponent) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/number-day.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<NumberDayComponent>",
+                "defaultValue": "(args: NumberDayComponent) => ({\n    props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/tooltip-calendar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<TooltipCalendarComponent>",
+                "defaultValue": "(args: TooltipCalendarComponent) => ({\n    props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/warning-day.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<WarningDayComponent>",
+                "defaultValue": "(args: WarningDayComponent) => ({\n    props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/AddActivityButton/AddActivityButton.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "(args) => ({props:args})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/card-footer/Hours.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "(args) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/card-footer/hidden-items.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "(args) => ({\n  props: args,\n})"
+            },
+            {
+                "name": "TooltipCalendar",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/tooltip-calendar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "TotalHours",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/card-footer/Hours.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            }
+        ],
+        "functions": [],
+        "typealiases": [],
+        "enumerations": [],
+        "groupedVariables": {
+            "src/test.ts": [
+                {
+                    "name": "context",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/test.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
+                },
+                {
+                    "name": "require",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/test.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "literal type"
+                }
+            ],
+            "src/stories/itemDía.stories.ts": [
+                {
+                    "name": "data",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/itemDía.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/itemDía.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<ItemDiaComponent>",
+                    "defaultValue": "(args :ItemDiaComponent) => ({\n  props: args,\n})"
+                }
+            ],
+            "src/stories/lista-dia.stories.ts": [
+                {
+                    "name": "data",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/lista-dia.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/lista-dia.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<ListaDiaComponent>",
+                    "defaultValue": "(args: ListaDiaComponent) => ({\n  props: args,\n})"
+                }
+            ],
+            "src/stories/AddActivityButton/AddActivityButton.stories.ts": [
+                {
+                    "name": "DayButton",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/AddActivityButton/AddActivityButton.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "GeneralButton",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/AddActivityButton/AddActivityButton.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/AddActivityButton/AddActivityButton.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "(args) => ({props:args})"
+                }
+            ],
+            "src/stories/number-day.stories.ts": [
+                {
+                    "name": "DayNumber",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/number-day.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/number-day.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<NumberDayComponent>",
+                    "defaultValue": "(args: NumberDayComponent) => ({\n    props: args,\n})"
+                }
+            ],
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  production: true\n}"
+                }
+            ],
+            "src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  production: false\n}"
+                }
+            ],
+            "src/stories/card-footer/hidden-items.stories.ts": [
+                {
+                    "name": "HiddenItems",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/card-footer/hidden-items.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/card-footer/hidden-items.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "(args) => ({\n  props: args,\n})"
+                }
+            ],
+            "src/stories/warning-day.stories.ts": [
+                {
+                    "name": "HoursDay",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/warning-day.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/warning-day.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<WarningDayComponent>",
+                    "defaultValue": "(args: WarningDayComponent) => ({\n    props: args,\n})"
+                }
+            ],
+            "src/stories/tooltip-calendar.stories.ts": [
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/tooltip-calendar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<TooltipCalendarComponent>",
+                    "defaultValue": "(args: TooltipCalendarComponent) => ({\n    props: args,\n})"
+                },
+                {
+                    "name": "TooltipCalendar",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/tooltip-calendar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                }
+            ],
+            "src/stories/card-footer/Hours.stories.ts": [
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/card-footer/Hours.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "(args) => ({\n  props: args,\n})"
+                },
+                {
+                    "name": "TotalHours",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/card-footer/Hours.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {}
+    },
+    "routes": {
+        "name": "<root>",
+        "kind": "module",
+        "className": "AppModule",
+        "children": [
+            {
+                "name": "routes",
+                "filename": "src/app/app-routing.module.ts",
+                "module": "AppRoutingModule",
+                "children": [],
+                "kind": "module"
+            }
+        ]
+    },
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "src/app/app.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AppComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/add-activity-button/add-activity-button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AddActivityButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/card-footer-hidden-items/card-footer-hidden-items.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CardFooterHiddenItemsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/card-footer-hours/card-footer-hours.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CardFooterHoursComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/item-dia/item-dia.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ItemDiaComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/item-dia/item-dia.component.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "ItemDia",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/lista-dia/lista-dia.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ListaDiaComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/lista-dia/lista-dia.component.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "itemDia",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/number-day/number-day.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "NumberDayComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/tooltip-calendar/tooltip-calendar.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TooltipCalendarComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/warning-day/warning-day.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "WarningDayComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/environments/environment.prod.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/environments/environment.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/AddActivityButton/AddActivityButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DayButton",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/AddActivityButton/AddActivityButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "GeneralButton",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/AddActivityButton/AddActivityButton.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/card-footer/Hours.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/card-footer/Hours.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "TotalHours",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/card-footer/hidden-items.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "HiddenItems",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/card-footer/hidden-items.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/itemDía.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "data",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/itemDía.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/lista-dia.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "data",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/lista-dia.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/number-day.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "DayNumber",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/number-day.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/tooltip-calendar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/tooltip-calendar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "TooltipCalendar",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/warning-day.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "HoursDay",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/warning-day.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "context",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/test.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "require",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}
+=======
+>>>>>>> development

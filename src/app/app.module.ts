@@ -16,23 +16,26 @@ import { NumberDayComponent } from './components/number-day/number-day.component
 import { CardFooterHoursComponent } from './components/card-footer-hours/card-footer-hours.component';
 import { PopoverButtonComponent } from './components/popover-button/popover-button.component';
 import { TooltipCalendarComponent } from './components/tooltip-calendar/tooltip-calendar.component';
+import { AddActivityButtonComponent } from './components/add-activity-button/add-activity-button.component';
 import { CardFooterComponent } from './components/card-footer/card-footer.component';
 import { DayHeaderComponent } from './components/day-header/day-header.component';
 
 registerLocaleData(en);
 
+
 @NgModule({
   declarations: [
     AppComponent,
     WarningDayComponent,
-    CardFooterHiddenItemsComponent,
     NumberDayComponent,
     CardFooterHoursComponent,
     PopoverButtonComponent,
     TooltipCalendarComponent,
+    AddActivityButtonComponent,
     CardFooterComponent,
     DayHeaderComponent,
     AddActivityButtonComponent,
+
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
 $gray: #8b8b8b;
 $bright-pink: rgb(245, 65, 98);
+$bright-pink-60: rgba(245, 65, 98, 0.6);
 
 #add-button {
   border: none;
@@ -18,6 +19,7 @@ $bright-pink: rgb(245, 65, 98);
   fill: white;
   border-radius: 50%;
   padding: 1.5em;
+  position: relative;
 }
 
 .day-add-button:hover,
@@ -26,5 +28,16 @@ $bright-pink: rgb(245, 65, 98);
 }
 
 .general-add-button:hover {
-  opacity: 0.6;
+  background: $bright-pink-60;
+}
+
+.general-add-button:hover app-tooltip-calendar{
+  display: inline-block;
+}
+
+app-tooltip-calendar{
+  display: none;
+  position: absolute;
+  left: 80px;
+  top:0%;
 }
