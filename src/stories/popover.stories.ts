@@ -1,8 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { componentWrapperDecorator, Meta, moduleMetadata, Story } from '@storybook/angular';
+import { Meta, moduleMetadata, Story } from '@storybook/angular';
+import { CardFooterHoursComponent } from 'src/app/components/card-footer-hours/card-footer-hours.component';
 import { HeaderPopoverComponent } from 'src/app/components/header-popover/header-popover.component';
+import { PopoverBodyTextComponent } from 'src/app/components/popover-body-text/popover-body-text.component';
+import { PopoverBodyComponent } from 'src/app/components/popover-body/popover-body.component';
 import { PopoverComponent } from 'src/app/components/popover/popover.component';
-import * as HeaderStory from './header-popover.stories'
 
 
 export default {
@@ -10,7 +12,7 @@ export default {
     component: PopoverComponent, 
     decorators:[
         moduleMetadata({
-            declarations:[PopoverComponent, HeaderPopoverComponent],
+            declarations:[PopoverComponent, HeaderPopoverComponent, PopoverBodyComponent, PopoverBodyTextComponent, CardFooterHoursComponent],
             imports: [CommonModule]
         
         }),
@@ -30,7 +32,10 @@ data:{
     "AccountName": "algo",
     "ProjectName": "algo",
     "CategoryName": "algo",
-    "ProjectColor": "red"
+    "ProjectColor": "red",
+    "comment": "comentarios",
+    "task": "ticket",
+    "hours": 2,
 
 }
 };

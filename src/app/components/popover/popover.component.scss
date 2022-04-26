@@ -23,7 +23,6 @@ section {
 	padding: 0;
 
 	background-color: transparent;
-
 }
 .container {
 	position: relative;
@@ -35,31 +34,51 @@ section {
 	height: 10em;
 	border-radius: 4px;
 	left: 18px;
+	
 
 	.colorFlag {
 		width: 5px;
 		height: 9.9em;
-        z-index: -2;
+		z-index: -2;
 	}
 	.main {
+		background-color: white;
 		font-size: $font-size;
 		display: flex;
-		flex-direction: row;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: space-evenly;
 		width: 100%;
-		height: 1.5em;
+		height: 100%;
+		padding-right: 3px;
 		padding-left: 3px;
+		app-header-popover {
+			
+			height: 40%;
+		}
+		.popover-body {
+			
+			height: 60%;
+		}
 	}
 }
 .pointer {
-	width: 30px;
-	height: 18px;
-	clip-path: polygon(50% 0, 0 100%, 100% 100%);
-	background-color: $gray;
+	
+	border:8px solid $gray;
+	border-right-color:white;
+	border-left-color:white;
+	border-width:0px 30px 60px;
 	transform: rotate(270deg);
-
-	z-index: -2;
+	z-index: -4;
 	position: absolute;
 }
-.red {
-	background-color: $red;
+.pointer2 {
+	left: 19px;
+	border:8px solid white;
+	border-right-color:transparent;
+	border-left-color:transparent;
+	border-width:0px 29.7px 59.7px;
+	transform: rotate(270deg);
+	z-index: -3;
+	position: absolute;
 }

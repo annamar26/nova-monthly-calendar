@@ -22,6 +22,8 @@ import { PopoverBodyComponent } from './components/popover-body/popover-body.com
 import { AddActivityButtonComponent } from './components/add-activity-button/add-activity-button.component';
 import { ItemDiaComponent } from './components/item-dia/item-dia.component';
 import { ListaDiaComponent } from './components/lista-dia/lista-dia.component';
+import { PopoverComponent } from './components/popover/popover.component';
+import { HeaderPopoverComponent } from './components/header-popover/header-popover.component';
 
 registerLocaleData(en);
 
@@ -42,8 +44,9 @@ registerLocaleData(en);
     PopoverBodyTextComponent,
     CardFooterHiddenItemsComponent,
     ItemDiaComponent,
-    ListaDiaComponent
-
+    ListaDiaComponent,
+    PopoverComponent,
+    HeaderPopoverComponent
   ],
   imports: [
     BrowserModule,
