@@ -16,9 +16,10 @@ export const Card_Day_Item = Template.bind({});
 // More on args: https://storybook.js.org/docs/angular/writing-stories/args
 Card_Day_Item.args = {
     data: {
-          "project": "iTexico - Talent Management",
-          "category": "category",
-          "color":"blue"
+      "AccountName": "Itexico",
+      "ProjectName": 'Project1',
+      "CategoryName": 'categorya',
+      "ProjectColor": 'red'
       }
     
     

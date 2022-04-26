@@ -1,11 +1,19 @@
+import { CommonModule } from '@angular/common';
+import { moduleMetadata } from '@storybook/angular';
 import { Story, Meta } from '@storybook/angular/types-6-0';
+import { ItemDiaComponent } from 'src/app/components/item-dia/item-dia.component';
 import { ListaDiaComponent } from 'src/app/components/lista-dia/lista-dia.component';
 
 
 export default {
   title: 'Card Day List',
   component: ListaDiaComponent,
-
+  decorators: [
+    moduleMetadata({
+      declarations: [ListaDiaComponent, ItemDiaComponent],
+      imports: [CommonModule],
+    }),
+  ],
 } as Meta;
 
 
@@ -17,19 +25,22 @@ export const Card_Day_List = Template.bind({});
 
 Card_Day_List.args = {
  arrayDia: [	{
-    "project": 'Project1',
-    "category": 'categorya',
-    "color": ''
+   "AccountName": "Itexico",
+    "ProjectName": 'Project1',
+    "CategoryName": 'categorya',
+    "ProjectColor": 'blue'
 },
 {
-    "project": 'Project2',
-    "category": 'categoryb',
-    "color": ''
+  "AccountName": "Itexico",
+  "ProjectName": 'Project2',
+  "CategoryName": 'categorya',
+  "ProjectColor": 'green'
 },
 {
-    "project": 'Project3',
-    "category": 'categoryc',
-    "color": ''
+  "AccountName": "Itexico",
+  "ProjectName": 'Project3',
+  "CategoryName": 'categorya',
+  "ProjectColor": 'red'
 }]
 };
 

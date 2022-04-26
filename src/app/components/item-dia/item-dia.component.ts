@@ -2,9 +2,10 @@ import { AfterViewInit, Component, ElementRef, EventEmitter, Input, Output, Rend
 
 
 interface ItemDia{
-  project: string;
-  category: string;
-  color?: string
+  AccountName: string;
+  ProjectName: string;
+  CategoryName: string
+  ProjectColor?: string
   }
 @Component({
   selector: 'app-item-dia',
@@ -14,8 +15,10 @@ interface ItemDia{
 export class ItemDiaComponent implements AfterViewInit {
 
   @Input() data: ItemDia = {
-    project: "Project",
-    category: "Category",
+    AccountName: "iTexico",
+    ProjectName: "Project",
+    CategoryName: "Category",
+    ProjectColor: "green"
    
   }
   @ViewChild("colorFlag") flag!: ElementRef
@@ -28,28 +31,13 @@ export class ItemDiaComponent implements AfterViewInit {
   ngAfterViewInit(): void {
     this.flagColorElement = this.flag.nativeElement
 
-    if (this.data.color) {
+ 
       this.renderer.removeStyle(this.flagColorElement, "background-color")
-      this.renderer.setStyle(this.flagColorElement, "background-color", `${this.data.color}`)
-    } else {
-      this.setColor()
-    }
+      this.renderer.setStyle(this.flagColorElement, "background-color", `${this.data.ProjectColor}`)
+   
   }
 
-  setColor():void {
-    if (this.data.project === "iTexico - Delivery") {
-      this.renderer.removeStyle(this.flagColorElement, "background-color")
-
-      this.renderer.addClass(this.flagColorElement, "red")
-    } else if (this.data.project == "iTexico - Talent Management") {
-      this.renderer.removeStyle(this.flagColorElement, "background-color")
-      this.renderer.addClass(this.flagColorElement, "green")
-
-    } else {
-      this.renderer.removeStyle(this.flagColorElement, "background-color")
-      this.renderer.addClass(this.flagColorElement, "lightgreen")
-
-    }
-  }
+  
+  
  
 }
