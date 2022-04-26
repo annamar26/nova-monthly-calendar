@@ -25,19 +25,20 @@ import { ListaDiaComponent } from './components/lista-dia/lista-dia.component';
 import { PopoverComponent } from './components/popover/popover.component';
 import { HeaderPopoverComponent } from './components/header-popover/header-popover.component';
 
+
 registerLocaleData(en);
+
 
 @NgModule({
   declarations: [
     AppComponent,
     WarningDayComponent,
-    CardFooterHiddenItemsComponent,
     NumberDayComponent,
     CardFooterHoursComponent,
-    TooltipCalendarComponent,
     AddActivityButtonComponent,
     CardFooterComponent,
     PopoverButtonComponent,
+    TooltipCalendarComponent,
     DayHeaderComponent,
     AddActivityButtonComponent,
     PopoverBodyComponent,
@@ -47,6 +48,7 @@ registerLocaleData(en);
     ListaDiaComponent,
     PopoverComponent,
     HeaderPopoverComponent
+
   ],
   imports: [
     BrowserModule,

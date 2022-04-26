@@ -39,5 +39,5 @@ describe('PopoverBodyComponent', () => {
       fixture.debugElement.query(By.css('card-footer-hours'))
     ).toBeTruthy();
   });
-  
+
 });
