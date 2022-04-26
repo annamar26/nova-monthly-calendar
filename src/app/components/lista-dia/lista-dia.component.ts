@@ -1,8 +1,9 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 interface itemDia {
-	project: string;
-	category: string;
-	color?: string;
+	AccountName: string;
+	ProjectName: string;
+	CategoryName: string,
+	ProjectColor?: string;
 }
 @Component({
 	selector: 'app-lista-dia',
@@ -13,21 +14,24 @@ export class ListaDiaComponent {
 	@Input()
 	arrayDia: Array<itemDia> = [
 		{
-			project: 'Project',
-			category: 'category',
-			color: ''
+			AccountName: 'iTexico',
+			ProjectName: 'Project',
+			CategoryName: 'category',
+			ProjectColor: ''
 		},
 		{
-			project: 'Project',
-			category: 'category',
-			color: ''
+			AccountName: 'iTexico',
+			ProjectName: 'Project',
+			CategoryName: 'category',
+			ProjectColor: ''
 		},
 		{
-			project: 'Project',
-			category: 'category',
-			color: ''
+			AccountName: 'iTexico',
+			ProjectName: 'Project',
+			CategoryName: 'category',
+			ProjectColor: ''
 		}
 	];
-	@Output() itemDia = new EventEmitter()
+	
 	
 }
