@@ -23,13 +23,14 @@ describe('ItemDiaComponent', () => {
 		expect(component).toBeTruthy();
 	});
 	it('should show TEST INPUT', () => {
-		component!.data.project = 'Test project';
-		component!.data.category = 'Test category';
+		component!.data.AccountName = 'Test AccountName';
+		component!.data.ProjectName = 'Test project';
+		component!.data.CategoryName = 'Test category';
 		fixture.detectChanges();
-		expect(fixture.nativeElement.querySelector('p').innerText).toEqual('Test project - Test category');
+		expect(fixture.nativeElement.querySelector('p').innerText).toEqual('Test AccountName Test project - Test category');
 	});
 	it('should change the color to the color name if the property exist in the input', () => {
-		component!.data.color = 'pink';
+		component!.data.ProjectColor = 'pink';
 		fixture.detectChanges();
 		const flag = component!.flagColorElement;
 		fixture.componentInstance.ngAfterViewInit();
@@ -38,7 +39,7 @@ describe('ItemDiaComponent', () => {
 		expect(styles.backgroundColor).toBe('rgb(255, 192, 203)');
 	});
 	it('should change the color to the rgb color if the property exist in the input', () => {
-		component!.data.color = 'rgb(38, 68, 220)';
+		component!.data.ProjectColor = 'rgb(38, 68, 220)';
 		fixture.detectChanges();
 		const flag = component!.flagColorElement;
 		fixture.componentInstance.ngAfterViewInit();
@@ -47,7 +48,7 @@ describe('ItemDiaComponent', () => {
 		expect(styles.backgroundColor).toBe('rgb(38, 68, 220)');
 	});
   it('should change the color to the hex color if the property exist in the input', () => {
-		component!.data.color = '#f7e348';
+		component!.data.ProjectColor = '#f7e348';
 		fixture.detectChanges();
 		const flag = component!.flagColorElement;
 		fixture.componentInstance.ngAfterViewInit();
@@ -55,36 +56,7 @@ describe('ItemDiaComponent', () => {
 
 		expect(styles.backgroundColor).toBe('rgb(247, 227, 72)');
 	});
-  it('should change the color to red if the color property does not exist in the input & the project is "iTexico - Delivery"', () => {
-		component!.data.color = '';
-    component!.data.project = "iTexico - Delivery"
-		fixture.detectChanges();
-		const flag = component!.flagColorElement;
-		fixture.componentInstance.ngAfterViewInit();
-		const styles = window.getComputedStyle(flag!);
-
-		expect(styles.backgroundColor).toBe('rgb(209, 35, 10)');
-	});
-  it('should change the color to green if the color property does not exist in the input & the project is "iTexico - Talent Management"', () => {
-		component!.data.color = '';
-    component!.data.project = "iTexico - Talent Management"
-		fixture.detectChanges();
-		const flag = component!.flagColorElement;
-		fixture.componentInstance.ngAfterViewInit();
-		const styles = window.getComputedStyle(flag!);
-
-		expect(styles.backgroundColor).toBe('rgb(76, 175, 80)');
-	});
-  it('should change the color to lightgreen if the color property does not exist in the input & the project does not exit neither', () => {
-		component!.data.color = '';
-    component!.data.project = ""
-		fixture.detectChanges();
-		const flag = component!.flagColorElement;
-		fixture.componentInstance.ngAfterViewInit();
-		const styles = window.getComputedStyle(flag!);
-
-		expect(styles.backgroundColor).toBe('rgb(93, 220, 38)');
-	});
+  
 	it('"flagColorElement" prop should be undefined before view init and defined after it', () => {
 		
     component!.flagColorElement = undefined

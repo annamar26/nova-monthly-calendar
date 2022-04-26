@@ -29,10 +29,12 @@ describe('ListaDiaComponent', () => {
 	it('should create 1 li element with 1 element in the Input', () => {
 		component.arrayDia = [
 			{
-				project: 'Project1',
-				category: 'category',
-				color: ''
+				AccountName: 'Itexico',
+				ProjectName: 'Project1',
+				CategoryName: 'category',
+				ProjectColor: ''
 			}
+			
 		];
 		fixture.detectChanges();
 		const numberfElements = component.arrayDia.length;
@@ -42,19 +44,22 @@ describe('ListaDiaComponent', () => {
 	it('should create 3 li element with 3 element in the Input', () => {
 		component.arrayDia = [
 			{
-				project: 'Project1',
-				category: 'category',
-				color: ''
+				AccountName: 'Itexico',
+				ProjectName: 'Project1',
+				CategoryName: 'category',
+				ProjectColor: ''
 			},
 			{
-				project: 'Project1',
-				category: 'category',
-				color: ''
+				AccountName: 'Itexico',
+				ProjectName: 'Project1',
+				CategoryName: 'category',
+				ProjectColor: ''
 			},
 			{
-				project: 'Project1',
-				category: 'category',
-				color: ''
+				AccountName: 'Itexico',
+				ProjectName: 'Project1',
+				CategoryName: 'category',
+				ProjectColor: ''
 			}
 		];
 		fixture.detectChanges();

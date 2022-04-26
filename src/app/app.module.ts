@@ -20,6 +20,8 @@ import { PopoverButtonComponent } from './components/popover-button/popover-butt
 import { DayHeaderComponent } from './components/day-header/day-header.component';
 import { PopoverBodyComponent } from './components/popover-body/popover-body.component';
 import { AddActivityButtonComponent } from './components/add-activity-button/add-activity-button.component';
+import { ItemDiaComponent } from './components/item-dia/item-dia.component';
+import { ListaDiaComponent } from './components/lista-dia/lista-dia.component';
 
 registerLocaleData(en);
 
@@ -39,6 +41,9 @@ registerLocaleData(en);
     PopoverBodyComponent,
     PopoverBodyTextComponent,
     CardFooterHiddenItemsComponent,
+    ItemDiaComponent,
+    ListaDiaComponent
+
   ],
   imports: [
     BrowserModule,

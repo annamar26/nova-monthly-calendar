@@ -1,6 +1,8 @@
 <div id="listCointainer">
     <ul *ngFor="let dia of arrayDia">
-        <li>{{dia.project}} - {{dia.category}}</li>
+        <li>
+            <app-item-dia [data]="dia"></app-item-dia>
+        </li>
     </ul>
 </div>
 
