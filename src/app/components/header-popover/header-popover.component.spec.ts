@@ -38,7 +38,7 @@ describe('HeaderPopoverComponent', () => {
 	});
 	it('should have the correct styles', () => {
 		const styles = window.getComputedStyle(fixture.nativeElement.querySelector('p'));
-		expect(styles.height).toBe('34px');
+		expect(styles.height).toBe('42px');
 
 	});
 });
