@@ -1,4 +1,3 @@
-import { AddActivityButtonComponent } from './components/add-activity-button/add-activity-button.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
