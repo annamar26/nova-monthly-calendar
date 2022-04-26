@@ -14,14 +14,16 @@ import { WarningDayComponent } from './components/warning-day/warning-day.compon
 import { CardFooterHiddenItemsComponent } from './components/card-footer-hidden-items/card-footer-hidden-items.component';
 import { NumberDayComponent } from './components/number-day/number-day.component';
 import { CardFooterHoursComponent } from './components/card-footer-hours/card-footer-hours.component';
-import { PopoverButtonComponent } from './components/popover-button/popover-button.component';
 import { TooltipCalendarComponent } from './components/tooltip-calendar/tooltip-calendar.component';
-import { AddActivityButtonComponent } from './components/add-activity-button/add-activity-button.component';
 import { CardFooterComponent } from './components/card-footer/card-footer.component';
+import { PopoverButtonComponent } from './components/popover-button/popover-button.component';
 import { DayHeaderComponent } from './components/day-header/day-header.component';
 import { PopoverBodyComponent } from './components/popover-body/popover-body.component';
+import { AddActivityButtonComponent } from './components/add-activity-button/add-activity-button.component';
 import { ItemDiaComponent } from './components/item-dia/item-dia.component';
 import { ListaDiaComponent } from './components/lista-dia/lista-dia.component';
+import { PopoverComponent } from './components/popover/popover.component';
+import { HeaderPopoverComponent } from './components/header-popover/header-popover.component';
 
 
 registerLocaleData(en);
@@ -33,17 +35,20 @@ registerLocaleData(en);
     WarningDayComponent,
     NumberDayComponent,
     CardFooterHoursComponent,
-    PopoverButtonComponent,
-    TooltipCalendarComponent,
     AddActivityButtonComponent,
     CardFooterComponent,
+    PopoverButtonComponent,
+    TooltipCalendarComponent,
     DayHeaderComponent,
     AddActivityButtonComponent,
     PopoverBodyComponent,
     PopoverBodyTextComponent,
     CardFooterHiddenItemsComponent,
     ItemDiaComponent,
-    ListaDiaComponent
+    ListaDiaComponent,
+    PopoverComponent,
+    HeaderPopoverComponent
+
   ],
   imports: [
     BrowserModule,

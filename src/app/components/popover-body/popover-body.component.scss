@@ -7,4 +7,25 @@
 .flex{
     display: flex;
     justify-content: space-between;
+    height: 5%;
+  
+   
 }
+.popover-body{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+  align-content: stretch;
+  height: 95%;
+
+}
+.comment{
+  height: 80%;
+  min-height: 75%;
+  white-space: wrap;
+ 
+ 
+
+}
+
