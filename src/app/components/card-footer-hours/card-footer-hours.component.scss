@@ -1,6 +1,11 @@
 @import "../../app.component.scss";
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .total-hours {
   color: $gray;
-  padding: 1px;
 }
