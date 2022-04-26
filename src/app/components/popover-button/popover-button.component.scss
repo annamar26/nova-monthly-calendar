@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800&display=swap');
+$fontBlue: rgb(53, 85, 195);
+$fontWork: 'Work Sans', sans-serif;
+$shadow-btn: offset 1px 1px 1px rgba(0, 0, 0, 0.25);
+
+.popover-btn{
+    cursor: pointer;
+    color: $fontBlue;
+    font-family: $fontWork;
+    font-size: 0.8em;
+    background-color: transparent;
+    border: none;
+    padding: 2px 5px;
+    margin: 0;
+}
+
+.popover-btn:active{
+    box-shadow: $shadow-btn;
+    transform: translateY(3px);
+}

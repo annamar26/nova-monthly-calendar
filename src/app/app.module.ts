@@ -1,3 +1,4 @@
+import { AddActivityButtonComponent } from './components/add-activity-button/add-activity-button.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
@@ -13,9 +14,14 @@ import { WarningDayComponent } from './components/warning-day/warning-day.compon
 import { CardFooterHiddenItemsComponent } from './components/card-footer-hidden-items/card-footer-hidden-items.component';
 import { NumberDayComponent } from './components/number-day/number-day.component';
 import { CardFooterHoursComponent } from './components/card-footer-hours/card-footer-hours.component';
+import { PopoverButtonComponent } from './components/popover-button/popover-button.component';
 import { TooltipCalendarComponent } from './components/tooltip-calendar/tooltip-calendar.component';
 import { AddActivityButtonComponent } from './components/add-activity-button/add-activity-button.component';
 import { CardFooterComponent } from './components/card-footer/card-footer.component';
+import { DayHeaderComponent } from './components/day-header/day-header.component';
+
+registerLocaleData(en);
+
 
 @NgModule({
   declarations: [
@@ -23,9 +29,12 @@ import { CardFooterComponent } from './components/card-footer/card-footer.compon
     WarningDayComponent,
     NumberDayComponent,
     CardFooterHoursComponent,
+    PopoverButtonComponent,
     TooltipCalendarComponent,
     AddActivityButtonComponent,
     CardFooterComponent,
+    DayHeaderComponent,
+    AddActivityButtonComponent,
 
   ],
   imports: [
@@ -33,9 +42,9 @@ import { CardFooterComponent } from './components/card-footer/card-footer.compon
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
