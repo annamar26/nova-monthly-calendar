@@ -46,7 +46,7 @@ describe('PopoverButtonComponent', () => {
     expect(component.message).toBe('Update Activity');
   });
 
-  it('should display update activity when update', () => {
+  it('should display clone activity when clone', () => {
     component.buttonText = 'clone';
     component.handleClickPopoverButton(component.buttonText)
 
@@ -57,7 +57,7 @@ describe('PopoverButtonComponent', () => {
     expect(component.message).toBe('Clone an Activity');
   });
 
-  it('should display update activity when update', () => {
+  it('should not display any message when delete', () => {
     component.buttonText = 'delete';
     component.handleClickPopoverButton(component.buttonText)
 
