@@ -15,7 +15,7 @@ $font-size: 12px;
 	box-sizing: border-box;
 	margin: 0;
 }
-section {
+.main-container {
 	display: flex;
 	flex-direction: row;
 	width: 18em;
@@ -38,8 +38,10 @@ section {
 
 	.colorFlag {
 		width: 5px;
-		height: 9.9em;
+		height: 100%;
 		z-index: -2;
+		border-top-left-radius: 3px;
+		border-bottom-left-radius: 3px;
 	}
 	.main {
 		background-color: white;
@@ -52,13 +54,21 @@ section {
 		height: 100%;
 		padding-right: 3px;
 		padding-left: 3px;
+		border-radius: 0 4px 0 4px;
+		border-bottom-right-radius: 4px;
+		
 		app-header-popover {
-			
+			border-radius: 0 6px 0 6px;
 			height: 40%;
 		}
 		.popover-body {
-			
-			height: 60%;
+			border-radius: 0 6px 0 6px;
+			height: 55%;
+		}
+		app-popover-list-footer{
+			background-color: none;
+			height: 15%;
+			border-radius: 0 6px 0 6px;
 		}
 	}
 }
@@ -81,4 +91,10 @@ section {
 	transform: rotate(270deg);
 	z-index: -3;
 	position: absolute;
+}
+
+.popover-container{
+	display: flex;
+	flex-direction: column;
+	width: 18em;
 }
