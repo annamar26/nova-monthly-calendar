@@ -1,0 +1,34 @@
+<div class="snackbar-container"
+    [style.backgroundColor]="type!=='custom'? success ? '#43A047': '#d1230a': backgroundColor">
+    <section *ngIf="type!=='custom'" [ngSwitch]="success">
+        <svg *ngSwitchCase="true" width="24px" height="24px" viewBox="0 0 24 24"
+            id="d9090658-f907-4d85-8bc1-743b70378e93" data-name="Livello 1" xmlns="http://www.w3.org/2000/svg">
+            <path  fill="white" id="70fa6808-131f-4233-9c3a-fc089fd0c1c4"
+                data-name="done circle"
+                d="M12,0A12,12,0,1,0,24,12,12,12,0,0,0,12,0ZM11.52,17L6,12.79l1.83-2.37L11.14,13l4.51-5.08,2.24,2Z" />
+            
+
+        </svg>
+        <svg *ngSwitchCase="false"version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 294.995 294.995" style="enable-background:new 0 0 294.995 294.995;" xml:space="preserve">
+
+	<path d="M291.874,248.279L165.605,26.526c-4.007-7.037-10.776-11.26-18.107-11.26s-14.101,4.202-18.107,11.239L3.121,248.238
+		c-3.979,6.989-4.164,15.013-0.493,21.326c3.67,6.313,10.663,10.165,18.705,10.165h252.329c8.042,0,15.035-3.852,18.705-10.165
+		C296.038,263.251,295.854,255.268,291.874,248.279z M146.665,86.229c9.665,0,17.5,7.835,17.5,17.5v63c0,9.665-7.835,17.5-17.5,17.5
+		c-9.665,0-17.5-7.835-17.5-17.5v-63C129.165,94.064,137,86.229,146.665,86.229z M147.498,204.005c9.665,0,17.5,7.835,17.5,17.5
+		c0,9.665-7.835,17.5-17.5,17.5c-9.665,0-17.5-7.835-17.5-17.5C129.998,211.84,137.833,204.005,147.498,204.005z"/>
+
+</svg>
+<svg *ngSwitchDefault></svg>
+
+
+    </section>
+
+ <p>{{message}}</p>
+
+
+
+
+
+   
+</div>

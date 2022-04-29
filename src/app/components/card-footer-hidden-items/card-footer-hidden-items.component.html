@@ -1,1 +1,3 @@
-<div *ngIf="hiddenItems" class="hidden-items">{{ hiddenItems }} more</div>
+<div *ngIf="hiddenItems" (click)="isClicked()" class="hidden-items">
+  {{ !clicked ? hiddenItems + " more" : "close" }}
+</div>
