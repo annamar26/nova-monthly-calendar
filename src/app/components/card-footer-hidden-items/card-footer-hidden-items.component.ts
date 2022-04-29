@@ -6,7 +6,10 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./card-footer-hidden-items.component.scss'],
 })
 export class CardFooterHiddenItemsComponent {
+  clicked: boolean = false;
   @Input() 'hiddenItems': number;
 
-  constructor() {}
+  isClicked() {
+    this.clicked = !this.clicked;
+  }
 }
