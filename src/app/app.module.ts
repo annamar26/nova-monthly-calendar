@@ -57,7 +57,7 @@ registerLocaleData(en);
     HeaderPopoverComponent,
     PopoverListFooterComponent,
     CalendarHeaderTitleComponent,
-    SnackbarComponent
+    SnackbarComponent,CardFooterHoursComponent
 
 
   ],

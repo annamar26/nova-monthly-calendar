@@ -6,7 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./card-footer-hours.component.scss'],
 })
 export class CardFooterHoursComponent {
-  @Input() 'totalHours': number;
+  @Input() totalHours!: number;
 
-  constructor() {}
 }

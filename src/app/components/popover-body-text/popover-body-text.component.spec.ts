@@ -43,7 +43,7 @@ describe('PopoverBodyTextComponent', () => {
     const comment = window.getComputedStyle(
       fixture.debugElement.query(By.css('.comment-text')).nativeElement
     );
-    expect(comment.color).toBe('rgb(74, 74, 74)');
+    expect(comment.color).toBe('rgb(139, 139, 139)');
 
     component.type = 'task';
     
