@@ -3,16 +3,19 @@ $fontGray: rgb(74, 74, 74);
 
 
 p {
-    white-space: nowrap;
+   
     margin: 0;
     text-align: left;
     font-weight: 700;
     cursor: pointer;
     font-size: 14px;
-    overflow: hidden;
+   width: inherit;
     height: fit-content;
     box-sizing: border-box;
     color: $fontGray;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 
 
     span {
