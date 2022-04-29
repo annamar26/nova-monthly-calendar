@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, Input, OnInit, Output, Renderer2, ViewChild } from '@angular/core';
+import { Component, Input} from '@angular/core';
 
 interface ItemDay {
   AccountName: string,
@@ -29,19 +29,5 @@ export class PopoverComponent {
 
   }
 
-  @ViewChild("colorFlag") flag!: ElementRef
 
-  flagColorElement = undefined
-
-  constructor(private renderer: Renderer2) {
-  }
-
-  ngAfterViewInit(): void {
-    this.flagColorElement = this.flag.nativeElement
-   
-    this.renderer.setStyle(this.flagColorElement, "background-color", `${this.data.ProjectColor}`)
-
-
-
-  }
 }
