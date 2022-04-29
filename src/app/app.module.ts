@@ -26,6 +26,9 @@ import { DayCardComponent } from './components/day-card/day-card.component';
 import { PopoverComponent } from './components/popover/popover.component';
 import { HeaderPopoverComponent } from './components/header-popover/header-popover.component';
 import { PopoverListFooterComponent } from './components/popover-list-footer/popover-list-footer.component';
+import { CalendarHeaderTitleComponent } from './components/calendar-header-title/calendar-header-title.component';
+import { SnackbarComponent } from './components/snackbar/snackbar.component';
+
 
 
 registerLocaleData(en);
@@ -52,7 +55,10 @@ registerLocaleData(en);
     ListaDiaComponent,
     PopoverComponent,
     HeaderPopoverComponent,
-    PopoverListFooterComponent
+    PopoverListFooterComponent,
+    CalendarHeaderTitleComponent,
+    SnackbarComponent
+
 
   ],
   imports: [

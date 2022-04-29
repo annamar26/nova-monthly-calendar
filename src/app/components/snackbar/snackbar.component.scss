@@ -1,0 +1,44 @@
+*{
+    box-sizing: border-box;
+}
+.snackbar-container{
+    width: max-content;
+    min-width: 20em;
+    height: 3em;
+    border-radius: 4px;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    section{
+        width: fit-content;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      svg{
+        margin-right: 3px;
+        width: 14px;
+        height: 14px;
+        path{
+            fill: white;
+        }
+       
+     
+    }
+    
+    }p{
+        margin: 0;
+        padding: 0;
+        font-size: 11px;
+        color: white;
+
+    }  
+    
+}
+.custom{
+    
+    p{
+      
+        color: black;
+
+    }
+}

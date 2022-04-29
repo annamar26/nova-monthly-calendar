@@ -1,4 +1,7 @@
 $font-size:12px;
+$fontGray: rgb(74, 74, 74);
+
+
 p {
     white-space: nowrap;
     margin: 0;
@@ -9,6 +12,7 @@ p {
     overflow: hidden;
     height: fit-content;
     box-sizing: border-box;
+    color: $fontGray;
 
 
     span {

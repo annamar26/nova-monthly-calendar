@@ -44,4 +44,11 @@ describe('CardFooterHiddenItemsComponent', () => {
     const element = fixture.debugElement.nativeElement;
     expect(element.querySelector('div')).toBeNull();
   });
+
+  it('is Clicked function changes', () => {
+    component.hiddenItems = 2;
+    component.isClicked();
+    fixture.detectChanges();
+    expect(component.clicked).toBeTrue();
+  });
 });

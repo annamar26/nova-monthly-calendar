@@ -9,3 +9,8 @@
 .hidden-items {
   color: $gray;
 }
+
+.hidden-items:hover {
+  color: $gray;
+  cursor: pointer;
+}
