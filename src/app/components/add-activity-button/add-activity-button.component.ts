@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./add-activity-button.component.scss'],
 })
 export class AddActivityButtonComponent {
-  @Input () type: string = 'general';
+  @Input () type: 'general' | 'day' = 'general';
   modalObservable: Observable = new Observable('addActivityModal');
   isPublished: boolean = false;
 

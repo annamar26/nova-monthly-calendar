@@ -1,5 +1,3 @@
-<div class="popover-list-footer">
-  <app-popover-button [buttonText]="update"></app-popover-button>
-  <app-popover-button [buttonText]="clone"></app-popover-button>
-  <app-popover-button [buttonText]="delete"></app-popover-button>
+<div class="popover-list-footer" >
+  <app-popover-button *ngFor="let button of buttons" [buttonText]="button"></app-popover-button>
 </div>

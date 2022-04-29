@@ -1,13 +1,15 @@
-<section class="main-container"><div class="pointer"></div>
+<section class="main-container">
+    <div class="pointer"></div>
     <div class="pointer2"></div>
-<div class="container">
-    <div class="colorFlag" #colorFlag>
-     </div> <div class="main">
-         <app-header-popover [data]="data"></app-header-popover>
-         <app-popover-body  class="popover-body" [comment]="data.comment" [task]="data.task" [comment]="data.comment" [hours]="data.hours"></app-popover-body>
-          <app-popover-list-footer></app-popover-list-footer>
+    <div class="container">
+        <div class="colorFlag" #colorFlag>
         </div>
-  
-   </div></section>
-  
+        <div class="main">
+            <app-header-popover [data]="data"></app-header-popover>
+            <app-popover-body class="popover-body" [comment]="data.comment" [task]="data.task" [comment]="data.comment"
+                [hours]="data.hours"></app-popover-body>
+            <app-popover-list-footer></app-popover-list-footer>
+        </div>
 
+    </div>
+</section>

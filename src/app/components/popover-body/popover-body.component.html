@@ -7,9 +7,10 @@
   ></app-popover-body-text>
   <div class="flex">
     <app-popover-body-text
-      *ngIf="task !== ''"
+      *ngIf="task"
       [type]="'task'"
       [content]="task"
+      class="ticket"
     ></app-popover-body-text>
     <card-footer-hours [totalHours]="hours"></card-footer-hours>
   </div>

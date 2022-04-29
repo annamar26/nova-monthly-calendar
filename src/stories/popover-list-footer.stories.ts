@@ -23,7 +23,5 @@ const Template: Story = (args) => ({
 
 export const Popover_List_Footer = Template.bind({});
 Popover_List_Footer.args = {
-  update: 'update',
-  clone: 'clone',
-  delete: 'delete',
+  buttons: ['update', 'clone', 'delete']
 };
