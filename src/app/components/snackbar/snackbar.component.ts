@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class SnackbarComponent{
 
 @Input() message: string = "Este es un mensaje predeterminado"
-type!: 'default'|'custom'
+@Input() type!: 'default'|'custom'
 success!: boolean 
 @Input() backgroundColor!: string 
 

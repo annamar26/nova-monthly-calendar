@@ -36,7 +36,7 @@ data:{
     "AccountName": "algo",
     "ProjectName": "algo",
     "CategoryName": "algo",
-    "ProjectColor": "red",
+    "ProjectColor": "pink",
     "comment": "comentarios",
     "task": "ticket",
     "hours": 2,
