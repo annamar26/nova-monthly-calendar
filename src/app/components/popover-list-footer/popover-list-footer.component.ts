@@ -6,7 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./popover-list-footer.component.scss'],
 })
 export class PopoverListFooterComponent {
-  @Input() 'update': string = 'update';
-  @Input() 'clone': string = 'clone';
-  @Input() 'delete': string = 'delete';
+  @Input() buttons: string[] = ['update', 'clone', 'delete'];
 }

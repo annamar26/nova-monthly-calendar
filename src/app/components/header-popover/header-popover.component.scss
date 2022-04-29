@@ -4,13 +4,13 @@ $fontGray: rgb(74, 74, 74);
 
 p {
     white-space: nowrap;
-    height: 3em;
     margin: 0;
     text-align: left;
     font-weight: 700;
     cursor: pointer;
     font-size: 14px;
     overflow: hidden;
+    height: fit-content;
     box-sizing: border-box;
     color: $fontGray;
 

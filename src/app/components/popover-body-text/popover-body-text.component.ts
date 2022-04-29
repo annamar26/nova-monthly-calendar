@@ -7,5 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class PopoverBodyTextComponent {
   @Input () content: string = '';
-  @Input () type: string = 'comment';
+  @Input () type: 'comment' | 'task' = 'comment';
 }
