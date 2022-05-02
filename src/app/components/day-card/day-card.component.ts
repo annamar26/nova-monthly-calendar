@@ -1,29 +1,31 @@
-import { Component, Input } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { FocusCardService } from 'src/app/services/focus-card/focus-card.service';
 
 interface Data {
-    projects:    Project[];
-    totalHours:  number;
-    hiddenItems: number;
-    day:         number;
+  projects: Project[];
+  totalHours: number;
+  hiddenItems: number;
+  day: number;
 }
 
 interface Project {
-    AccountName:  string;
-    ProjectName:  string;
-    CategoryName: string;
-    ProjectColor: string;
-    Task:         string;
-    Comment:      string;
-    hours:        number;
+  AccountName: string;
+  ProjectName: string;
+  CategoryName: string;
+  ProjectColor: string;
+  Task: string;
+  Comment: string;
+  hours: number;
 }
 
 @Component({
   selector: 'app-day-card',
   templateUrl: './day-card.component.html',
-  styleUrls: ['./day-card.component.scss']
+  styleUrls: ['./day-card.component.scss'],
 })
-export class DayCardComponent {
- @Input () data: Data = {
+export class DayCardComponent implements OnInit, OnDestroy {
+  @Input() data: Data = {
     projects: [
       {
         AccountName: 'Itexico',
@@ -56,5 +58,19 @@ export class DayCardComponent {
     totalHours: 6,
     hiddenItems: 2,
     day: 26,
+  };
+  subscription!: Subscription;
+  state!: boolean;
+
+  constructor(private _focusCardService: FocusCardService) {}
+
+  ngOnInit() {
+    this.subscription = this._focusCardService
+      .onSubscribe()
+      .subscribe((state$) => (this.state = state$));
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 }

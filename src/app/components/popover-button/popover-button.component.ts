@@ -1,4 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ServiceDeleteModalService } from 'src/app/services/service-delete-modal.service';
 
 @Component({
   selector: 'app-popover-button',
@@ -8,7 +10,16 @@ import { Component, Input, OnInit } from '@angular/core';
 export class PopoverButtonComponent {
   @Input() buttonText:string = 'update';
 
+  modalState!: boolean;
+  isVisible:boolean = false;
+  modalState$!: Observable<boolean>;
   message!:string;
+
+  constructor (private ServiceDeleteModalService: ServiceDeleteModalService){}
+
+  ngOnInit(): void {
+    
+  }
 
   handleClickPopoverButton(action:string) {
     if (action === 'update'){
@@ -19,6 +30,7 @@ export class PopoverButtonComponent {
       //console.log(this.message)
     } else if (action === 'delete'){
       //console.log(this.message)
+      this.ServiceDeleteModalService.showModal()
     }
   }
   
