@@ -5,8 +5,10 @@
 }
 
 .day-card{
-    width: 15%;
+    max-width: 15em;
+    margin: auto;
     padding: 0.5em 0.8em;
     border: 1px #EDEDED solid;
     border-radius: 0.5em;
+    position:relative;
 }
