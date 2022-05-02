@@ -1,25 +1,35 @@
-<section class="main-container">
-    <div class="pointer"></div>
-    <div class="pointer2"></div>
+<section
+  class="main-container"
+  [style.left.px]="position.positionX"
+  [style.top.px]="position.positionY"
+  [style.display]="isVisible ? 'flex' : 'none'"
+  (mousemove)="handleMousemove()"
+  (mouseout)="handleMouseout()"
+>
+  <div class="pointer"></div>
+  <div class="pointer2"></div>
 
-    <div class="container">
-        <div class="colorFlag" [ngStyle]="{'background-color': data.ProjectColor}">
-        </div>
-        <div class="main">
-            <app-header-popover [data]="data"></app-header-popover>
-      
-                <app-popover-body-text class="comment" [type]="'comment'"[content]="data.comment"></app-popover-body-text>
-                <section class="popover-ticket-hours">
-                    <app-popover-body-text [type]="'task'" [content]="data.task"></app-popover-body-text>
-                    <card-footer-hours [totalHours]="data.hours"></card-footer-hours> 
-                 
-                </section>
-           <app-popover-list-footer></app-popover-list-footer>
+  <div class="container">
+    <div
+      class="colorFlag"
+      [ngStyle]="{ 'background-color': data.ProjectColor }"
+    ></div>
+    <div class="main">
+      <app-header-popover [data]="data"></app-header-popover>
 
-
-           
-
-        </div>
-
+      <app-popover-body-text
+        class="comment"
+        [type]="'comment'"
+        [content]="data.comment"
+      ></app-popover-body-text>
+      <section class="popover-ticket-hours">
+        <app-popover-body-text
+          [type]="'task'"
+          [content]="data.task"
+        ></app-popover-body-text>
+        <card-footer-hours [totalHours]="data.hours"></card-footer-hours>
+      </section>
+      <app-popover-list-footer></app-popover-list-footer>
     </div>
+  </div>
 </section>

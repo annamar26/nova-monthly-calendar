@@ -1,10 +1,13 @@
-    <div class="container">
-   <div class="colorFlag" [style.backgroundColor]="data.ProjectColor">
-    </div> <div class="itemDia"> 
-       <p><span> {{data.AccountName}} {{data.ProjectName}}</span> - {{data.CategoryName}}
-      </p></div>
- 
+<div
+  class="container"
+  (mouseover)="handleMouseover($event.target)"
+  (mouseout)="handleMouseout($event.target)"
+>
+  <div class="colorFlag" [style.backgroundColor]="data.ProjectColor"></div>
+  <div class="itemDia" #item>
+    <p>
+      <span> {{ data.AccountName }} {{ data.ProjectName }}</span> -
+      {{ data.CategoryName }}
+    </p>
   </div>
-
-
-
+</div>
