@@ -10,8 +10,9 @@ const Template: Story<ModalButtonsComponent> = (args: ModalButtonsComponent) => 
     props: args,
 });
 
-export const ModalConfirmButton = Template.bind({});
-ModalConfirmButton.args = {
+export const Modal_Buttons = Template.bind({});
+Modal_Buttons.args = {
+
     type: 'confirm',
 };
 

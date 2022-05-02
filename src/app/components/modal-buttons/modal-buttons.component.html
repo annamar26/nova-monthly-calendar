@@ -1,1 +1,2 @@
-<button type="button" (click)="handleClickModalButton(type)" class="{{ type }}-button" [style.backgroundColor]="type === 'custom' ? backgroundColor : ''">{{buttonText}}</button>
+<button type="button" (click)="handleClickModalButton(type)" class="{{ type }}-button" [style.backgroundColor]="type === 'custom' ? backgroundColor : ''" [style.color]="type === 'custom' ? color : ''">{{buttonText}}</button>
+

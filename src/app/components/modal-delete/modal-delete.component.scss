@@ -1,0 +1,46 @@
+$gray: #8b8b8b74;
+$fontGray: rgb(74, 74, 74);
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.background-modal{
+    width: 100vw;
+    height: 100vh;
+    background-color: $gray;
+    z-index: 11;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    padding-bottom: 30%;
+    position:fixed;
+}
+
+.modal-window{
+    background-color: white;
+    width: fit-content;
+    padding: 20px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    border-radius: 10px;
+}
+
+app-popover-body-text{
+    font-size: 1.2em;
+    color: $fontGray;
+    margin:0;
+}
+
+.flex-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}

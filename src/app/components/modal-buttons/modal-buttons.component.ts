@@ -1,4 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ServiceDeleteModalService } from 'src/app/services/service-delete-modal.service';
+
 
 @Component({
   selector: 'app-modal-buttons',
@@ -8,15 +10,22 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ModalButtonsComponent implements OnInit{
   @Input () type: 'cancel' | 'confirm' | 'custom' = 'confirm';
   @Input () backgroundColor!: string;
+  @Input () color!: string;
   buttonText!: string;
   message!: string;
+
+  constructor (private ServiceDeleteModalService: ServiceDeleteModalService){}
+
 
   handleClickModalButton(action:string) {
     if (action === 'confirm'){
       this.message = 'yes'
     } else if (action === 'cancel'){
       this.message = 'no'
-    } 
+
+    }
+    this.ServiceDeleteModalService.hideModal();
+  
   }
 
   ngOnInit(): void {
