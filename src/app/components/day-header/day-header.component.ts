@@ -8,5 +8,5 @@ import { Component, Input } from '@angular/core';
 export class DayHeaderComponent {
   @Input() day: number = 1;
   @Input() hours: number = 0;
-  buttonType: string = 'day'
+  buttonType: 'day' | 'general' = 'day'
 }

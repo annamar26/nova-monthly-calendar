@@ -8,7 +8,9 @@ $shadow-btn: offset 4px 4px 4px rgba(0, 0, 0, 0.25);
     box-sizing: border-box;
 }
 
+
 .confirm-button, .cancel-button, .custom-button{
+
     cursor: pointer;
     font-family: $fontWork;
     font-size: 1em;
@@ -22,6 +24,7 @@ $shadow-btn: offset 4px 4px 4px rgba(0, 0, 0, 0.25);
     background-color: $fontBlue;
     color: white;
     border: 1px solid $fontBlue;
+
 }
 
 .cancel-button{

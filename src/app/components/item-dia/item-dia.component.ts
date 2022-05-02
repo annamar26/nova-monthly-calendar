@@ -12,7 +12,7 @@ interface ItemDia{
   templateUrl: './item-dia.component.html',
   styleUrls: ['./item-dia.component.scss']
 })
-export class ItemDiaComponent implements AfterViewInit {
+export class ItemDiaComponent  {
 
   @Input() data: ItemDia = {
     AccountName: "iTexico",
@@ -21,22 +21,7 @@ export class ItemDiaComponent implements AfterViewInit {
     ProjectColor: "green"
    
   }
-  @ViewChild("colorFlag") flag!: ElementRef
-
-  flagColorElement = undefined
-
-  constructor(private renderer: Renderer2) {
-  }
-
-  ngAfterViewInit(): void {
-    this.flagColorElement = this.flag.nativeElement
-
- 
-      this.renderer.removeStyle(this.flagColorElement, "background-color")
-      this.renderer.setStyle(this.flagColorElement, "background-color", `${this.data.ProjectColor}`)
-   
-  }
-
+  
   
   
  

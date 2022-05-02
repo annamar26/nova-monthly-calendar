@@ -12,6 +12,7 @@ const Template: Story<ModalButtonsComponent> = (args: ModalButtonsComponent) => 
 
 export const Modal_Buttons = Template.bind({});
 Modal_Buttons.args = {
+
     type: 'confirm',
 };
 

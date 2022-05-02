@@ -6,26 +6,29 @@
 
 .flex{
     display: flex;
+    height: fit-content;
     justify-content: space-between;
-    height: 5%;
-  
-   
+    margin:0.4em;
 }
+
 .popover-body{
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: stretch;
   align-content: stretch;
-  height: 95%;
-
+  height: 100%;
 }
-.comment{
-  height: 80%;
-  min-height: 75%;
-  white-space: wrap;
- 
- 
 
+.comment{
+  height: inherit;
+  white-space: wrap;
+  margin-bottom: 8px;
+  min-height: 80%;
+ 
+}
+
+.ticket{
+  max-width: 70%;
 }
 

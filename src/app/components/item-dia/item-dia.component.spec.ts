@@ -32,42 +32,29 @@ describe('ItemDiaComponent', () => {
 	it('should change the color to the color name if the property exist in the input', () => {
 		component!.data.ProjectColor = 'pink';
 		fixture.detectChanges();
-		const flag = component!.flagColorElement;
-		fixture.componentInstance.ngAfterViewInit();
-		const styles = window.getComputedStyle(flag!);
+	const element = fixture.nativeElement.querySelector(".colorFlag")
+		const styles = window.getComputedStyle(element);
 
 		expect(styles.backgroundColor).toBe('rgb(255, 192, 203)');
 	});
 	it('should change the color to the rgb color if the property exist in the input', () => {
 		component!.data.ProjectColor = 'rgb(38, 68, 220)';
 		fixture.detectChanges();
-		const flag = component!.flagColorElement;
-		fixture.componentInstance.ngAfterViewInit();
-		const styles = window.getComputedStyle(flag!);
+		const element = fixture.nativeElement.querySelector(".colorFlag")
+		const styles = window.getComputedStyle(element);
 
 		expect(styles.backgroundColor).toBe('rgb(38, 68, 220)');
 	});
   it('should change the color to the hex color if the property exist in the input', () => {
 		component!.data.ProjectColor = '#f7e348';
 		fixture.detectChanges();
-		const flag = component!.flagColorElement;
-		fixture.componentInstance.ngAfterViewInit();
-		const styles = window.getComputedStyle(flag!);
+		const element = fixture.nativeElement.querySelector(".colorFlag")
+		const styles = window.getComputedStyle(element);
 
 		expect(styles.backgroundColor).toBe('rgb(247, 227, 72)');
 	});
   
-	it('"flagColorElement" prop should be undefined before view init and defined after it', () => {
-		
-    component!.flagColorElement = undefined
-	expect(component.flagColorElement).toBeUndefined()
-		fixture.detectChanges();
-		const flag = component!.flagColorElement;
-		fixture.componentInstance.ngAfterViewInit();
-		
 
-		expect(flag).toBeTruthy()
-	});
 });
 
 
