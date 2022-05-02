@@ -1,4 +1,4 @@
-<section class="main-container">
+<section class="main-container"  [style.left]="position.positionX" [style.top]="position.positionY" [style.display]="isVisible ? 'flex' : 'none'" (mousemove)="handleMousemove()" (mouseout)="handleMouseout()">
     <div class="pointer"></div>
     <div class="pointer2"></div>
 

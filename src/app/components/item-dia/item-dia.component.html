@@ -1,4 +1,4 @@
-    <div class="container">
+    <div class="container"  (mouseover)="handleMouseover($event)" (mouseout)="handleMouseout($event)">
    <div class="colorFlag" [style.backgroundColor]="data.ProjectColor">
     </div> <div class="itemDia"> 
        <p><span> {{data.AccountName}} {{data.ProjectName}}</span> - {{data.CategoryName}}
