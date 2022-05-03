@@ -6,89 +6,94 @@ import { OnMouseOverItemService } from 'src/app/services/item-popover/on-mouse-o
 import { ItemDiaComponent } from './item-dia.component';
 
 describe('ItemDiaComponent', () => {
-	let component: ItemDiaComponent;
-	let fixture: ComponentFixture<ItemDiaComponent>;
+  let component: ItemDiaComponent;
+  let fixture: ComponentFixture<ItemDiaComponent>;
 
-	beforeEach(async () => {
-		await TestBed.configureTestingModule({
-			declarations: [ ItemDiaComponent ]
-		}).compileComponents();
-	});
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ItemDiaComponent],
+    }).compileComponents();
+  });
 
-	beforeEach(() => {
-		fixture = TestBed.createComponent(ItemDiaComponent);
-		component = fixture.componentInstance;
-	});
+  beforeEach(() => {
+    fixture = TestBed.createComponent(ItemDiaComponent);
+    component = fixture.componentInstance;
+  });
 
-	it('should create', () => {
-		expect(component).toBeTruthy();
-	});
-	//asi es uno de integracion pasa el input desde el padre al hijo
-	it('should show TEST INPUT from the parentNode', () => {
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
+  //asi es uno de integracion pasa el input desde el padre al hijo
+  /* it('should show TEST INPUT from the parentNode', () => {
 		component!.data.AccountName = 'Test AccountName';
 		component!.data.ProjectName = 'Test project';
 		component!.data.CategoryName = 'Test category';
 		const element = fixture.debugElement.query(By.css('app-p-item-dia')).nativeElement;
-
 		fixture.detectChanges();
-		console.log(component.data)
+
 		expect(element.textContent).toBe('Test AccountName Test project - Test category');
-	});
-	it('should change the color to the color name if the property exist in the input', () => {
-		component!.data.ProjectColor = 'pink';
-		fixture.detectChanges();
-		const element = fixture.nativeElement.querySelector('.colorFlag');
-		const styles = window.getComputedStyle(element);
+	}); */
 
-		expect(styles.backgroundColor).toBe('rgb(255, 192, 203)');
-	});
-	it('should change the color to the rgb color if the property exist in the input', () => {
-		component!.data.ProjectColor = 'rgb(38, 68, 220)';
-		fixture.detectChanges();
-		const element = fixture.nativeElement.querySelector('.colorFlag');
-		const styles = window.getComputedStyle(element);
+  it('should change the color to the color name if the property exist in the input', () => {
+    component!.data.ProjectColor = 'pink';
+    fixture.detectChanges();
+    const element = fixture.nativeElement.querySelector('.colorFlag');
+    const styles = window.getComputedStyle(element);
 
-		expect(styles.backgroundColor).toBe('rgb(38, 68, 220)');
-	});
-	it('should change the color to the hex color if the property exist in the input', () => {
-		component!.data.ProjectColor = '#f7e348';
-		fixture.detectChanges();
-		const element = fixture.nativeElement.querySelector('.colorFlag');
-		const styles = window.getComputedStyle(element);
+    expect(styles.backgroundColor).toBe('rgb(255, 192, 203)');
+  });
 
-		expect(styles.backgroundColor).toBe('rgb(247, 227, 72)');
-	});
-	it('should trigger handleMouseover on mouseover', () => {
-		spyOn(component, 'handleMouseover');
+  it('should change the color to the rgb color if the property exist in the input', () => {
+    component!.data.ProjectColor = 'rgb(38, 68, 220)';
+    fixture.detectChanges();
+    const element = fixture.nativeElement.querySelector('.colorFlag');
+    const styles = window.getComputedStyle(element);
 
-		let element = fixture.debugElement.query(By.css('.item-dia')).nativeElement;
+    expect(styles.backgroundColor).toBe('rgb(38, 68, 220)');
+  });
 
-		element.triggerEventHandler('mouseover', component);
-		fixture.detectChanges();
+  it('should change the color to the hex color if the property exist in the input', () => {
+    component!.data.ProjectColor = '#f7e348';
+    fixture.detectChanges();
+    const element = fixture.nativeElement.querySelector('.colorFlag');
+    const styles = window.getComputedStyle(element);
 
-		expect(component.handleMouseover).toHaveBeenCalled();
-	});
-	// it('should trigger handleMouseout on mouseout', () => {
-	// 	spyOn(component, 'handleMouseout');
+    expect(styles.backgroundColor).toBe('rgb(247, 227, 72)');
+  });
 
-	// 	let element = fixture.debugElement.query(By.css('.item-dia'));
+  it('should trigger handleMouseover on mouseover', () => {
+    spyOn(component, 'handleMouseover');
 
-	// 	element.triggerEventHandler('mouseout', component);
-	// 	fixture.detectChanges();
+    let element = fixture.debugElement.query(By.css('.itemDia'));
 
-	// 	expect(component.handleMouseout).toHaveBeenCalled();
-	// });
-	// it('should use the observable when the event is triggered', () => {
-	// 	let element = fixture.debugElement.query(By.css('.item-dia'));
+    element.triggerEventHandler('mouseover', component);
 
-	// 	element.triggerEventHandler('mouseover', element);
-	// 	fixture.detectChanges();
+    expect(component.handleMouseover).toHaveBeenCalled();
+  });
 
-	// 	expect(component.isShown).toBeTrue();
-	// 	element.triggerEventHandler('mouseout', element);
-	// 	fixture.detectChanges();
+  it('should trigger handleMouseout on mouseout', () => {
+    spyOn(component, 'handleMouseout');
 
-	// 	expect(component.isShown).toBeFalse();
-	// });
+    let element = fixture.debugElement.query(By.css('.itemDia'));
+
+    element.triggerEventHandler('mouseout', component);
+
+    expect(component.handleMouseout).toHaveBeenCalled();
+  });
+
+  it('should change isShonw when runnig handleMouseover or handleMouseout', () => {
+    const element = fixture.debugElement.query(By.css('.p-item-dia')).nativeElement
+	const event = new MouseEvent('mouseover');
+    element.dispatchEvent(event);
+	component.handleMouseover(event);
 	
+    expect(component.isShown).toBeTrue();
+	
+	const event2 = new MouseEvent('mouseout');
+    element.dispatchEvent(event2);
+	component.handleMouseout(event2);
+	
+    expect(component.isShown).toBeFalse();
+  });
 });

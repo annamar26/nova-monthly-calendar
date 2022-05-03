@@ -13,33 +13,34 @@ export interface Position {
 export class OnMouseOverItemService {
   private popoverCaller$ = new Subject<boolean>();
   private position$ = new Subject<Position>();
-  private data$ = new Subject<Activity>()
-  data!: Activity
+  private data$ = new Subject<Activity>();
+  data!: Activity;
   position: Position = {
     positionX: 0,
     positionY: 0,
   };
   state!: boolean;
-  
 
-  showPopover(data: Activity, event?:any): void {
+  showPopover(data: Activity, event?: any): void {
     this.state = true;
     this.popoverCaller$.next(this.state);
-    this.position = {
-      positionX: event.srcElement.parentNode.parentNode.offsetLeft - 1.62*(event.srcElement.parentNode.getBoundingClientRect().width),
-      positionY:  +event.target.parentNode.offsetTop - 67
-    };
-    this.position$.next(this.position)
-    this.data = data
-    this.data$.next(this.data);  }
+    if (event) {
+      this.position = {
+        positionX:
+          event.srcElement.parentNode.parentNode.offsetLeft -
+          1.62 * event.srcElement.parentNode.getBoundingClientRect().width,
+        positionY: +event.target.parentNode.offsetTop - 67,
+      };
+    }
+    this.position$.next(this.position);
+    this.data = data;
+    this.data$.next(this.data);
+  }
 
   hidePopover(event: any): void {
     this.state = false;
     this.popoverCaller$.next(this.state);
-    
-  
   }
- 
 
   getState$(): Observable<boolean> {
     return this.popoverCaller$.asObservable();

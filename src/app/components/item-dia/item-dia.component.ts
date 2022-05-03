@@ -1,24 +1,24 @@
-import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnInit, Output, Renderer2, ViewChild } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, Input } from '@angular/core';
 import { Activity } from 'src/app/services/data-service/data-interfaces';
-import { OnMouseOverItemService, Position } from 'src/app/services/item-popover/on-mouse-over-item.service';
-
+import {
+  OnMouseOverItemService,
+  Position,
+} from 'src/app/services/item-popover/on-mouse-over-item.service';
 
 @Component({
   selector: 'app-item-dia',
   templateUrl: './item-dia.component.html',
-  styleUrls: ['./item-dia.component.scss']
+  styleUrls: ['./item-dia.component.scss'],
 })
-export class ItemDiaComponent  {
-  
-    position!: Position;
+export class ItemDiaComponent {
+  position!: Position;
 
   @Input() data: Activity = {
-    AccountName: "iTexico",
-    ProjectName: "Project",
-    CategoryName: "Category",
-    ProjectColor: "green",
-    ActivityDate: "2022-05-02T15:28:46.493Z",
+    AccountName: 'iTexico',
+    ProjectName: 'Project',
+    CategoryName: 'Category',
+    ProjectColor: 'green',
+    ActivityDate: '2022-05-02T15:28:46.493Z',
     ActivityID: 0,
     Comments: 'Este es un comentario',
     EmployeeID: 0,
@@ -26,27 +26,18 @@ export class ItemDiaComponent  {
     StepID: 0,
     TypeID: 0,
     value: 8,
-    activeInProject: false
-  }
-isShown!: boolean
-  constructor(private onMouseOverItem: OnMouseOverItemService){}
-  
+    activeInProject: false,
+  };
+  isShown!: boolean;
+  constructor(private onMouseOverItem: OnMouseOverItemService) {}
 
-  
-  handleMouseover(event:any):void{
-    event.stopImmediatePropagation();
-  
-  
-    this.isShown= true
-    this.onMouseOverItem.showPopover( this.data, event);
-    //this.posX = event.clientX;
-    //this.posY = event.clientY;
+  handleMouseover(event: any): void {
+    this.onMouseOverItem.showPopover(this.data, event);
+    this.isShown = true;
   }
 
-  handleMouseout(event:any):void{
-    
-    event.stopImmediatePropagation()
-    this.isShown= false
+  handleMouseout(event: any): void {
     this.onMouseOverItem.hidePopover(event);
+    this.isShown = false;
   }
 }
