@@ -25,11 +25,14 @@ export class OnMouseOverItemService {
   showPopover(event:any, data: Activity): void {
     this.state = true;
     this.popoverCaller$.next(this.state);
-    this.position$.next(this.position);
-    this.position = {
-      positionX: 0,
-      positionY: 0
-    };
+    
+       this.position = {
+      positionX: event.srcElement.parentNode.getBoundingClientRect().x - event.srcElement.parentNode.getBoundingClientRect().left,
+      positionY:  +event.target.parentNode.offsetTop - 67
+    }; this.position$.next(this.position);
+    console.log(event.srcElement.parentNode.getBoundingClientRect())
+    console.log(this.position)
+
     // this.position$.next(this.position);
     // let rect = event.getBoundingClientRect();
     // this.position = {

@@ -3,10 +3,11 @@
   [style.display]="isVisible ? 'flex' : 'none'"
   (mousemove)="handleMousemove()"
   (mouseout)="handleMouseout()"
->
-  <div class="pointer"></div>
-  <div class="pointer2"></div>
+  [style.left.px]="position?.positionX"
+  [style.top.px]="position?.positionY"
 
+>
+ 
   <div class="container">
     <div
       class="colorFlag"
@@ -30,4 +31,6 @@
       <app-popover-list-footer></app-popover-list-footer>
     </div>
   </div>
+  <div class="pointer"></div>
+  <div class="pointer2"></div>
 </section>
