@@ -13,57 +13,6 @@ import { CardFooterHoursComponent } from 'src/app/components/card-footer-hours/c
 import { AddActivityButtonComponent } from 'src/app/components/add-activity-button/add-activity-button.component';
 import { CardFooterHiddenItemsComponent } from 'src/app/components/card-footer-hidden-items/card-footer-hidden-items.component';
 
-interface Data {
-    projects:    Project[];
-    totalHours:  number;
-    hiddenItems: number;
-    day:         number;
-}
-
-interface Project {
-    AccountName:  string;
-    ProjectName:  string;
-    CategoryName: string;
-    ProjectColor: string;
-    Task:         string;
-    Comment:      string;
-    hours:        number;
-}
-
-const data: Data = {
-    projects: [
-      {
-        AccountName: 'Itexico',
-        ProjectName: 'Project1',
-        CategoryName: 'Categoria',
-        ProjectColor: 'blue',
-        Task: 'Nova Menu',
-        Comment: 'React and storybook',
-        hours: 2,
-      },
-      {
-        AccountName: 'Itexico',
-        ProjectName: 'Project2',
-        CategoryName: 'Categoria',
-        ProjectColor: 'green',
-        Task: 'Nova Calendar',
-        Comment: 'Angular and storybook',
-        hours: 2,
-      },
-      {
-        AccountName: 'Itexico',
-        ProjectName: 'Project3',
-        CategoryName: 'Categoria',
-        ProjectColor: 'red',
-        Task: 'Nova Header',
-        Comment: 'React and typescript',
-        hours: 2,
-      },
-    ],
-    totalHours: 6,
-    hiddenItems: 2,
-    day: 26,
-  }
 
 export default {
   title: 'Day Card',
@@ -92,6 +41,55 @@ const Template: Story = (args) => ({ props: args });
 
 export const Day_Card = Template.bind({});
 Day_Card.args = {
-  data,
+  data: [	{
+    "AccountName": 'Itexico ',
+    "ActivityDate": '2011-12-19T15:28:46.493Z',
+    "ActivityID": 0,
+    "CategoryName": 'Avalaible',
+    "Comments": 'Comentario de las actividades realizadas',
+    "EmployeeID": 0,
+    "ProjectColor": 'blue',
+    "ProjectID": 0,
+    "ProjectName": 'Delivery',
+    "StepID": 0,
+    "Task": 'Este es un ticket',
+    "TypeID": 0,
+    "value": 8,
+    "activeInProject": false},
+  {
+    "AccountName": 'Itexico ',
+    "ActivityDate": '2011-12-19T15:28:46.493Z',
+    "ActivityID": 0,
+    "CategoryName": 'Avalaible',
+    "Comments": 'Comentario de las actividades realizadas',
+    "EmployeeID": 0,
+    "ProjectColor": 'blue',
+    "ProjectID": 0,
+    "ProjectName": 'Delivery',
+    "StepID": 0,
+    "Task": 'Este es un ticket',
+    "TypeID": 0,
+    "value": 8,
+    "activeInProject": false
+  },
+  {
+    "AccountName": 'Itexico ',
+    "ActivityDate": '2011-12-19T15:28:46.493Z',
+    "ActivityID": 0,
+    "CategoryName": 'Avalaible',
+    "Comments": 'Comentario de las actividades realizadas',
+    "EmployeeID": 0,
+    "ProjectColor": 'blue',
+    "ProjectID": 0,
+    "ProjectName": 'Delivery',
+    "StepID": 0,
+    "Task": 'Este es un ticket',
+    "TypeID": 0,
+    "value": 8,
+    "activeInProject": false
+  }],
+  totalHours: 6,
+    hiddenItems: 2,
+    day: 26,
 };
 

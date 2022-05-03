@@ -6,6 +6,6 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./popover-body-text.component.scss']
 })
 export class PopoverBodyTextComponent {
-  @Input () content: string = '';
+  @Input () content: string | undefined
   @Input () type: 'comment' | 'task' = 'comment';
 }

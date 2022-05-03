@@ -25,22 +25,51 @@ export const Card_Day_List = Template.bind({});
 
 Card_Day_List.args = {
  arrayDia: [	{
-   "AccountName": "Itexico",
-    "ProjectName": 'Project1',
-    "CategoryName": 'categorya',
-    "ProjectColor": 'blue'
+  "AccountName": 'Itexico ',
+  "ActivityDate": '2011-12-19T15:28:46.493Z',
+  "ActivityID": 0,
+  "CategoryName": 'Avalaible',
+  "Comments": 'Comentario de las actividades realizadas',
+  "EmployeeID": 0,
+  "ProjectColor": 'blue',
+  "ProjectID": 0,
+  "ProjectName": 'Delivery',
+  "StepID": 0,
+  "Task": 'Este es un ticket',
+  "TypeID": 0,
+  "value": 8,
+  "activeInProject": false},
+{
+  "AccountName": 'Itexico ',
+  "ActivityDate": '2011-12-19T15:28:46.493Z',
+  "ActivityID": 0,
+  "CategoryName": 'Avalaible',
+  "Comments": 'Comentario de las actividades realizadas',
+  "EmployeeID": 0,
+  "ProjectColor": 'blue',
+  "ProjectID": 0,
+  "ProjectName": 'Delivery',
+  "StepID": 0,
+  "Task": 'Este es un ticket',
+  "TypeID": 0,
+  "value": 8,
+  "activeInProject": false
 },
 {
-  "AccountName": "Itexico",
-  "ProjectName": 'Project2',
-  "CategoryName": 'categorya',
-  "ProjectColor": 'green'
-},
-{
-  "AccountName": "Itexico",
-  "ProjectName": 'Project3',
-  "CategoryName": 'categorya',
-  "ProjectColor": 'red'
+  "AccountName": 'Itexico ',
+  "ActivityDate": '2011-12-19T15:28:46.493Z',
+  "ActivityID": 0,
+  "CategoryName": 'Avalaible',
+  "Comments": 'Comentario de las actividades realizadas',
+  "EmployeeID": 0,
+  "ProjectColor": 'blue',
+  "ProjectID": 0,
+  "ProjectName": 'Delivery',
+  "StepID": 0,
+  "Task": 'Este es un ticket',
+  "TypeID": 0,
+  "value": 8,
+  "activeInProject": false
 }]
 };
 
