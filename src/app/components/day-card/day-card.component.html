@@ -1,8 +1,8 @@
 <div id="borrar"><section class="day-card {{ state ? 'focused' : '' }}" aria-label="day card">
-  <app-day-header [day]="data.day" [hours]="data.totalHours"></app-day-header>
-  <app-lista-dia [arrayDia]="data.projects"></app-lista-dia>
+  <app-day-header [day]="day" [hours]="totalHours"></app-day-header>
+  <app-lista-dia [arrayDia]="data"></app-lista-dia>
   <card-footer
-    [totalHours]="data.totalHours"
-    [hiddenItems]="data.hiddenItems"
+    [totalHours]="totalHours"
+    [hiddenItems]="hiddenItems"
   ></card-footer>
 </section></div>

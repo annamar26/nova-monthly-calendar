@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
+import { Activity } from '../data-service/data-interfaces';
 
 export interface Position {
   positionX: number;
@@ -12,32 +13,39 @@ export interface Position {
 export class OnMouseOverItemService {
   private popoverCaller$ = new Subject<boolean>();
   private position$ = new Subject<Position>();
+  private data$ = new Subject<Activity>()
+  data!: Activity
   position: Position = {
     positionX: 0,
     positionY: 0,
   };
   state!: boolean;
+  
 
-  showPopover(event:any): void {
+  showPopover(event:any, data: Activity): void {
+    this.state = true;
     this.popoverCaller$.next(this.state);
-    this.state = false;
     this.position$.next(this.position);
-    let rect = event.getBoundingClientRect();
     this.position = {
-      positionX: rect.left,
-      positionY: (rect.top - rect.bottom) / 2,
+      positionX: 0,
+      positionY: 0
     };
-  }
+    // this.position$.next(this.position);
+    // let rect = event.getBoundingClientRect();
+    // this.position = {
+    //   positionX: rect.left,
+    //   positionY: (rect.top - rect.bottom) / 2,
+    // };
+this.data = data
+this.data$.next(this.data);  }
 
   hidePopover(event: any): void {
+    this.state = false;
     this.popoverCaller$.next(this.state);
-    this.state = true;
-    this.position$.next(this.position);
-    this.position = {
-      positionX: event.clientX,
-      positionY: event.clientY,
-    };
+    
+  
   }
+ 
 
   getState$(): Observable<boolean> {
     return this.popoverCaller$.asObservable();
@@ -45,5 +53,8 @@ export class OnMouseOverItemService {
 
   getPosition$(): Observable<Position> {
     return this.position$.asObservable();
+  }
+  getData$(): Observable<Activity> {
+    return this.data$.asObservable();
   }
 }

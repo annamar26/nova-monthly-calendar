@@ -29,10 +29,20 @@ describe('ListaDiaComponent', () => {
 	it('should create 1 li element with 1 element in the Input', () => {
 		component.arrayDia = [
 			{
-				AccountName: 'Itexico',
+				AccountName: 'Itexico',  
+				ActivityDate: "",
+				ActivityID: 0,
+				CategoryName: 'Categoria',
+				Comments: 'React and storybook',
+				EmployeeID: 0,
+				ProjectColor: 'blue',
+				ProjectID: 0,
 				ProjectName: 'Project1',
-				CategoryName: 'category',
-				ProjectColor: ''
+				StepID: 0,
+				Task: 'Nova Menu',
+				TypeID: 0,
+				value: 2,
+				activeInProject: true
 			}
 			
 		];
@@ -44,22 +54,52 @@ describe('ListaDiaComponent', () => {
 	it('should create 3 li element with 3 element in the Input', () => {
 		component.arrayDia = [
 			{
-				AccountName: 'Itexico',
-				ProjectName: 'Project1',
-				CategoryName: 'category',
-				ProjectColor: ''
+				AccountName: 'Itexico',  
+        ActivityDate: "",
+        ActivityID: 0,
+        CategoryName: 'Categoria',
+        Comments: 'React and storybook3',
+        EmployeeID: 0,
+        ProjectColor: 'blue',
+        ProjectID: 0,
+        ProjectName: 'Project1',
+        StepID: 0,
+        Task: 'Nova Menu',
+        TypeID: 0,
+        value: 2,
+        activeInProject: true
 			},
 			{
-				AccountName: 'Itexico',
-				ProjectName: 'Project1',
-				CategoryName: 'category',
-				ProjectColor: ''
+				AccountName: 'Itexico',  
+        ActivityDate: "",
+        ActivityID: 0,
+        CategoryName: 'Categoria',
+        Comments: 'React and storybook3',
+        EmployeeID: 0,
+        ProjectColor: 'blue',
+        ProjectID: 0,
+        ProjectName: 'Project1',
+        StepID: 0,
+        Task: 'Nova Menu',
+        TypeID: 0,
+        value: 2,
+        activeInProject: true
 			},
 			{
-				AccountName: 'Itexico',
-				ProjectName: 'Project1',
-				CategoryName: 'category',
-				ProjectColor: ''
+				AccountName: 'Itexico',  
+        ActivityDate: "",
+        ActivityID: 0,
+        CategoryName: 'Categoria',
+        Comments: 'React and storybook3',
+        EmployeeID: 0,
+        ProjectColor: 'blue',
+        ProjectID: 0,
+        ProjectName: 'Project1',
+        StepID: 0,
+        Task: 'Nova Menu',
+        TypeID: 0,
+        value: 2,
+        activeInProject: true
 			}
 		];
 		fixture.detectChanges();

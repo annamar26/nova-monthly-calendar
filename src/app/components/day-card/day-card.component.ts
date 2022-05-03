@@ -1,23 +1,9 @@
 import { Subscription } from 'rxjs';
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { FocusCardService } from 'src/app/services/focus-card/focus-card.service';
+import { Activity, Project } from 'src/app/services/data-service/data-interfaces';
 
-interface Data {
-  projects: Project[];
-  totalHours: number;
-  hiddenItems: number;
-  day: number;
-}
 
-interface Project {
-  AccountName: string;
-  ProjectName: string;
-  CategoryName: string;
-  ProjectColor: string;
-  Task: string;
-  Comment: string;
-  hours: number;
-}
 
 @Component({
   selector: 'app-day-card',
@@ -25,52 +11,76 @@ interface Project {
   styleUrls: ['./day-card.component.scss'],
 })
 export class DayCardComponent implements OnInit, OnDestroy {
-  @Input() data: Data = {
-    projects: [
+  @Input() data: Array<Activity> =
+    [
       {
-        AccountName: 'Itexico',
-        ProjectName: 'Project1',
+        AccountName: 'Itexico',  
+        ActivityDate: "",
+        ActivityID: 0,
         CategoryName: 'Categoria',
+        Comments: 'React and storybook1',
+        EmployeeID: 0,
         ProjectColor: 'blue',
+        ProjectID: 0,
+        ProjectName: 'Project1',
+        StepID: 0,
         Task: 'Nova Menu',
-        Comment: 'React and storybook',
-        hours: 2,
+        TypeID: 0,
+        value: 2,
+        activeInProject: true,
+     
+    
+     
       },
       {
-        AccountName: 'Itexico',
-        ProjectName: 'Project2',
+        AccountName: 'Itexico',  
+        ActivityDate: "",
+        ActivityID: 0,
         CategoryName: 'Categoria',
-        ProjectColor: 'green',
-        Task: 'Nova Calendar',
-        Comment: 'Angular and storybook',
-        hours: 2,
+        Comments: 'React and storybook2',
+        EmployeeID: 0,
+        ProjectColor: 'blue',
+        ProjectID: 0,
+        ProjectName: 'Project1',
+        StepID: 0,
+        Task: 'Nova Menu',
+        TypeID: 0,
+        value: 2,
+        activeInProject: true,
       },
       {
-        AccountName: 'Itexico',
-        ProjectName: 'Project3',
+        AccountName: 'Itexico',  
+        ActivityDate: "",
+        ActivityID: 0,
         CategoryName: 'Categoria',
-        ProjectColor: 'red',
-        Task: 'Nova Header',
-        Comment: 'React and typescript',
-        hours: 2,
-      },
-    ],
-    totalHours: 6,
-    hiddenItems: 2,
-    day: 26,
-  };
-  subscription!: Subscription;
-  state!: boolean;
+        Comments: 'React and storybook3',
+        EmployeeID: 0,
+        ProjectColor: 'blue',
+        ProjectID: 0,
+        ProjectName: 'Project1',
+        StepID: 0,
+        Task: 'Nova Menu',
+        TypeID: 0,
+        value: 2,
+        activeInProject: true
+        }
+      ]
+  totalHours: number = 6
+  hiddenItems: number = 2
+  day: number = 26
 
-  constructor(private _focusCardService: FocusCardService) {}
+subscription!: Subscription;
+state!: boolean;
 
-  ngOnInit() {
-    this.subscription = this._focusCardService
-      .onSubscribe()
-      .subscribe((state$) => (this.state = state$));
-  }
+constructor(private _focusCardService: FocusCardService) { }
 
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
-  }
+ngOnInit() {
+  this.subscription = this._focusCardService
+    .onSubscribe()
+    .subscribe((state$) => (this.state = state$));
+}
+
+ngOnDestroy() {
+  this.subscription.unsubscribe();
+}
 }

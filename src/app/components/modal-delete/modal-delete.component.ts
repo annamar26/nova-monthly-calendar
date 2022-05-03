@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ServiceDeleteModalService } from 'src/app/services/service-delete-modal.service';
+import { ServiceDeleteModalService } from 'src/app/services/delete-modal/service-delete-modal.service';
+
 
 @Component({
   selector: 'app-modal-delete',

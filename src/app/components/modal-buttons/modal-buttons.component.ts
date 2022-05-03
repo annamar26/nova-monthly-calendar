@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ServiceDeleteModalService } from 'src/app/services/service-delete-modal.service';
+import { ServiceDeleteModalService } from 'src/app/services/delete-modal/service-delete-modal.service';
+
 
 
 @Component({

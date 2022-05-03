@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { ServiceDeleteModalService } from 'src/app/services/service-delete-modal.service';
+import { ServiceDeleteModalService } from 'src/app/services/delete-modal/service-delete-modal.service';
 import { ModalButtonsComponent } from '../modal-buttons/modal-buttons.component';
 
 import { ModalDeleteComponent } from './modal-delete.component';
