@@ -12,6 +12,11 @@ import { TooltipCalendarComponent } from 'src/app/components/tooltip-calendar/to
 import { CardFooterHoursComponent } from 'src/app/components/card-footer-hours/card-footer-hours.component';
 import { AddActivityButtonComponent } from 'src/app/components/add-activity-button/add-activity-button.component';
 import { CardFooterHiddenItemsComponent } from 'src/app/components/card-footer-hidden-items/card-footer-hidden-items.component';
+import { PopoverBodyComponent } from 'src/app/components/popover-body/popover-body.component';
+import { PopoverBodyTextComponent } from 'src/app/components/popover-body-text/popover-body-text.component';
+import { PopoverButtonComponent } from 'src/app/components/popover-button/popover-button.component';
+import { PopoverListFooterComponent } from 'src/app/components/popover-list-footer/popover-list-footer.component';
+import { PopoverComponent } from 'src/app/components/popover/popover.component';
 
 
 export default {
@@ -31,6 +36,11 @@ export default {
         AddActivityButtonComponent,
         ListaDiaComponent,
         ItemDiaComponent,
+        PopoverBodyComponent,
+        PopoverBodyTextComponent,
+        PopoverButtonComponent,
+        PopoverListFooterComponent,
+        PopoverComponent
       ],
       imports: [CommonModule],
     }),

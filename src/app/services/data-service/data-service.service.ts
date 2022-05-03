@@ -85,7 +85,7 @@ export class DataServiceService {
 		}
 	];
 
-	getAPIData() {
+	/* getAPIData() {
 		return { user: this.userData, project: this.projectData, activities: this.activitiesData };
-	}
+	} */
 }

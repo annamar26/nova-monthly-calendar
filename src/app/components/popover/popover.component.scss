@@ -18,12 +18,12 @@ $font-size: 12px;
 .main-container {
 	display: flex;
 	flex-direction: row;
-	width: 18em;
+	width: 20em;
 	align-items: center;
 	padding: 0;
-	margin: 0;
 	background-color: transparent;
-	position: absolute;
+	position:fixed;
+	z-index: 9
 }
 .container {
 	background-color: white;
@@ -47,7 +47,7 @@ $font-size: 12px;
 		position: absolute
 	}
 	.main {
-	
+		
 		font-size: $font-size;
 		display: flex;
 		flex-direction: column;
@@ -104,28 +104,23 @@ $font-size: 12px;
 	}
 }
 .pointer {
-	
+	left: 14.33em;
 	border:8px solid $gray;
-	border-right-color:white;
-	border-left-color:white;
+	border-right-color:transparent;
+	border-left-color:transparent;
 	border-width:0px 30px 60px;
-	transform: rotate(270deg);
+	transform: rotate(90deg);
 	z-index: -2;
 	position: absolute;
 }
 .pointer2 {
-	left: 4px;
+	left: 14.20em;
 	border:8px solid white;
 	border-right-color:transparent;
 	border-left-color:transparent;
 	border-width:0px 29.7px 59.7px;
-	transform: rotate(270deg);
+	transform: rotate(90deg);
 	z-index: 1;
 	position: absolute;
 }
 
-.popover-container{
-	display: flex;
-	flex-direction: column;
-	width: 18em;
-}

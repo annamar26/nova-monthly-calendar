@@ -22,9 +22,11 @@ describe('PopoverComponent', () => {
 	it('should create', () => {
 		expect(component).toBeTruthy();
 	});
+
 	it('should render the header', () => {
 		expect(fixture.nativeElement.querySelector('app-header-popover')).toBeTruthy();
 	});
+
 	it('should render the body', () => {
 		expect(fixture.nativeElement.querySelector('app-popover-body-text')).toBeTruthy();
 		expect(fixture.nativeElement.querySelector('.popover-ticket-hours')).toBeTruthy();
@@ -38,19 +40,19 @@ describe('PopoverComponent', () => {
 
 		expect(styles.backgroundColor).toBe('rgb(38, 68, 220)');
 	});
+
 	it('should change is visible when the observable changes', () => {
-		fixture.detectChanges();
 		const service: OnMouseOverItemService = new OnMouseOverItemService();
 		const myComponent: PopoverComponent = new PopoverComponent(service);
 		myComponent.isVisible = true;
 		myComponent.ngOnInit();
-		service.showPopover(undefined, myComponent.data);
+		service.showPopover(myComponent.data);
+		fixture.detectChanges();
 
 		expect(myComponent.isVisible).toBeTrue();
 	});
 
 	it('should change data when the observable changes', () => {
-		fixture.detectChanges();
 		const service: OnMouseOverItemService = new OnMouseOverItemService();
 		const myComponent: PopoverComponent = new PopoverComponent(service);
 		const data = {
@@ -69,17 +71,18 @@ describe('PopoverComponent', () => {
 			activeInProject: false
 		};
 		myComponent.ngOnInit();
-		service.showPopover(null, data);
+		service.showPopover(data);
+		fixture.detectChanges();
 
 		expect(myComponent.data.ProjectColor).toBe('red');
 	});
-	it('should change data when the observable changes', () => {
-		fixture.detectChanges();
+
+	it('should change position when the observable changes', () => {
 		const service: OnMouseOverItemService = new OnMouseOverItemService();
 		const myComponent: PopoverComponent = new PopoverComponent(service);
-		const position = undefined;
 		myComponent.ngOnInit();
-		service.showPopover(null, component.data);
+		service.showPopover(component.data);
+		fixture.detectChanges();
 
 		expect(myComponent.position).toBeDefined();
 	});
@@ -96,6 +99,7 @@ describe('PopoverComponent', () => {
 
 		expect(component.isVisible).toBeFalse();
 	});
+	
 	it('should trigger handleMouseout on mouseout', () => {
 		const service: OnMouseOverItemService = new OnMouseOverItemService();
 		const myComponent: PopoverComponent = new PopoverComponent(service);

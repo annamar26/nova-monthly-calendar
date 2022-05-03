@@ -28,6 +28,9 @@ import { HeaderPopoverComponent } from './components/header-popover/header-popov
 import { PopoverListFooterComponent } from './components/popover-list-footer/popover-list-footer.component';
 import { CalendarHeaderTitleComponent } from './components/calendar-header-title/calendar-header-title.component';
 import { SnackbarComponent } from './components/snackbar/snackbar.component';
+import { ModalDeleteComponent } from './components/modal-delete/modal-delete.component';
+import { ModalButtonsComponent } from './components/modal-buttons/modal-buttons.component';
+import { PItemDiaComponent } from './components/p-item-dia/p-item-dia.component';
 
 registerLocaleData(en);
 
@@ -57,6 +60,9 @@ registerLocaleData(en);
     SnackbarComponent,
     CardFooterHoursComponent,
     DayCardComponent,
+    ModalDeleteComponent,
+    ModalButtonsComponent,
+    PItemDiaComponent
   ],
   imports: [
     BrowserModule,
