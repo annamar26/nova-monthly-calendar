@@ -1,9 +1,8 @@
 import { Meta, Story } from '@storybook/angular/';
-
-import { CardFooterHiddenItemsComponent } from '../../app/components/card-footer-hidden-items/card-footer-hidden-items.component';
+import { CardFooterHiddenItemsComponent } from 'src/app/components/card-footer-hidden-items/card-footer-hidden-items.component';
 
 export default {
-  title: 'Card Footer Hidden Items',
+  title: 'Day Card/Card Footer/Card Footer Hidden Items',
   component: CardFooterHiddenItemsComponent,
 } as Meta;
 

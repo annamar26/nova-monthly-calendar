@@ -3,14 +3,15 @@ import { moduleMetadata } from '@storybook/angular';
 import { Story, Meta } from '@storybook/angular/types-6-0';
 import { ItemDiaComponent } from 'src/app/components/item-dia/item-dia.component';
 import { ListaDiaComponent } from 'src/app/components/lista-dia/lista-dia.component';
+import { PItemDiaComponent } from 'src/app/components/p-item-dia/p-item-dia.component';
 
 
 export default {
-  title: 'Card Day List',
+  title: 'Day Card/Day List/Card Day List',
   component: ListaDiaComponent,
   decorators: [
     moduleMetadata({
-      declarations: [ListaDiaComponent, ItemDiaComponent],
+      declarations: [ListaDiaComponent, ItemDiaComponent, PItemDiaComponent],
       imports: [CommonModule],
     }),
   ],

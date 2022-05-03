@@ -2,7 +2,7 @@ import { Story, Meta } from '@storybook/angular/types-6-0';
 import { SnackbarComponent } from 'src/app/components/snackbar/snackbar.component';
 
 export default {
-	title: 'Calendar snackbar',
+	title: 'Extra components/Calendar snackbar',
 	component: SnackbarComponent
 } as Meta;
 

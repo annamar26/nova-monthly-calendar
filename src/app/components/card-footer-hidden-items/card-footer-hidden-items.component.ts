@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FocusCardService } from 'src/app/services/focus-card/focus-card.service';
 
 @Component({
@@ -8,14 +8,15 @@ import { FocusCardService } from 'src/app/services/focus-card/focus-card.service
 })
 export class CardFooterHiddenItemsComponent {
   clicked: boolean;
-  @Input() 'hiddenItems': number;
+  @Input() hiddenItems!: number;
 
   constructor(private focusCardService: FocusCardService) {
     this.clicked = this.focusCardService.getState();
   }
 
-  isClicked() {
-    this.focusCardService.changeState();
+  isClicked(event?: Event) {
+    if(event){this.focusCardService.changeState(event);}
+    
     this.clicked = this.focusCardService.getState();
   }
 }

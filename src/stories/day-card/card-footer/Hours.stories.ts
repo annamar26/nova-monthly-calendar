@@ -1,9 +1,8 @@
 import { Meta, Story } from '@storybook/angular';
-
-import { CardFooterHoursComponent } from '../../app/components/card-footer-hours/card-footer-hours.component';
+import { CardFooterHoursComponent } from 'src/app/components/card-footer-hours/card-footer-hours.component';
 
 export default {
-  title: 'Card Footer Hours',
+  title: 'Day Card/Card Footer/Card Footer Hours',
   component: CardFooterHoursComponent,
 } as Meta;
 

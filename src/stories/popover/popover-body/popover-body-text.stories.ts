@@ -1,8 +1,8 @@
 import { Story, Meta } from '@storybook/angular/types-6-0';
-import { PopoverBodyTextComponent } from '../app/components/popover-body-text/popover-body-text.component';
+import { PopoverBodyTextComponent } from 'src/app/components/popover-body-text/popover-body-text.component';
 
 export default {
-  title: 'Popover body text',
+  title: 'Popover/Popover Body/Popover body text',
   component: PopoverBodyTextComponent,
 } as Meta;
 

@@ -1,8 +1,13 @@
 <div id="listCointainer">
-    <ul *ngFor="let dia of arrayDia">
-        <li>
-            <app-item-dia [data]="dia"></app-item-dia>
-        </li>
-    </ul>
+  <ul *ngIf="!state; else elseBlock">
+    <li *ngFor="let dia of arrayDia | slice: 0:3">
+      <app-item-dia [data]="dia"></app-item-dia>
+    </li>
+  </ul>
+  <ng-template #elseBlock>
+    <ul>
+      <li *ngFor="let dia of arrayDia">
+        <app-item-dia [data]="dia"></app-item-dia>
+      </li></ul
+  ></ng-template>
 </div>
-

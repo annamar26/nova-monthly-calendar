@@ -2,7 +2,7 @@ import { Meta, Story } from '@storybook/angular';
 import { PopoverButtonComponent } from 'src/app/components/popover-button/popover-button.component';
 
 export default {
-    title: 'Popover Button',
+    title: 'Popover/Popover Footer/Popover Button',
     component: PopoverButtonComponent,
 } as Meta;
 

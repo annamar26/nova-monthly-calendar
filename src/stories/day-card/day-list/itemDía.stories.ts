@@ -1,10 +1,18 @@
+import { CommonModule } from '@angular/common';
+import { moduleMetadata } from '@storybook/angular';
 import { Story, Meta } from '@storybook/angular/types-6-0';
 import { ItemDiaComponent } from 'src/app/components/item-dia/item-dia.component';
+import { PItemDiaComponent } from 'src/app/components/p-item-dia/p-item-dia.component';
 
 export default {
-  title: 'Card Day Item',
+  title: 'Day Card/Day List/Card Day Item',
   component: ItemDiaComponent,
- 
+  decorators: [
+    moduleMetadata({
+        declarations: [PItemDiaComponent],
+        imports: [CommonModule]
+    })
+  ]
 } as Meta;
 
 

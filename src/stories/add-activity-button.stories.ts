@@ -5,7 +5,7 @@ import { AddActivityButtonComponent } from 'src/app/components/add-activity-butt
 import { TooltipCalendarComponent } from 'src/app/components/tooltip-calendar/tooltip-calendar.component';
 
 export default {
-  title: 'Calendar Add activity buttton',
+  title: 'Extra components/Calendar Add activity buttton',
   component: AddActivityButtonComponent,
   decorators: [
     moduleMetadata({

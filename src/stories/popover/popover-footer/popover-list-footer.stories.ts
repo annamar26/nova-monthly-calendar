@@ -1,12 +1,10 @@
-import { Meta, moduleMetadata, Story } from '@storybook/angular/';
-
-import { PopoverListFooterComponent } from '../app/components/popover-list-footer/popover-list-footer.component';
-import { PopoverButtonComponent } from '../app/components/popover-button/popover-button.component';
-
 import { CommonModule } from '@angular/common';
+import { Meta, moduleMetadata, Story } from '@storybook/angular/';
+import { PopoverButtonComponent } from 'src/app/components/popover-button/popover-button.component';
+import { PopoverListFooterComponent } from 'src/app/components/popover-list-footer/popover-list-footer.component';
 
 export default {
-  title: 'Popover List Footer',
+  title: 'Popover/Popover Footer/Popover List Footer',
   component: PopoverListFooterComponent,
 
   decorators: [
