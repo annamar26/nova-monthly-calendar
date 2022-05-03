@@ -18,11 +18,12 @@ $font-size: 12px;
 .main-container {
 	display: flex;
 	flex-direction: row;
-	width: 18em;
+	width: 20em;
 	align-items: center;
 	padding: 0;
 	background-color: transparent;
 	position:fixed;
+	z-index: 9
 }
 .container {
 	background-color: white;
@@ -46,7 +47,7 @@ $font-size: 12px;
 		position: absolute
 	}
 	.main {
-	
+		
 		font-size: $font-size;
 		display: flex;
 		flex-direction: column;
@@ -105,8 +106,8 @@ $font-size: 12px;
 .pointer {
 	left: 14.33em;
 	border:8px solid $gray;
-	border-right-color:white;
-	border-left-color:white;
+	border-right-color:transparent;
+	border-left-color:transparent;
 	border-width:0px 30px 60px;
 	transform: rotate(90deg);
 	z-index: -2;
@@ -123,8 +124,3 @@ $font-size: 12px;
 	position: absolute;
 }
 
-.popover-container{
-	display: flex;
-	flex-direction: column;
-	width: 18em;
-}

@@ -22,25 +22,16 @@ export class OnMouseOverItemService {
   state!: boolean;
   
 
-  showPopover(event:any, data: Activity): void {
+  showPopover(data: Activity, event?:any): void {
     this.state = true;
     this.popoverCaller$.next(this.state);
-    
-       this.position = {
-      positionX: event.srcElement.parentNode.getBoundingClientRect().x - event.srcElement.parentNode.getBoundingClientRect().left,
+    this.position = {
+      positionX: event.srcElement.parentNode.parentNode.offsetLeft - 1.62*(event.srcElement.parentNode.getBoundingClientRect().width),
       positionY:  +event.target.parentNode.offsetTop - 67
-    }; this.position$.next(this.position);
-    console.log(event.srcElement.parentNode.getBoundingClientRect())
-    console.log(this.position)
-
-    // this.position$.next(this.position);
-    // let rect = event.getBoundingClientRect();
-    // this.position = {
-    //   positionX: rect.left,
-    //   positionY: (rect.top - rect.bottom) / 2,
-    // };
-this.data = data
-this.data$.next(this.data);  }
+    };
+    this.position$.next(this.position)
+    this.data = data
+    this.data$.next(this.data);  }
 
   hidePopover(event: any): void {
     this.state = false;

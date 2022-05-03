@@ -34,13 +34,18 @@ isShown!: boolean
 
   
   handleMouseover(event:any):void{
+    event.stopImmediatePropagation();
+  
+  
     this.isShown= true
-    this.onMouseOverItem.showPopover(event, this.data);
+    this.onMouseOverItem.showPopover( this.data, event);
     //this.posX = event.clientX;
     //this.posY = event.clientY;
   }
 
   handleMouseout(event:any):void{
+    
+    event.stopImmediatePropagation()
     this.isShown= false
     this.onMouseOverItem.hidePopover(event);
   }

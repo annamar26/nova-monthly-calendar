@@ -1,13 +1,10 @@
 <div
   class="container"
-  (mouseover)="handleMouseover($event)"
-  (mouseout)="handleMouseout($event)"
->
+  >
   <div class="colorFlag" [style.backgroundColor]="data.ProjectColor"></div>
-  <div class="itemDia" #item>
-    <p>
-      <span> {{ data.AccountName }} {{ data.ProjectName }}</span> -
-      {{ data.CategoryName }}
-    </p>
+  <div class="itemDia"
+    (mouseover)="handleMouseover($event)"
+    (mouseout)="handleMouseout($event)" >
+   <app-p-item-dia [data]="data"></app-p-item-dia>
   </div>
 </div>
