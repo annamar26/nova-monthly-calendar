@@ -1,5 +1,9 @@
+ *{
+	 box-sizing: border-box;
+ }
  p {
-	position: relative;
+
+
 	white-space: nowrap;
 	height: 1.5em;
 	margin: 0;
@@ -12,6 +16,8 @@
 	text-align: left;
 	font-weight: 400;
 	cursor: pointer;
+	width: inherit;
+
 
 
 	span {

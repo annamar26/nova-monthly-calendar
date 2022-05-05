@@ -3,7 +3,7 @@ import { HeaderPopoverComponent } from 'src/app/components/header-popover/header
 
 
 export default {
-  title: 'Popover Header ',
+  title: 'Popover/Popover Header/Popover Header ',
   component: HeaderPopoverComponent,
  
 } as Meta;

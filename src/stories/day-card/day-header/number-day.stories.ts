@@ -1,8 +1,8 @@
 import { Meta, Story } from '@storybook/angular';
-import { NumberDayComponent } from '../app/components/number-day/number-day.component';
+import { NumberDayComponent } from 'src/app/components/number-day/number-day.component';
 
 export default {
-    title: 'Card Number Day',
+    title: 'Day Card/Card Header/Card Number Day',
     component: NumberDayComponent,
 } as Meta;
 

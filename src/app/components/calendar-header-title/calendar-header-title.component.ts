@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./calendar-header-title.component.scss'],
 })
 export class CalendarHeaderTitleComponent {
-  @Input() 'headerTitle': string;
+  @Input() headerTitle!: string;
 
   @Input()
   textColor?: string;

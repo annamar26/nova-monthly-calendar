@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./day-header.component.scss'],
 })
 export class DayHeaderComponent {
-  @Input() day: number = 1;
+  @Input() day: undefined | number = 1;
   @Input() hours: number = 0;
-  buttonType: 'day' | 'general' = 'day'
+  buttonType: 'day' | 'general' = 'day';
 }

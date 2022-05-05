@@ -7,8 +7,15 @@ import { Observable, Subject } from 'rxjs';
 export class FocusCardService {
   private _state$ = new Subject<boolean>();
   private _state: boolean = false;
+  private _element$ = new Subject<HTMLElement>();
+  private _element!: HTMLElement;
 
-  changeState(): void {
+  changeState(e?: any): void {
+    if (e) {
+      this._element =
+        e.srcElement.parentNode.parentNode.parentNode.parentNode.parentNode;
+      this._element$.next(this._element);
+    }
     this._state = !this._state;
     this._state$.next(this._state);
   }
@@ -19,5 +26,8 @@ export class FocusCardService {
 
   onSubscribe(): Observable<boolean> {
     return this._state$.asObservable();
+  }
+  onSubscribeElement(): Observable<HTMLElement> {
+    return this._element$.asObservable();
   }
 }

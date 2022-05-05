@@ -2,6 +2,7 @@ import { not } from '@angular/compiler/src/output/output_ast';
 import { ComponentFixture, TestBed, tick } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { ServiceDeleteModalService } from 'src/app/services/delete-modal/service-delete-modal.service';
+import { FocusCardService } from 'src/app/services/focus-card/focus-card.service';
 import { OnMouseOverItemService } from 'src/app/services/item-popover/on-mouse-over-item.service';
 import { ItemDiaComponent } from './item-dia.component';
 

@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { Meta, moduleMetadata, Story } from '@storybook/angular';
 import { TooltipCalendarComponent } from 'src/app/components/tooltip-calendar/tooltip-calendar.component';
-import { WarningDayComponent } from '../app/components/warning-day/warning-day.component';
+import { WarningDayComponent } from 'src/app/components/warning-day/warning-day.component';
 
 export default {
-    title: 'Card Warning Day',
+    title: 'Day Card/Card Header/Card Warning Day',
     component: WarningDayComponent,
     decorators: [
         moduleMetadata({

@@ -29,7 +29,7 @@ export class OnMouseOverItemService {
         positionX:
           event.srcElement.parentNode.parentNode.offsetLeft -
           1.62 * event.srcElement.parentNode.getBoundingClientRect().width,
-        positionY: +event.target.parentNode.offsetTop - 67,
+        positionY: +event.target.parentNode.offsetTop - 67 - scrollY,
       };
     }
     this.position$.next(this.position);

@@ -31,6 +31,9 @@ import { SnackbarComponent } from './components/snackbar/snackbar.component';
 import { ModalDeleteComponent } from './components/modal-delete/modal-delete.component';
 import { ModalButtonsComponent } from './components/modal-buttons/modal-buttons.component';
 import { PItemDiaComponent } from './components/p-item-dia/p-item-dia.component';
+import { WeekRowComponent } from './components/week-row/week-row.component';
+import { CalendarHeaderComponent } from './components/calendar-header/calendar-header.component';
+import { CalendarComponent } from './components/calendar/calendar.component';
 
 registerLocaleData(en);
 
@@ -62,7 +65,11 @@ registerLocaleData(en);
     DayCardComponent,
     ModalDeleteComponent,
     ModalButtonsComponent,
-    PItemDiaComponent
+    PItemDiaComponent,
+    WeekRowComponent,
+    CalendarHeaderComponent,
+    CalendarComponent,
+  
   ],
   imports: [
     BrowserModule,

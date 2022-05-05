@@ -20,7 +20,7 @@ import { PopoverComponent } from 'src/app/components/popover/popover.component';
 
 
 export default {
-  title: 'Day Card',
+  title: 'Day Card/Day Card',
   component: DayCardComponent,
   decorators: [
     moduleMetadata({
