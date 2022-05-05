@@ -69,7 +69,6 @@ registerLocaleData(en);
     WeekRowComponent,
     CalendarHeaderComponent,
     CalendarComponent,
-  
   ],
   imports: [
     BrowserModule,

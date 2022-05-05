@@ -1,10 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Activity } from 'src/app/services/data-service/data-interfaces';
-import {
-  OnMouseOverItemService,
-  Position,
-} from 'src/app/services/item-popover/on-mouse-over-item.service';
+import { Activity } from 'src/app/interfaces/data-interfaces';
+import { Position } from 'src/app/interfaces/popover.interface';
+import { OnMouseOverItemService } from 'src/app/services/item-popover/on-mouse-over-item.service';
 
 @Component({
   selector: 'app-popover',
@@ -17,7 +15,6 @@ export class PopoverComponent implements OnInit {
   position$!: Observable<Position>;
   position: Position | undefined = undefined;
   data$!: Observable<Activity>;
-
   @Input() data: Activity = {
     AccountName: '',
     ActivityDate: '',

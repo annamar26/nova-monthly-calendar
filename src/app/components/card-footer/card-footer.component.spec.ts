@@ -35,7 +35,6 @@ describe('CardFooterComponent', () => {
     const footerHiddenItems = fixture.debugElement.nativeElement.querySelector(
       'card-footer-hidden-items'
     );
-
     expect(footerHours).toBeTruthy();
     expect(footerHiddenItems).toBeTruthy();
   });

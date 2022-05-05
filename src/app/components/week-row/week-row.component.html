@@ -1,5 +1,7 @@
 <div class="row">
-
-  <app-day-card *ngFor="let card of cards" [data]="card.activities" [day]="card.day?.numberDay"></app-day-card>
-
+  <app-day-card
+    *ngFor="let card of cards"
+    [data]="card.activities"
+    [day]="card.day?.numberDay"
+  ></app-day-card>
 </div>

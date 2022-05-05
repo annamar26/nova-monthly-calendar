@@ -8,9 +8,8 @@ describe('TooltipCalendarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TooltipCalendarComponent ]
-    })
-    .compileComponents();
+      declarations: [TooltipCalendarComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -26,6 +25,8 @@ describe('TooltipCalendarComponent', () => {
   it('should display the tooltip text', () => {
     component.tooltipText = 'You have 2 missing hours';
     fixture.detectChanges();
-    expect(fixture.debugElement.nativeElement.querySelector('span').textContent).toContain('You have 2 missing hours');
+    expect(
+      fixture.debugElement.nativeElement.querySelector('span').textContent
+    ).toContain('You have 2 missing hours');
   });
 });

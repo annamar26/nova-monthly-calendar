@@ -1,9 +1,11 @@
 <section class="background-modal" *ngIf="isVisible">
-    <div class="modal-window">
-        <app-popover-body-text [content]="'Are you sure you want to delete this?'"></app-popover-body-text>
-        <div class="flex-buttons">
-            <app-modal-buttons [type]="'cancel'"></app-modal-buttons>
-            <app-modal-buttons [type]="'confirm'"></app-modal-buttons>
-        </div>
+  <div class="modal-window">
+    <app-popover-body-text
+      [content]="'Are you sure you want to delete this?'"
+    ></app-popover-body-text>
+    <div class="flex-buttons">
+      <app-modal-buttons [type]="'cancel'"></app-modal-buttons>
+      <app-modal-buttons [type]="'confirm'"></app-modal-buttons>
     </div>
+  </div>
 </section>

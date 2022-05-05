@@ -5,14 +5,9 @@
   (mouseout)="handleMouseout()"
   [style.left.px]="position?.positionX"
   [style.top.px]="position?.positionY"
-
 >
- 
   <div class="container">
-    <div
-      class="colorFlag"
-    [style.backgroundColor]="data.ProjectColor"
-    ></div>
+    <div class="colorFlag" [style.backgroundColor]="data.ProjectColor"></div>
     <div class="main">
       <app-header-popover [data]="data"></app-header-popover>
 

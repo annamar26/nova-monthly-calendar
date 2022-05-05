@@ -1,4 +1,3 @@
-import { Subscription } from 'rxjs';
 import {
   AfterViewInit,
   Component,
@@ -8,8 +7,9 @@ import {
   OnInit,
   ViewChild,
 } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { Activity } from 'src/app/interfaces/data-interfaces';
 import { FocusCardService } from 'src/app/services/focus-card/focus-card.service';
-import { Activity } from 'src/app/services/data-service/data-interfaces';
 
 @Component({
   selector: 'app-day-card',
@@ -67,10 +67,10 @@ export class DayCardComponent implements OnInit, OnDestroy, AfterViewInit {
       activeInProject: true,
     },
   ];
-  totalHours!: number;
-  hiddenItems!: number;
   @Input() day!: undefined | number;
 
+  totalHours!: number;
+  hiddenItems!: number;
   subscription!: Subscription;
   element!: HTMLElement;
   elementSubscription!: Subscription;
@@ -78,26 +78,25 @@ export class DayCardComponent implements OnInit, OnDestroy, AfterViewInit {
   focusableElemenet!: HTMLElement;
 
   @ViewChild('card') card!: ElementRef;
+
   constructor(private _focusCardService: FocusCardService) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.subscription = this._focusCardService
       .onSubscribe()
       .subscribe((state$) => (this.state = state$));
     this.elementSubscription = this._focusCardService
       .onSubscribeElement()
       .subscribe((element$) => (this.element = element$));
-
     this.data.forEach((activity) => (this.totalHours += activity.value));
+    this.hiddenItems = this.data.length <= 3 ? 0 : this.data.length - 3;
+  }
 
-    this.hiddenItems =
-      this.data.length <= 3 ? 0 : this.data.length - 3;
+  ngAfterViewInit() {
+    this.focusableElemenet = this.card.nativeElement;
   }
 
   ngOnDestroy() {
     this.subscription.unsubscribe();
-  }
-  ngAfterViewInit() {
-    this.focusableElemenet = this.card.nativeElement;
   }
 }

@@ -1,5 +1,5 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PopoverButtonComponent } from './popover-button.component';
 
@@ -9,9 +9,8 @@ describe('PopoverButtonComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PopoverButtonComponent ]
-    })
-    .compileComponents();
+      declarations: [PopoverButtonComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -26,45 +25,30 @@ describe('PopoverButtonComponent', () => {
 
   it('should trigger handleClickPopoverButton on click', () => {
     spyOn(component, 'handleClickPopoverButton');
-
     let buttonElement = fixture.debugElement.query(By.css('button'));
-
     buttonElement.triggerEventHandler('click', component);
     fixture.detectChanges();
-
-    expect(component?.handleClickPopoverButton).toHaveBeenCalled();
+    expect(component.handleClickPopoverButton).toHaveBeenCalled();
   });
 
   it('should display update activity when update', () => {
     component.buttonText = 'update';
-    component.handleClickPopoverButton(component.buttonText)
-
-    let buttonElement = fixture.debugElement.query(By.css('button'));
-
+    component.handleClickPopoverButton(component.buttonText);
     fixture.detectChanges();
-
     expect(component.message).toBe('Update Activity');
   });
 
   it('should display clone activity when clone', () => {
     component.buttonText = 'clone';
-    component.handleClickPopoverButton(component.buttonText)
-
-    let buttonElement = fixture.debugElement.query(By.css('button'));
-
+    component.handleClickPopoverButton(component.buttonText);
     fixture.detectChanges();
-
     expect(component.message).toBe('Clone an Activity');
   });
 
   it('should not display any message when delete', () => {
     component.buttonText = 'delete';
-    component.handleClickPopoverButton(component.buttonText)
-
-    let buttonElement = fixture.debugElement.query(By.css('button'));
-
+    component.handleClickPopoverButton(component.buttonText);
     fixture.detectChanges();
-
     expect(component.message).toBeUndefined();
   });
 });

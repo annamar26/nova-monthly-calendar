@@ -9,9 +9,8 @@ describe('NumberDayComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NumberDayComponent ]
-    })
-    .compileComponents();
+      declarations: [NumberDayComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

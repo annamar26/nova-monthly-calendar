@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+
 import { HeaderPopoverComponent } from './header-popover.component';
 
 describe('HeaderPopoverComponent', () => {
@@ -23,7 +24,6 @@ describe('HeaderPopoverComponent', () => {
 
   it('should render the AcountName', () => {
     component!.data.AccountName = 'Test AccountName';
-
     fixture.detectChanges();
     expect(fixture.nativeElement.querySelector('p').innerText).toContain(
       `Test AccountName`
@@ -51,6 +51,6 @@ describe('HeaderPopoverComponent', () => {
       fixture.nativeElement.querySelector('p')
     );
     fixture.detectChanges();
-    expect(styles.height).toBe('32px');
+    expect(styles.height).toBe('31px');
   });
 });

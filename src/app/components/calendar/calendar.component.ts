@@ -1,14 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Activity } from 'src/app/services/data-service/data-interfaces';
+import { Component } from '@angular/core';
 
-interface Day {
-  weeklyDay?: string;
-  numberDay?: number;
-}
-interface Card {
-  day: Day;
-  activities: Activity[];
-}
 @Component({
   selector: 'app-calendar',
   templateUrl: './calendar.component.html',

@@ -1,11 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
-import { Activity } from '../data-service/data-interfaces';
-
-export interface Position {
-  positionX: number;
-  positionY: number;
-}
+import { Position } from 'src/app/interfaces/popover.interface';
+import { Activity } from '../../interfaces/data-interfaces';
 
 @Injectable({
   providedIn: 'root',
@@ -37,7 +33,7 @@ export class OnMouseOverItemService {
     this.data$.next(this.data);
   }
 
-  hidePopover(event: any): void {
+  hidePopover(): void {
     this.state = false;
     this.popoverCaller$.next(this.state);
   }

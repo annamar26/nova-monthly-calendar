@@ -1,6 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-
 import { CalendarHeaderComponent } from './calendar-header.component';
 
 describe('CalendarHeaderComponent', () => {
@@ -9,9 +7,8 @@ describe('CalendarHeaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CalendarHeaderComponent ]
-    })
-    .compileComponents();
+      declarations: [CalendarHeaderComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -23,8 +20,11 @@ describe('CalendarHeaderComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
   it('should render the array of days', () => {
-    const elements = fixture.nativeElement.querySelectorAll('app-calendar-header-title')
-    expect(elements.length).toBe(7)
+    const elements = fixture.nativeElement.querySelectorAll(
+      'app-calendar-header-title'
+    );
+    expect(elements.length).toBe(7);
   });
 });

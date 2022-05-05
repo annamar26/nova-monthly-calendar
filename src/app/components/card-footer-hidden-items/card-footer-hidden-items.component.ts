@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FocusCardService } from 'src/app/services/focus-card/focus-card.service';
 
 @Component({
@@ -15,8 +15,9 @@ export class CardFooterHiddenItemsComponent {
   }
 
   isClicked(event?: Event) {
-    if(event){this.focusCardService.changeState(event);}
-    
+    if (event) {
+      this.focusCardService.changeState(event);
+    }
     this.clicked = this.focusCardService.getState();
   }
 }
