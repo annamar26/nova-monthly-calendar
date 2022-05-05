@@ -1,39 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800&display=swap');
-$fontBlue: rgb(53, 85, 195);
-$fontWork: 'Work Sans', sans-serif;
-$fontRed: #d1230a;
-$shadow-btn: offset 4px 4px 4px rgba(0, 0, 0, 0.25);
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800&display=swap");
+@import "../../app.component.scss";
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-
-.confirm-button, .cancel-button, .custom-button{
-
-    cursor: pointer;
-    font-family: $fontWork;
-    font-size: 1em;
-    border: none;
-    padding: 3px 10px;
-    margin: 0;
-    border-radius: 6px;
+.confirm-button,
+.cancel-button,
+.custom-button {
+  cursor: pointer;
+  font-family: $fontWork;
+  font-size: 1em;
+  border: none;
+  padding: 3px 10px;
+  margin: 0;
+  border-radius: 6px;
 }
 
-.confirm-button{
-    background-color: $fontBlue;
-    color: white;
-    border: 1px solid $fontBlue;
-
+.confirm-button {
+  background-color: $fontBlue;
+  color: white;
+  border: 1px solid $fontBlue;
 }
 
-.cancel-button{
-    background-color: transparent;
-    border: 1px solid $fontRed;
-    color: $fontRed;
+.cancel-button {
+  background-color: transparent;
+  border: 1px solid $red;
+  color: $red;
 }
 
-.confirm-button:active, .cancel-button:active{
-    box-shadow: $shadow-btn;
-    transform: translateY(3px);
+.confirm-button:active,
+.cancel-button:active {
+  box-shadow: $shadow-btn;
+  transform: translateY(3px);
 }

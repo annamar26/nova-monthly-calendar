@@ -1,7 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { FocusCardService } from 'src/app/services/focus-card/focus-card.service';
-import { DayCardComponent } from '../day-card/day-card.component';
 
 import { CardFooterHiddenItemsComponent } from './card-footer-hidden-items.component';
 
@@ -19,7 +16,6 @@ describe('CardFooterHiddenItemsComponent', () => {
     fixture = TestBed.createComponent(CardFooterHiddenItemsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-   
   });
 
   it(' card footer hidden items component should been created', () => {
@@ -61,7 +57,6 @@ describe('CardFooterHiddenItemsComponent', () => {
   //   service.changeState(event);
   //   fixture.detectChanges();
 
-    
   //   expect(component.clicked).toBe(!component.clicked);
   // });
 });

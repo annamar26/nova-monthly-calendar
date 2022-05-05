@@ -1,5 +1,5 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PopoverBodyTextComponent } from './popover-body-text.component';
 
@@ -9,9 +9,8 @@ describe('PopoverBodyTextComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PopoverBodyTextComponent ]
-    })
-    .compileComponents();
+      declarations: [PopoverBodyTextComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -24,33 +23,28 @@ describe('PopoverBodyTextComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should render the PopoverBodyTextComponent with the given content', ()=>{
+  it('should render the PopoverBodyTextComponent with the given content', () => {
     component.content = 'This is the given content';
     fixture.detectChanges();
-    const p = fixture.debugElement.query(By.css('.comment-text'))
+    const p = fixture.debugElement.query(By.css('.comment-text'));
     expect(p.nativeElement.textContent).toBe('This is the given content');
-
     component.content = 'This is the changed content';
     fixture.detectChanges();
     expect(p.nativeElement.textContent).toBe('This is the changed content');
-  })
+  });
 
-  it('should render the PopoverBodyTextComponent with the correct styles', ()=>{
+  it('should render the PopoverBodyTextComponent with the correct styles', () => {
     component.content = 'Some content';
-
     fixture.detectChanges();
-
     const comment = window.getComputedStyle(
       fixture.debugElement.query(By.css('.comment-text')).nativeElement
     );
     expect(comment.color).toBe('rgb(139, 139, 139)');
-
     component.type = 'task';
-    
     fixture.detectChanges();
     const ticket = window.getComputedStyle(
       fixture.debugElement.query(By.css('.task-text')).nativeElement
     );
     expect(ticket.color).toBe('rgb(139, 139, 139)');
-  })
+  });
 });

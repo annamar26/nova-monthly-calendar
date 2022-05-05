@@ -1,11 +1,12 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FocusCardService } from 'src/app/services/focus-card/focus-card.service';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ListaDiaComponent } from './lista-dia.component';
 
 describe('ListaDiaComponent', () => {
   let component: ListaDiaComponent;
   let fixture: ComponentFixture<ListaDiaComponent>;
+  let array: [];
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -29,79 +30,15 @@ describe('ListaDiaComponent', () => {
   });
 
   it('should create 1 li element with 1 element in the Input', () => {
-    component.arrayDia = [
-      {
-        AccountName: 'Itexico',
-        ActivityDate: '',
-        ActivityID: 0,
-        CategoryName: 'Categoria',
-        Comments: 'React and storybook',
-        EmployeeID: 0,
-        ProjectColor: 'blue',
-        ProjectID: 0,
-        ProjectName: 'Project1',
-        StepID: 0,
-        Task: 'Nova Menu',
-        TypeID: 0,
-        value: 2,
-        activeInProject: true,
-      },
-    ];
+    component.arrayDia = [];
+    component.arrayDia.length = 1;
     fixture.detectChanges();
     expect(fixture.nativeElement.querySelectorAll('li').length).toBe(1);
   });
 
   it('should create 3 li element with 3 element in the Input', () => {
-    component.arrayDia = [
-      {
-        AccountName: 'Itexico',
-        ActivityDate: '',
-        ActivityID: 0,
-        CategoryName: 'Categoria',
-        Comments: 'React and storybook3',
-        EmployeeID: 0,
-        ProjectColor: 'blue',
-        ProjectID: 0,
-        ProjectName: 'Project1',
-        StepID: 0,
-        Task: 'Nova Menu',
-        TypeID: 0,
-        value: 2,
-        activeInProject: true,
-      },
-      {
-        AccountName: 'Itexico',
-        ActivityDate: '',
-        ActivityID: 0,
-        CategoryName: 'Categoria',
-        Comments: 'React and storybook3',
-        EmployeeID: 0,
-        ProjectColor: 'blue',
-        ProjectID: 0,
-        ProjectName: 'Project1',
-        StepID: 0,
-        Task: 'Nova Menu',
-        TypeID: 0,
-        value: 2,
-        activeInProject: true,
-      },
-      {
-        AccountName: 'Itexico',
-        ActivityDate: '',
-        ActivityID: 0,
-        CategoryName: 'Categoria',
-        Comments: 'React and storybook3',
-        EmployeeID: 0,
-        ProjectColor: 'blue',
-        ProjectID: 0,
-        ProjectName: 'Project1',
-        StepID: 0,
-        Task: 'Nova Menu',
-        TypeID: 0,
-        value: 2,
-        activeInProject: true,
-      },
-    ];
+    component.arrayDia = [];
+    component.arrayDia.length = 3;
     fixture.detectChanges();
     expect(fixture.nativeElement.querySelectorAll('li').length).toBe(3);
   });
@@ -110,7 +47,7 @@ describe('ListaDiaComponent', () => {
     const service: FocusCardService = new FocusCardService();
     const myComponent: ListaDiaComponent = new ListaDiaComponent(service);
     myComponent.ngOnInit();
-    service.changeState()
+    service.changeState();
     expect(myComponent.subscription).not.toBeFalsy();
     expect(myComponent.state).toBeTrue();
   });

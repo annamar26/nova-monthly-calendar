@@ -1,9 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { Activity } from 'src/app/services/data-service/data-interfaces';
-import {
-  OnMouseOverItemService,
-  Position,
-} from 'src/app/services/item-popover/on-mouse-over-item.service';
+import { Activity } from 'src/app/interfaces/data-interfaces';
+import { Position } from 'src/app/interfaces/popover.interface';
+import { OnMouseOverItemService } from 'src/app/services/item-popover/on-mouse-over-item.service';
 
 @Component({
   selector: 'app-item-dia',
@@ -11,8 +9,6 @@ import {
   styleUrls: ['./item-dia.component.scss'],
 })
 export class ItemDiaComponent {
-  position!: Position;
-
   @Input() data: Activity = {
     AccountName: 'iTexico',
     ProjectName: 'Project',
@@ -29,6 +25,8 @@ export class ItemDiaComponent {
     activeInProject: false,
   };
   isShown!: boolean;
+  position!: Position;
+
   constructor(private onMouseOverItem: OnMouseOverItemService) {}
 
   handleMouseover(event: any): void {
@@ -36,8 +34,8 @@ export class ItemDiaComponent {
     this.isShown = true;
   }
 
-  handleMouseout(event: any): void {
-    this.onMouseOverItem.hidePopover(event);
+  handleMouseout(): void {
+    this.onMouseOverItem.hidePopover();
     this.isShown = false;
   }
 }

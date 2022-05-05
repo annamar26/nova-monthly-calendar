@@ -1,9 +1,5 @@
-import { not } from '@angular/compiler/src/output/output_ast';
-import { ComponentFixture, TestBed, tick } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { ServiceDeleteModalService } from 'src/app/services/delete-modal/service-delete-modal.service';
-import { FocusCardService } from 'src/app/services/focus-card/focus-card.service';
-import { OnMouseOverItemService } from 'src/app/services/item-popover/on-mouse-over-item.service';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ItemDiaComponent } from './item-dia.component';
 
 describe('ItemDiaComponent', () => {
@@ -41,7 +37,6 @@ describe('ItemDiaComponent', () => {
     fixture.detectChanges();
     const element = fixture.nativeElement.querySelector('.colorFlag');
     const styles = window.getComputedStyle(element);
-
     expect(styles.backgroundColor).toBe('rgb(255, 192, 203)');
   });
 
@@ -50,7 +45,6 @@ describe('ItemDiaComponent', () => {
     fixture.detectChanges();
     const element = fixture.nativeElement.querySelector('.colorFlag');
     const styles = window.getComputedStyle(element);
-
     expect(styles.backgroundColor).toBe('rgb(38, 68, 220)');
   });
 
@@ -59,17 +53,13 @@ describe('ItemDiaComponent', () => {
     fixture.detectChanges();
     const element = fixture.nativeElement.querySelector('.colorFlag');
     const styles = window.getComputedStyle(element);
-
     expect(styles.backgroundColor).toBe('rgb(247, 227, 72)');
   });
 
   it('should trigger handleMouseover on mouseover', () => {
     spyOn(component, 'handleMouseover');
-
     let element = fixture.debugElement.query(By.css('.itemDia'));
-
     element.triggerEventHandler('mouseover', component);
-
     expect(component.handleMouseover).toHaveBeenCalled();
   });
 
@@ -84,17 +74,16 @@ describe('ItemDiaComponent', () => {
   });
 
   it('should change isShonw when runnig handleMouseover or handleMouseout', () => {
-    const element = fixture.debugElement.query(By.css('.p-item-dia')).nativeElement
-	const event = new MouseEvent('mouseover');
+    const element = fixture.debugElement.query(
+      By.css('.p-item-dia')
+    ).nativeElement;
+    const event = new MouseEvent('mouseover');
     element.dispatchEvent(event);
-	component.handleMouseover(event);
-	
+    component.handleMouseover(event);
     expect(component.isShown).toBeTrue();
-	
-	const event2 = new MouseEvent('mouseout');
+    const event2 = new MouseEvent('mouseout');
     element.dispatchEvent(event2);
-	component.handleMouseout(event2);
-	
+    component.handleMouseout();
     expect(component.isShown).toBeFalse();
   });
 });

@@ -1,9 +1,9 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ServiceDeleteModalService } from 'src/app/services/delete-modal/service-delete-modal.service';
-import { ModalButtonsComponent } from '../modal-buttons/modal-buttons.component';
 
 import { ModalDeleteComponent } from './modal-delete.component';
+import { ModalButtonsComponent } from '../modal-buttons/modal-buttons.component';
 
 describe('ModalDeleteComponent', () => {
   let component: ModalDeleteComponent;
@@ -11,9 +11,8 @@ describe('ModalDeleteComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ModalDeleteComponent, ModalButtonsComponent ]
-    })
-    .compileComponents();
+      declarations: [ModalDeleteComponent, ModalButtonsComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -50,7 +49,9 @@ describe('ModalDeleteComponent', () => {
   it('should render its children buttons', () => {
     component.isVisible = true;
     fixture.detectChanges();
-    expect(fixture.debugElement.query(By.css('app-modal-buttons'))).toBeTruthy();
+    expect(
+      fixture.debugElement.query(By.css('app-modal-buttons'))
+    ).toBeTruthy();
   });
 
   it('should modify the value of the subscription when action', () => {
@@ -60,5 +61,5 @@ describe('ModalDeleteComponent', () => {
     service.showModal();
     fixture.detectChanges();
     expect(myComponent.modalState$).not.toBeFalsy();
-  })
+  });
 });

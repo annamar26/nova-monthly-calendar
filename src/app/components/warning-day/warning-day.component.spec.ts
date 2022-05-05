@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
 import { TooltipCalendarComponent } from '../tooltip-calendar/tooltip-calendar.component';
 
 import { WarningDayComponent } from './warning-day.component';
@@ -11,9 +10,8 @@ describe('WarningDayComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ WarningDayComponent, TooltipCalendarComponent ]
-    })
-    .compileComponents();
+      declarations: [WarningDayComponent, TooltipCalendarComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -27,15 +25,18 @@ describe('WarningDayComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should display ! if the hours havent been assigned', () => {
+  it('should not display ! if the hours havent been assigned', () => {
+    component.hoursDay = undefined;
     fixture.detectChanges();
-    expect(fixture.debugElement.nativeElement.querySelector('p').textContent).toContain('!');
+    expect(fixture.debugElement.nativeElement.querySelector('p')).toBeNull();
   });
 
   it('should display ! if the hours are less than 8 and greater than 0', () => {
     component.hoursDay = 6;
     fixture.detectChanges();
-    expect(fixture.debugElement.nativeElement.querySelector('p').textContent).toContain('!');
+    expect(
+      fixture.debugElement.nativeElement.querySelector('p').textContent
+    ).toContain('!');
   });
 
   it('should not display anything if hours are greater than 8 or equal', () => {
@@ -51,11 +52,11 @@ describe('WarningDayComponent', () => {
   });
 
   it('should render the correct styles depending on the input', () => {
+    component.hoursDay = 5;
     fixture.detectChanges();
     expect(
       fixture.debugElement.nativeElement.querySelector('#tooltip')
     ).toBeTruthy();
-
     const styles = window.getComputedStyle(
       fixture.debugElement.nativeElement.querySelector('#tooltip')
     );

@@ -1,22 +1,21 @@
 import { Component, Input } from '@angular/core';
 
-interface ItemDay{
-  AccountName: string,
-  ProjectName: string,
+interface ItemDay {
+  AccountName: string;
+  ProjectName: string;
   CategoryName: string;
-  ProjectColor?: string
-  }
+  ProjectColor?: string;
+}
 @Component({
   selector: 'app-header-popover',
   templateUrl: './header-popover.component.html',
-  styleUrls: ['./header-popover.component.scss']
+  styleUrls: ['./header-popover.component.scss'],
 })
 export class HeaderPopoverComponent {
   @Input() data: ItemDay = {
-    AccountName: "iTexico",
-    ProjectName: "Project",
-    CategoryName: "Category",
-    ProjectColor: "red"
-   
-  }
+    AccountName: 'iTexico',
+    ProjectName: 'Project',
+    CategoryName: 'Category',
+    ProjectColor: 'red',
+  };
 }

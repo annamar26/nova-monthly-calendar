@@ -8,9 +8,8 @@ describe('WeekRowComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ WeekRowComponent ]
-    })
-    .compileComponents();
+      declarations: [WeekRowComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {

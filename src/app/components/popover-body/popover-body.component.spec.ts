@@ -1,5 +1,5 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { PopoverBodyComponent } from './popover-body.component';
 
@@ -27,17 +27,13 @@ describe('PopoverBodyComponent', () => {
     component.comment = 'This is a comment';
     component.task = 'This is a ticket';
     fixture.detectChanges();
-
     expect(
       fixture.debugElement.query(By.css('app-popover-body-text'))
     ).toBeTruthy();
-
     component.hours = 3;
     fixture.detectChanges();
-
     expect(
       fixture.debugElement.query(By.css('card-footer-hours'))
     ).toBeTruthy();
   });
-
 });

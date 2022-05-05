@@ -32,7 +32,6 @@ describe('PopoverListFooterComponent', () => {
     fixture.detectChanges();
     const footerButtons =
       fixture.debugElement.nativeElement.querySelector('app-popover-button');
-
     expect(footerButtons).toBeTruthy();
   });
 });

@@ -1,5 +1,5 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DayCardComponent } from './day-card.component';
 import { FocusCardService } from 'src/app/services/focus-card/focus-card.service';
@@ -25,8 +25,8 @@ describe('DayCardComponent', () => {
   });
 
   it('should create DayCard components children', () => {
-    component.day = 1
-    fixture.detectChanges()
+    component.day = 1;
+    fixture.detectChanges();
     expect(fixture.debugElement.query(By.css('app-day-header'))).toBeTruthy();
     expect(fixture.debugElement.query(By.css('app-lista-dia'))).toBeTruthy();
     expect(fixture.debugElement.query(By.css('card-footer'))).toBeTruthy();
@@ -36,7 +36,7 @@ describe('DayCardComponent', () => {
     const service: FocusCardService = new FocusCardService();
     const myComponent: DayCardComponent = new DayCardComponent(service);
     myComponent.ngOnInit();
-    service.changeState()
+    service.changeState();
     expect(myComponent.subscription).not.toBeFalsy();
     expect(myComponent.state).toBeTrue();
   });
@@ -125,7 +125,7 @@ describe('DayCardComponent', () => {
         value: 2,
         activeInProject: true,
       },
-    ]
+    ];
     myComponent.ngOnInit();
     expect(myComponent.hiddenItems).toBe(2);
   });

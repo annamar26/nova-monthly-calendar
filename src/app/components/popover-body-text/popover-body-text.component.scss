@@ -1,7 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
-
-$fontGray: rgb(74, 74, 74);
-$gray: rgb(139, 139, 139);//#8b8b8b;
+@import "../../app.component.scss";
 
 * {
   margin: 0;
@@ -12,11 +10,10 @@ $gray: rgb(139, 139, 139);//#8b8b8b;
 .comment-text,
 .task-text {
   font-family: "Roboto", sans-serif;
-
 }
 
-p{
-  margin:0
+p {
+  margin: 0;
 }
 
 .comment-text {
@@ -43,6 +40,6 @@ p{
 }
 
 .comment-div {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }

@@ -1,33 +1,20 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
-
-$gray: #8b8b8b;
-$red: #d1230a;
-$blue: #3555c3;
-$green: #4caf50;
-$yellow: hsl(49, 100%, 63%);
-$lightgreen: #5ddc26;
-$lightpink: #f97f98;
-$pink: rgb(245, 65, 98);
-$fontFamily: Poppins, sans-serif;
-$boxShadow: rgb(0 0 0 / 50%) 0px 2px 4px 0px;
-$font-size: 12px;
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+@import "../../app.component.scss";
 
 #listCointainer {
-	width: 100%;
-	margin: 0 auto;
-	box-sizing: border-box;
-    padding: 3px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 3px;
 
-	ul {
-		margin: 0;
-		padding: 0 1px;
-		li {
-			list-style: none;
-			text-align: start;
-            white-space: nowrap;
-            overflow: hidden;
-		}
-	}
+  ul {
+    margin: 0;
+    padding: 0 1px;
+    li {
+      list-style: none;
+      text-align: start;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
 }
-
-
