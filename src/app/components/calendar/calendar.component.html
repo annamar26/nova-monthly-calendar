@@ -1,8 +1,9 @@
 <div class="container">
     <app-calendar-header></app-calendar-header>
-    <app-week-row [cards]="monthArr[0]"></app-week-row>
-    <app-week-row [cards]="monthArr[1]"></app-week-row>
-    <app-week-row [cards]="monthArr[2]"></app-week-row>
-    <app-week-row [cards]="monthArr[3]"></app-week-row>
-    <app-week-row [cards]="monthArr[4]"></app-week-row>
+    <app-week-row [cards]="monthArr.slice(0,7)"></app-week-row>
+    <app-week-row [cards]="monthArr.slice(7,14)"></app-week-row>
+    <app-week-row [cards]="monthArr.slice(14,21)"></app-week-row>
+    <app-week-row [cards]="monthArr.slice(21,28)"></app-week-row>
+    <app-week-row *ngIf="monthArr.length>28"[cards]="monthArr.slice(28,35)"></app-week-row>
+    <app-week-row *ngIf="monthArr.length>35" [cards]="monthArr.slice(35,42)"></app-week-row>
 </div>

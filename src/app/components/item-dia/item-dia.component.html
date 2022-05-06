@@ -1,9 +1,9 @@
 <div class="container">
   <div class="colorFlag" [style.backgroundColor]="data.ProjectColor"></div>
   <div
+  (mouseover)="handleMouseover($event)"
+  (mouseout)="handleMouseout()"
     class="itemDia"
-    (mouseover)="handleMouseover($event)"
-    (mouseout)="handleMouseout()"
   >
     <app-p-item-dia class="p-item-dia" [data]="data"></app-p-item-dia>
   </div>
