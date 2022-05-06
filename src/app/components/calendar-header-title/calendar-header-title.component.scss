@@ -1,14 +1,16 @@
 @import "../../app.component.scss";
 
 .header-title-bold {
-  margin: auto;
   font-family: $fontFamily;
   font-weight: 600;
-  width: fit-content;
 }
 .header-title-bolder {
-  margin: auto;
   font-family: $fontFamily;
   font-weight: bolder;
-  width: fit-content;
+}
+
+
+.header-title-bold, .header-title-bolder{
+  background: yellow;
+  width:100%;
 }

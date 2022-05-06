@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Activity } from 'src/app/interfaces/data-interfaces';
 import { Position } from 'src/app/interfaces/popover.interface';
@@ -8,6 +8,7 @@ import { OnMouseOverItemService } from 'src/app/services/item-popover/on-mouse-o
   selector: 'app-popover',
   templateUrl: './popover.component.html',
   styleUrls: ['./popover.component.scss'],
+  encapsulation: ViewEncapsulation.ShadowDom
 })
 export class PopoverComponent implements OnInit {
   isVisible: boolean = false;

@@ -24,7 +24,7 @@ export class OnMouseOverItemService {
       this.position = {
         positionX:
           event.srcElement.parentNode.parentNode.offsetLeft -
-          1.62 * event.srcElement.parentNode.getBoundingClientRect().width,
+          1.82 * event.srcElement.parentNode.getBoundingClientRect().width,
         positionY: +event.target.parentNode.offsetTop - 67 - scrollY,
       };
     }

@@ -1,11 +1,12 @@
 import { Observable } from 'rxjs';
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { ServiceDeleteModalService } from 'src/app/services/delete-modal/service-delete-modal.service';
 
 @Component({
   selector: 'app-popover-button',
   templateUrl: './popover-button.component.html',
   styleUrls: ['./popover-button.component.scss'],
+  encapsulation: ViewEncapsulation.ShadowDom
 })
 export class PopoverButtonComponent {
   @Input() buttonText: string = 'update';

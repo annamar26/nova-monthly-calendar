@@ -1,11 +1,12 @@
 import { Observable } from 'rxjs';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ServiceDeleteModalService } from 'src/app/services/delete-modal/service-delete-modal.service';
 
 @Component({
   selector: 'app-modal-delete',
   templateUrl: './modal-delete.component.html',
   styleUrls: ['./modal-delete.component.scss'],
+  encapsulation: ViewEncapsulation.ShadowDom
 })
 export class ModalDeleteComponent implements OnInit {
   isVisible: boolean = false;
