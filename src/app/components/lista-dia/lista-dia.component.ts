@@ -9,7 +9,7 @@ import { FocusCardService } from 'src/app/services/focus-card/focus-card.service
   styleUrls: ['./lista-dia.component.scss'],
 })
 export class ListaDiaComponent implements OnInit {
-  @Input() arrayDia!: Array<Activity>;
+  @Input() arrayDia!: Array<Activity> | undefined;
   subscription!: Subscription;
   state!: boolean;
 

@@ -7,5 +7,5 @@ import { Card } from 'src/app/interfaces/input.interfaces';
   styleUrls: ['./week-row.component.scss'],
 })
 export class WeekRowComponent {
-  @Input() cards!: Card[];
+  @Input() cards!: Card[] | undefined;
 }
