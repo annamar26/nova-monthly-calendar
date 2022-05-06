@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ServiceDeleteModalService } from 'src/app/services/delete-modal/service-delete-modal.service';
+import { SnackbarService } from 'src/app/services/snackbar/snackbar.service';
 
 @Component({
   selector: 'app-modal-buttons',
@@ -13,11 +14,13 @@ export class ModalButtonsComponent implements OnInit {
   buttonText!: string;
   message!: string;
 
-  constructor(private ServiceDeleteModalService: ServiceDeleteModalService) {}
 
-  handleClickModalButton(action: string) {
+  constructor(private ServiceDeleteModalService: ServiceDeleteModalService, private snackbarService:SnackbarService) {}
+
+  handleClickModalButton(action: string):void {
     if (action === 'confirm') {
       this.message = 'yes';
+      this.snackbarService.showSnackbar();
     } else if (action === 'cancel') {
       this.message = 'no';
     }
