@@ -1,16 +1,21 @@
 @import "../../app.component.scss";
 
+.day-box {
+  width: 100%;
+  text-align: center;
+}
+
 .header-title-bold {
   font-family: $fontFamily;
   font-weight: 600;
 }
+
 .header-title-bolder {
   font-family: $fontFamily;
   font-weight: bolder;
 }
 
-
-.header-title-bold, .header-title-bolder{
-  background: yellow;
-  width:100%;
+.header-title-bold,
+.header-title-bolder {
+  margin-bottom: 5px;
 }
