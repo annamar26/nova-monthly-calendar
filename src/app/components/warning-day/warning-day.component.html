@@ -1,5 +1,5 @@
-<p class="warning-day" *ngIf="hoursDay! >= 0 && hoursDay! < 8">
-  !<app-tooltip-calendar
+<p class="warning-day" *ngIf="hoursDay !== undefined">
+  !<app-tooltip-calendar *ngIf="message !== undefined"
     [tooltipText]="message"
     id="tooltip"
   ></app-tooltip-calendar>

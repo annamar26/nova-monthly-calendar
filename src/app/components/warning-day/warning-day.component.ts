@@ -4,13 +4,26 @@ import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
   selector: 'app-warning-day',
   templateUrl: './warning-day.component.html',
   styleUrls: ['./warning-day.component.scss'],
-  encapsulation: ViewEncapsulation.ShadowDom
+  encapsulation: ViewEncapsulation.ShadowDom,
 })
 export class WarningDayComponent implements OnInit {
   @Input() hoursDay!: number | undefined;
-  message!: string;
+  @Input() date?: Date;
+
+  weekDay?: number;
+  message?: string;
 
   ngOnInit(): void {
-    this.message = `You have ${8 - this.hoursDay!} missing hours`;
+    this.weekDay = this.date!.getDay();
+    if (
+      this.weekDay !== 0 &&
+      this.weekDay !== 6 &&
+      this.date &&
+      this.date < new Date() &&
+      this.hoursDay! < 8
+    ) {
+      this.message = `You have ${8 - this.hoursDay!} missing hours`;
+      console.log(this.hoursDay)
+    } else this.hoursDay = undefined;
   }
 }

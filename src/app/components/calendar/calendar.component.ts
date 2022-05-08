@@ -1,4 +1,4 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Activity } from 'src/app/interfaces/data-interfaces';
 import { Card } from 'src/app/interfaces/input.interfaces';
 
@@ -6,7 +6,6 @@ import { Card } from 'src/app/interfaces/input.interfaces';
   selector: 'app-calendar',
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.scss'],
-  encapsulation: ViewEncapsulation.ShadowDom
 })
 export class CalendarComponent {
   currentDate: Date = new Date();
@@ -15,7 +14,7 @@ export class CalendarComponent {
   srcData: Activity[] = [
     {
       AccountName: 'Itexico',
-      ActivityDate: '2022-05-12T09:35:04',
+      ActivityDate: '2022-05-06T09:35:04',
       ActivityID: 0,
       CategoryName: 'Available',
       Comments: 'string',
@@ -91,7 +90,7 @@ export class CalendarComponent {
     const initialEmptyDays: Card[] = Array(firstDayOfMonth).fill({});
     this.monthArr.push(...initialEmptyDays);
 
-    const isLeap =
+    const isLeap: boolean =
       this.year % 4 == 0 && this.year % 100 != 0
         ? true
         : this.year % 400 == 0
@@ -111,16 +110,20 @@ export class CalendarComponent {
       }
     }
 
-    for (let index = 1; index < daysOfMonth + 1; index++) {
-      let dateActivities = this.srcData.filter(
-        (activity) =>
+    for (let index: number = 1; index < daysOfMonth + 1; index++) {
+      let dateActivities: Activity[] = this.srcData.filter(
+        (activity: Activity) =>
           activity.ActivityDate.substring(0, 10) ===
           `${this.year}-${
             this.month + 1 < 10 ? '0' + (this.month + 1) : this.month + 1
           }-${index < 10 ? '0' + index : index}`
       );
 
-      let day = { day: index, activities: dateActivities };
+      let day: Card = {
+        day: index,
+        activities: dateActivities,
+        date: new Date(this.year, this.month, index),
+      };
       this.monthArr.push(day);
     }
 

@@ -12,8 +12,7 @@ export class FocusCardService {
 
   changeState(e?: any): void {
     if (e) {
-      this._element =
-        e.srcElement.parentNode.parentNode.parentNode.parentNode.parentNode;
+      this._element = e.path[5];
       this._element$.next(this._element);
     }
     this._state = !this._state;
