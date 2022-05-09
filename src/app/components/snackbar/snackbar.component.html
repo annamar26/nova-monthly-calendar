@@ -1,4 +1,5 @@
 <div
+  *ngIf="isVisible"
   class="snackbar-container"
   [style.backgroundColor]="
     type !== 'custom' ? (success ? '#43A047' : '#d1230a') : backgroundColor

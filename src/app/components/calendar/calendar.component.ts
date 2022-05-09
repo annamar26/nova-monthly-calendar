@@ -9,6 +9,7 @@ import { Card } from 'src/app/interfaces/input.interfaces';
   encapsulation: ViewEncapsulation.Emulated,
 })
 export class CalendarComponent {
+
   currentDate: Date = new Date();
   month!: number;
   year!: number;
@@ -95,7 +96,7 @@ export class CalendarComponent {
     },
   ];
 
-  @Input() monthArr: Card[] = [];
+	@Input() monthArr: Card[] = [];
 
   ngOnInit(): void {
     //If we receive the month to render else this code: //
