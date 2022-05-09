@@ -14,17 +14,20 @@ export const Success_snackbar = Template.bind({});
 Success_snackbar.args = {
 	message: 'Este es un mensaje de prueba',
 	type: 'default',
-	success: true
+	success: true,
+	isVisible: true,
 };
 export const error = Template.bind({});
 error.args = {
 	message: 'Este es un mensaje de prueba',
 	type: 'default',
-	success: false
+	success: false,
+	isVisible: true,
 };
 export const Custom_snackbar = Template.bind({});
 Custom_snackbar.args = {
 	message: 'Este es un mensaje de prueba',
 	type: 'custom',
-    backgroundColor: 'purple'
+    backgroundColor: 'purple',
+	isVisible: true,
 };

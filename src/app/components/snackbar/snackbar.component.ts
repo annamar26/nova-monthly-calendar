@@ -1,7 +1,6 @@
 
-import { Component, OnDestroy, OnInit, Input, ViewEncapsulation} from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
-import { DataSnackbar } from 'src/app/interfaces/input.interfaces';
+import { Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
+import { Subscription } from 'rxjs';
 import { SnackbarService } from 'src/app/services/snackbar/snackbar.service';
 
 @Component({
@@ -13,23 +12,37 @@ import { SnackbarService } from 'src/app/services/snackbar/snackbar.service';
 export class SnackbarComponent implements OnInit, OnDestroy{
   message!: string;
   type!: 'default' | 'custom';
-  backgroundColor!: string;
+  backgroundColor: string |undefined;
   success!: boolean;
   isClicked$!: Subscription;
   data$!: Subscription;
-  isVisible!:boolean;
+  isVisible:boolean | undefined;
 
   constructor(private snackbarService: SnackbarService){}
  
   ngOnInit():void{
-    this.isClicked$ = this.snackbarService.getIsClick$().subscribe(res => this.isVisible = res);
+    this.getIsVisible();
+    this.getData();
+   
+  }
+
+  getData() {
     this.data$ = this.snackbarService.getDataSnackbar$().subscribe(res => {
-      console.log(res)
       this.message = res.message;
       this.type = res.type;
       this.success = res.success;
+      this.backgroundColor = res.backgroundColor!;
       setTimeout(() => {
-        this.snackbarService.hideSnackbar()
+        this.snackbarService.hideSnackbar();
+      }, 3000);
+    });
+  }
+
+  getIsVisible() {
+    this.isClicked$ = this.snackbarService.getIsClick$().subscribe(res => {
+      this.isVisible = res;
+      setTimeout(() => {
+        this.snackbarService.hideSnackbar();
       }, 3000);
     });
   }

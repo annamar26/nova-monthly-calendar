@@ -8,5 +8,5 @@ import { Card } from 'src/app/interfaces/input.interfaces';
   encapsulation: ViewEncapsulation.Emulated
 })
 export class WeekRowComponent {
-  @Input() cards!: Card[] | undefined;
+  @Input() cards: Card[] | undefined;
 }

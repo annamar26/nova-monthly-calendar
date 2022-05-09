@@ -17,6 +17,7 @@ describe('ListaDiaComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(ListaDiaComponent);
     component = fixture.componentInstance;
+    fixture.detectChanges()
   });
 
   it('should create', () => {

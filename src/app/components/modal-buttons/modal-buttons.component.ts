@@ -8,11 +8,10 @@ import { SnackbarService } from 'src/app/services/snackbar/snackbar.service';
   styleUrls: ['./modal-buttons.component.scss'],
   encapsulation: ViewEncapsulation.Emulated
 })
-export class ModalButtonsComponent implements OnInit {
+export class ModalButtonsComponent{
   @Input() type: 'cancel' | 'confirm' | 'custom' = 'confirm';
   @Input() backgroundColor!: string;
   @Input() color!: string;
-  buttonText!: string;
   message!: string;
 
 
@@ -21,15 +20,13 @@ export class ModalButtonsComponent implements OnInit {
   handleClickModalButton(action: string):void {
     if (action === 'confirm') {
       this.message = 'yes';
-      this.snackbarService.showSnackbar();
+      this.snackbarService.showSnackBar();
+      this.snackbarService.setDataSnackbar()
     } else if (action === 'cancel') {
       this.message = 'no';
     }
     this.ServiceDeleteModalService.hideModal();
   }
 
-  ngOnInit(): void {
-    this.buttonText =
-      this.type[0].toUpperCase() + this.type.split('').slice(1).join('');
-  }
+  
 }

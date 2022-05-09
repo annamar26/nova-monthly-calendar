@@ -5,5 +5,5 @@
   [style.backgroundColor]="type === 'custom' ? backgroundColor : ''"
   [style.color]="type === 'custom' ? color : ''"
 >
-  {{ buttonText }}
+  {{type[0].toUpperCase() + type.split('').slice(1).join('') }}
 </button>

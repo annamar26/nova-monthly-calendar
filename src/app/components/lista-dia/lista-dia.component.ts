@@ -1,5 +1,5 @@
 import { Subscription } from 'rxjs';
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { Activity } from 'src/app/interfaces/data-interfaces';
 import { FocusCardService } from 'src/app/services/focus-card/focus-card.service';
 
@@ -9,7 +9,7 @@ import { FocusCardService } from 'src/app/services/focus-card/focus-card.service
   styleUrls: ['./lista-dia.component.scss'],
   encapsulation: ViewEncapsulation.Emulated
 })
-export class ListaDiaComponent implements OnInit {
+export class ListaDiaComponent implements OnInit, OnDestroy {
   @Input() arrayDia!: Array<Activity> | undefined;
   subscription!: Subscription;
   state!: boolean;
@@ -21,4 +21,8 @@ export class ListaDiaComponent implements OnInit {
       .onSubscribe()
       .subscribe((state$) => (this.state = state$));
   }
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
+  
 }
