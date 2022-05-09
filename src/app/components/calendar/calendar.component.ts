@@ -6,7 +6,7 @@ import { Card } from 'src/app/interfaces/input.interfaces';
   selector: 'app-calendar',
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
 })
 export class CalendarComponent {
   currentDate: Date = new Date();
@@ -104,30 +104,13 @@ export class CalendarComponent {
     const firstDayOfMonth: number = new Date(
       `${this.year}-${this.month + 1}-1`
     ).getDay();
-    const initialEmptyDays: Card[] = Array(firstDayOfMonth).fill({});
-    this.monthArr.push(...initialEmptyDays);
+    this.initialEmptyDays(firstDayOfMonth);
 
-    const isLeap: boolean =
-      this.year % 4 == 0 && this.year % 100 != 0
-        ? true
-        : this.year % 400 == 0
-        ? true
-        : false;
-    let daysOfMonth: number = 31;
-    if (this.month === 1) {
-      daysOfMonth = isLeap ? 29 : 28;
-    } else {
-      if (
-        this.month === 3 ||
-        this.month === 5 ||
-        this.month === 8 ||
-        this.month === 10
-      ) {
-        daysOfMonth = 30;
-      }
-    }
-
-    for (let index: number = 1; index < daysOfMonth + 1; index++) {
+    for (
+      let index: number = 1;
+      index < this.daysOfMonth(this.month, this.year) + 1;
+      index++
+    ) {
       let dateActivities: Activity[] = this.srcData.filter(
         (activity: Activity) =>
           activity.ActivityDate.substring(0, 10) ===
@@ -144,13 +127,40 @@ export class CalendarComponent {
       this.monthArr.push(day);
     }
 
-    if (this.monthArr.length > 28) {
-      const finallEmptyDays: Card[] = Array(
-        this.monthArr.length > 35 ? 42 : 35 - this.monthArr.length
-      ).fill({});
-      this.monthArr.push(...finallEmptyDays);
-    }
+    this.finalEmptyDays(this.monthArr);
 
     console.log(this.monthArr);
+  }
+
+  finalEmptyDays(monthArr: Card[]) {
+    const finallEmptyDays: Card[] = Array(
+      monthArr.length > 35 ? 42 - monthArr.length : 35 - monthArr.length
+    ).fill({});
+    monthArr.push(...finallEmptyDays);
+  }
+
+  initialEmptyDays(firstDayOfMonth: number) {
+    const initialEmptyDays: Card[] = Array(firstDayOfMonth).fill({});
+    this.monthArr.push(...initialEmptyDays);
+  }
+
+  daysOfMonth(month: number, year: number) {
+    let daysOfMonth: number = 31;
+    if (month === 1) {
+      daysOfMonth = this.isLeap(year) ? 29 : 28;
+    } else {
+      if (month === 3 || month === 5 || month === 8 || month === 10) {
+        daysOfMonth = 30;
+      }
+    }
+    return daysOfMonth;
+  }
+
+  isLeap(year: number): boolean {
+    return year % 4 == 0 && year % 100 != 0
+      ? true
+      : year % 400 == 0
+      ? true
+      : false;
   }
 }

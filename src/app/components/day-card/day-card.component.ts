@@ -21,7 +21,7 @@ import { FocusCardService } from 'src/app/services/focus-card/focus-card.service
 export class DayCardComponent implements OnInit, OnDestroy, AfterViewInit {
   @Input() data: Array<Activity> | undefined;
   @Input() day: undefined | number;
-  @Input() date!: Date;
+  @Input() date: Date | undefined;
 
   totalHours: number = 0;
   hiddenItems!: number;
