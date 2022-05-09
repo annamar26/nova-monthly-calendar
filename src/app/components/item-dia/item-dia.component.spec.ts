@@ -2,7 +2,7 @@ import { By } from '@angular/platform-browser';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ItemDiaComponent } from './item-dia.component';
 
-fdescribe('ItemDiaComponent', () => {
+describe('ItemDiaComponent', () => {
   let component: ItemDiaComponent;
   let fixture: ComponentFixture<ItemDiaComponent>;
 

@@ -8,7 +8,7 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
 })
 export class DayHeaderComponent {
   @Input() day: undefined | number;
-  @Input() date: undefined | Date;
+  @Input() date!: Date;
   @Input() hours: number | undefined;
 
   buttonType: 'day' | 'general' = 'day';

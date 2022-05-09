@@ -8,7 +8,7 @@ import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class WarningDayComponent implements OnInit {
   @Input() hoursDay!: number | undefined;
-  @Input() date?: Date;
+  @Input() date!: Date;
 
   weekDay?: number;
   message?: string;
@@ -18,12 +18,12 @@ export class WarningDayComponent implements OnInit {
     if (
       this.weekDay !== 0 &&
       this.weekDay !== 6 &&
-      this.date &&
       this.date < new Date() &&
-      this.hoursDay! < 8
+      this.hoursDay! < 8 &&
+      this.hoursDay! > 0
     ) {
       this.message = `You have ${8 - this.hoursDay!} missing hours`;
-      console.log(this.hoursDay)
+      console.log(this.hoursDay);
     } else this.hoursDay = undefined;
   }
 }

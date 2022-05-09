@@ -6,7 +6,6 @@ import { WarningDayComponent } from './warning-day.component';
 describe('WarningDayComponent', () => {
   let component: WarningDayComponent;
   let fixture: ComponentFixture<WarningDayComponent>;
-  let p: HTMLElement;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
@@ -17,7 +16,7 @@ describe('WarningDayComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(WarningDayComponent);
     component = fixture.componentInstance;
-    p = fixture.nativeElement.querySelector('p');
+    component.date = new Date(2022, 4, 4);
   });
 
   it('should create', () => {
@@ -34,6 +33,7 @@ describe('WarningDayComponent', () => {
   it('should display ! if the hours are less than 8 and greater than 0', () => {
     component.hoursDay = 6;
     fixture.detectChanges();
+    console.log('buenas')
     expect(
       fixture.debugElement.nativeElement.querySelector('p').textContent
     ).toContain('!');
