@@ -4,7 +4,7 @@ import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
   selector: 'app-warning-day',
   templateUrl: './warning-day.component.html',
   styleUrls: ['./warning-day.component.scss'],
-  encapsulation: ViewEncapsulation.ShadowDom,
+  encapsulation: ViewEncapsulation.None,
 })
 export class WarningDayComponent implements OnInit {
   @Input() hoursDay!: number | undefined;

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { Activity } from 'src/app/interfaces/data-interfaces';
 import { Card } from 'src/app/interfaces/input.interfaces';
 
@@ -6,6 +6,7 @@ import { Card } from 'src/app/interfaces/input.interfaces';
   selector: 'app-calendar',
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class CalendarComponent {
   currentDate: Date = new Date();

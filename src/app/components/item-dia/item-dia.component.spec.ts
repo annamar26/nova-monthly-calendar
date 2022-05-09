@@ -79,7 +79,7 @@ describe('ItemDiaComponent', () => {
     ).nativeElement;
     const event = new MouseEvent('mouseover');
     element.dispatchEvent(event);
-    component.handleMouseover(event);
+    component.handleMouseover(element);
     expect(component.isShown).toBeTrue();
     const event2 = new MouseEvent('mouseout');
     element.dispatchEvent(event2);
