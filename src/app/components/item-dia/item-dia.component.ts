@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { Activity } from 'src/app/interfaces/data-interfaces';
 import { Position } from 'src/app/interfaces/popover.interface';
 import { OnMouseOverItemService } from 'src/app/services/item-popover/on-mouse-over-item.service';
@@ -7,30 +7,18 @@ import { OnMouseOverItemService } from 'src/app/services/item-popover/on-mouse-o
   selector: 'app-item-dia',
   templateUrl: './item-dia.component.html',
   styleUrls: ['./item-dia.component.scss'],
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class ItemDiaComponent {
-  @Input() data: Activity = {
-    AccountName: 'iTexico',
-    ProjectName: 'Project',
-    CategoryName: 'Category',
-    ProjectColor: 'green',
-    ActivityDate: '2022-05-02T15:28:46.493Z',
-    ActivityID: 0,
-    Comments: 'Este es un comentario',
-    EmployeeID: 0,
-    ProjectID: 0,
-    StepID: 0,
-    TypeID: 0,
-    value: 8,
-    activeInProject: false,
-  };
+  @Input() data: Activity | undefined;
   isShown!: boolean;
   position!: Position;
 
   constructor(private onMouseOverItem: OnMouseOverItemService) {}
 
-  handleMouseover(event: any): void {
-    this.onMouseOverItem.showPopover(this.data, event);
+  handleMouseover(element: HTMLElement): void {
+  
+    this.onMouseOverItem.showPopover(this.data!, element);
     this.isShown = true;
   }
 

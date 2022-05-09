@@ -1,5 +1,5 @@
 import { Subscription } from 'rxjs';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { Activity } from 'src/app/interfaces/data-interfaces';
 import { FocusCardService } from 'src/app/services/focus-card/focus-card.service';
 
@@ -7,6 +7,7 @@ import { FocusCardService } from 'src/app/services/focus-card/focus-card.service
   selector: 'app-lista-dia',
   templateUrl: './lista-dia.component.html',
   styleUrls: ['./lista-dia.component.scss'],
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class ListaDiaComponent implements OnInit {
   @Input() arrayDia!: Array<Activity> | undefined;

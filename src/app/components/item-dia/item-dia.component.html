@@ -1,10 +1,11 @@
-<div class="container">
-  <div class="colorFlag" [style.backgroundColor]="data.ProjectColor"></div>
-  <div
-  (mouseover)="handleMouseover($event)"
+<div #itemDia
+  class="container"
+  id="itemDia"
+  (mouseover)="handleMouseover(itemDia)"
   (mouseout)="handleMouseout()"
-    class="itemDia"
-  >
+>
+  <div class="colorFlag" id="colorFlag" [style.backgroundColor]="data!.ProjectColor"></div>
+  <div class="itemDia">
     <app-p-item-dia class="p-item-dia" [data]="data"></app-p-item-dia>
   </div>
 </div>

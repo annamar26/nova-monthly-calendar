@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { ServiceDeleteModalService } from 'src/app/services/delete-modal/service-delete-modal.service';
 import { SnackbarService } from 'src/app/services/snackbar/snackbar.service';
 
@@ -6,6 +6,7 @@ import { SnackbarService } from 'src/app/services/snackbar/snackbar.service';
   selector: 'app-modal-buttons',
   templateUrl: './modal-buttons.component.html',
   styleUrls: ['./modal-buttons.component.scss'],
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class ModalButtonsComponent implements OnInit {
   @Input() type: 'cancel' | 'confirm' | 'custom' = 'confirm';

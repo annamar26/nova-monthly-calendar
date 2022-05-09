@@ -129,4 +129,24 @@ describe('DayCardComponent', () => {
     myComponent.ngOnInit();
     expect(myComponent.hiddenItems).toBe(2);
   });
+
+  it('should set hiddenItems correctly', () => {
+    component.data = [];
+    component.data.length = 1;
+    component.ngOnInit();
+    expect(component.hiddenItems).toBe(0);
+  });
+
+  it('should set element when subscribing', () => {
+    const service: FocusCardService = new FocusCardService();
+    const myComponent: DayCardComponent = new DayCardComponent(service);
+    myComponent.ngOnInit();
+    const event = {
+      composedPath: jasmine.createSpy().and.returnValue([]),
+    };
+    service.changeState(event.composedPath());
+    fixture.detectChanges();
+
+    expect(myComponent.element).toBeDefined();
+  });
 });

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 interface ItemDay {
   AccountName: string;
@@ -10,6 +10,7 @@ interface ItemDay {
   selector: 'app-header-popover',
   templateUrl: './header-popover.component.html',
   styleUrls: ['./header-popover.component.scss'],
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class HeaderPopoverComponent {
   @Input() data: ItemDay = {

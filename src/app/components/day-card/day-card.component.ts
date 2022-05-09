@@ -6,6 +6,7 @@ import {
   OnDestroy,
   OnInit,
   ViewChild,
+  ViewEncapsulation
 } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Activity } from 'src/app/interfaces/data-interfaces';
@@ -15,22 +16,24 @@ import { FocusCardService } from 'src/app/services/focus-card/focus-card.service
   selector: 'app-day-card',
   templateUrl: './day-card.component.html',
   styleUrls: ['./day-card.component.scss'],
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class DayCardComponent implements OnInit, OnDestroy, AfterViewInit {
-  @Input() data!: Array<Activity> | undefined
-  @Input() day!: undefined | number;
+  @Input() data: Array<Activity> | undefined;
+  @Input() day: undefined | number;
+  @Input() date: Date | undefined;
 
-  totalHours: number = 0
+  totalHours: number = 0;
   hiddenItems!: number;
-  subscription!: Subscription;
-  element!: HTMLElement;
-  elementSubscription!: Subscription;
   state!: boolean;
+  subscription!: Subscription;
+  element?: EventTarget;
+  elementSubscription!: Subscription;
   focusableElemenet!: HTMLElement;
 
   @ViewChild('card') card!: ElementRef;
 
-  constructor(private _focusCardService: FocusCardService) { }
+  constructor(private _focusCardService: FocusCardService) {}
 
   ngOnInit(): void {
     this.subscription = this._focusCardService
@@ -39,19 +42,18 @@ export class DayCardComponent implements OnInit, OnDestroy, AfterViewInit {
     this.elementSubscription = this._focusCardService
       .onSubscribeElement()
       .subscribe((element$) => (this.element = element$));
+
     if (this.data?.length) {
-      this.data!.forEach((activity?) => (this.totalHours += activity.value)); 
+      this.data!.forEach((activity?) => (this.totalHours += activity.value));
       this.hiddenItems = this.data!.length <= 3 ? 0 : this.data!.length - 3;
     }
-
-
   }
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     this.focusableElemenet = this.card.nativeElement;
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.subscription.unsubscribe();
   }
 }

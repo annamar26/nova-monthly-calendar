@@ -1,4 +1,5 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+
+import { Component, OnDestroy, OnInit, Input, ViewEncapsulation} from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
 import { DataSnackbar } from 'src/app/interfaces/input.interfaces';
 import { SnackbarService } from 'src/app/services/snackbar/snackbar.service';
@@ -7,6 +8,7 @@ import { SnackbarService } from 'src/app/services/snackbar/snackbar.service';
   selector: 'app-snackbar',
   templateUrl: './snackbar.component.html',
   styleUrls: ['./snackbar.component.scss'],
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class SnackbarComponent implements OnInit, OnDestroy{
   message!: string;
@@ -19,7 +21,6 @@ export class SnackbarComponent implements OnInit, OnDestroy{
 
   constructor(private snackbarService: SnackbarService){}
  
-
   ngOnInit():void{
     this.isClicked$ = this.snackbarService.getIsClick$().subscribe(res => this.isVisible = res);
     this.data$ = this.snackbarService.getDataSnackbar$().subscribe(res => {

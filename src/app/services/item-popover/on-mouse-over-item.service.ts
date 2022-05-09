@@ -17,15 +17,15 @@ export class OnMouseOverItemService {
   };
   state!: boolean;
 
-  showPopover(data: Activity, event?: any): void {
+  showPopover(data: Activity, element?: HTMLElement): void {
     this.state = true;
     this.popoverCaller$.next(this.state);
-    if (event) {
+    if (element) {
+      let coords = element.getBoundingClientRect();
       this.position = {
         positionX:
-          event.srcElement.parentNode.parentNode.offsetLeft -
-          1.62 * event.srcElement.parentNode.getBoundingClientRect().width,
-        positionY: +event.target.parentNode.offsetTop - 67 - scrollY,
+          coords.x -257,
+        positionY: coords.y - 67,
       };
     }
     this.position$.next(this.position);
