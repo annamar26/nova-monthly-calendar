@@ -33,7 +33,7 @@ describe('ItemDiaComponent', () => {
 	}); */
 
   it('should change the color to the color name if the property exist in the input', () => {
-    component!.data.ProjectColor = 'pink';
+    component!.data!.ProjectColor = 'pink';
     fixture.detectChanges();
     const element = fixture.nativeElement.querySelector('.colorFlag');
     const styles = window.getComputedStyle(element);
@@ -41,7 +41,7 @@ describe('ItemDiaComponent', () => {
   });
 
   it('should change the color to the rgb color if the property exist in the input', () => {
-    component!.data.ProjectColor = 'rgb(38, 68, 220)';
+    component!.data!.ProjectColor = 'rgb(38, 68, 220)';
     fixture.detectChanges();
     const element = fixture.nativeElement.querySelector('.colorFlag');
     const styles = window.getComputedStyle(element);
@@ -49,7 +49,7 @@ describe('ItemDiaComponent', () => {
   });
 
   it('should change the color to the hex color if the property exist in the input', () => {
-    component!.data.ProjectColor = '#f7e348';
+    component!.data!.ProjectColor = '#f7e348';
     fixture.detectChanges();
     const element = fixture.nativeElement.querySelector('.colorFlag');
     const styles = window.getComputedStyle(element);
