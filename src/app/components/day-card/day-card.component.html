@@ -1,8 +1,9 @@
-<section
+<div class="card-container"><section
   #card
   class="day-card {{ state && focusableElemenet === element ? 'focused' : '' }}"
   aria-label="day card"
 >
+
   <div *ngIf="day">
     <app-day-header
       [day]="day"
@@ -15,4 +16,5 @@
       [hiddenItems]="hiddenItems"
     ></card-footer>
   </div>
-</section>
+</section></div>
+

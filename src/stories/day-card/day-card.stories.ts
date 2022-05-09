@@ -17,6 +17,7 @@ import { PopoverBodyTextComponent } from 'src/app/components/popover-body-text/p
 import { PopoverButtonComponent } from 'src/app/components/popover-button/popover-button.component';
 import { PopoverListFooterComponent } from 'src/app/components/popover-list-footer/popover-list-footer.component';
 import { PopoverComponent } from 'src/app/components/popover/popover.component';
+import { PItemDiaComponent } from 'src/app/components/p-item-dia/p-item-dia.component';
 
 
 export default {
@@ -40,7 +41,8 @@ export default {
         PopoverBodyTextComponent,
         PopoverButtonComponent,
         PopoverListFooterComponent,
-        PopoverComponent
+        PopoverComponent,
+        PItemDiaComponent
       ],
       imports: [CommonModule],
     }),

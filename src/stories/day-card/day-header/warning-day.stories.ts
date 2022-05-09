@@ -21,4 +21,5 @@ const Template: Story<WarningDayComponent> = (args: WarningDayComponent) => ({
 export const Card_Warning_Day = Template.bind({});
 Card_Warning_Day.args = {
     hoursDay: 6,
+    date: new Date(2022,4,9)
 };

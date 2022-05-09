@@ -26,6 +26,6 @@ export class PopoverButtonComponent {
       this.message = 'Clone an Activity';
     } else if (action === 'delete') {
       this.ServiceDeleteModalService.showModal();
-    }
+         }
   }
 }

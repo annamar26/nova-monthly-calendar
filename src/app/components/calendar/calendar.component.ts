@@ -96,7 +96,7 @@ export class CalendarComponent {
     },
   ];
 
-	@Input() monthArr: Card[] = [];
+	monthArr: Card[] = [];
 
   ngOnInit(): void {
     //If we receive the month to render else this code: //
