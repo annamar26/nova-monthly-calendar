@@ -16,10 +16,9 @@ export class ItemDiaComponent {
 
   constructor(private onMouseOverItem: OnMouseOverItemService) {}
 
-  handleMouseover(event: Event): void {
-    event.stopPropagation();
-    event.cancelBubble;
-    this.onMouseOverItem.showPopover(this.data!, event);
+  handleMouseover(element: HTMLElement): void {
+  
+    this.onMouseOverItem.showPopover(this.data!, element);
     this.isShown = true;
   }
 
