@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { Activity } from 'src/app/interfaces/data-interfaces';
 import { Position } from 'src/app/interfaces/popover.interface';
 import { OnMouseOverItemService } from 'src/app/services/item-popover/on-mouse-over-item.service';
@@ -12,10 +12,10 @@ import { OnMouseOverItemService } from 'src/app/services/item-popover/on-mouse-o
 })
 export class PopoverComponent implements OnInit {
   isVisible: boolean = false;
-  popoverState$!: Observable<boolean>;
-  position$!: Observable<Position>;
+  popoverState$!: Subscription;
+  position$!:Subscription;
   position: Position | undefined = undefined;
-  data$!: Observable<Activity>;
+  data$!: Subscription;
   @Input() data: Activity = {
     AccountName: '',
     ActivityDate: '',
@@ -35,18 +35,20 @@ export class PopoverComponent implements OnInit {
   constructor(private onMouseOverItem: OnMouseOverItemService) {}
 
   ngOnInit(): void {
-    this.popoverState$ = this.onMouseOverItem.getState$();
-    this.popoverState$.subscribe((res) => {
+    this.popoverState$ = this.onMouseOverItem.getState$().subscribe((res) => {
       this.isVisible = res;
     });
-    this.position$ = this.onMouseOverItem.getPosition$();
-    this.position$.subscribe((res) => {
+    this.position$ = this.onMouseOverItem.getPosition$().subscribe((res) => {
       this.position = res;
     });
-    this.data$ = this.onMouseOverItem.getData$();
-    this.data$.subscribe((res) => {
+    this.data$ = this.onMouseOverItem.getData$().subscribe((res) => {
       this.data = res;
     });
+  }
+  ngOnDestroy(): void {
+    this.data$.unsubscribe();
+    this.position$.unsubscribe();
+    this.popoverState$.unsubscribe();
   }
 
   handleMouseout() {

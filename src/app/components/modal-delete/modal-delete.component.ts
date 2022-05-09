@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ServiceDeleteModalService } from 'src/app/services/delete-modal/service-delete-modal.service';
 
@@ -10,14 +10,16 @@ import { ServiceDeleteModalService } from 'src/app/services/delete-modal/service
 })
 export class ModalDeleteComponent implements OnInit {
   isVisible: boolean = false;
-  modalState$!: Observable<boolean>;
+  modalState$!: Subscription;
 
   constructor(private ServiceDeleteModalService: ServiceDeleteModalService) {}
 
   ngOnInit(): void {
-    this.modalState$ = this.ServiceDeleteModalService.getState$();
-    this.modalState$.subscribe((res) => {
+    this.modalState$ = this.ServiceDeleteModalService.getState$().subscribe((res) => {
       this.isVisible = res;
     });
+  }
+  ngOnDestroy(): void {
+    this.modalState$.unsubscribe();
   }
 }
