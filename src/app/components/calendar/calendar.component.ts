@@ -6,7 +6,7 @@ import { Card } from 'src/app/interfaces/input.interfaces';
   selector: 'app-calendar',
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.scss'],
-  encapsulation: ViewEncapsulation.None,
+  encapsulation: ViewEncapsulation.Emulated,
 })
 export class CalendarComponent {
   currentDate: Date = new Date();

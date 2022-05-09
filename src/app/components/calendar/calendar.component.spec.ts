@@ -31,7 +31,7 @@ describe('CalendarComponent', () => {
     component.currentDate = new Date(2022, 1);
     expect(component.monthArr.length).toBe(35);
     
-    component.currentDate = new Date(2033, 9, 1);
+    component.currentDate = new Date(2022, 0);
     expect(component.monthArr.length).toBe(42);
   });
 

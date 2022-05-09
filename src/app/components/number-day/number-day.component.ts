@@ -4,7 +4,7 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
   selector: 'app-number-day',
   templateUrl: './number-day.component.html',
   styleUrls: ['./number-day.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class NumberDayComponent {
   @Input() dayNumber: number | undefined = 1;

@@ -16,7 +16,7 @@ import { FocusCardService } from 'src/app/services/focus-card/focus-card.service
   selector: 'app-day-card',
   templateUrl: './day-card.component.html',
   styleUrls: ['./day-card.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class DayCardComponent implements OnInit, OnDestroy, AfterViewInit {
   @Input() data: Array<Activity> | undefined;

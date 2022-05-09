@@ -5,7 +5,7 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
   selector: 'app-add-activity-button',
   templateUrl: './add-activity-button.component.html',
   styleUrls: ['./add-activity-button.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class AddActivityButtonComponent {
   @Input () type: 'general' | 'day' = 'general';

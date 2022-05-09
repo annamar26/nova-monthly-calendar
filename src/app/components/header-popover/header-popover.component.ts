@@ -10,7 +10,7 @@ interface ItemDay {
   selector: 'app-header-popover',
   templateUrl: './header-popover.component.html',
   styleUrls: ['./header-popover.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class HeaderPopoverComponent {
   @Input() data: ItemDay = {

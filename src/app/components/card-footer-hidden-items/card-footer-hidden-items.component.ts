@@ -5,7 +5,7 @@ import { FocusCardService } from 'src/app/services/focus-card/focus-card.service
   selector: 'card-footer-hidden-items',
   templateUrl: './card-footer-hidden-items.component.html',
   styleUrls: ['./card-footer-hidden-items.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class CardFooterHiddenItemsComponent {
   clicked: boolean;

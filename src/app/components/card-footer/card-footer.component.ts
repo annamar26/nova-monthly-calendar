@@ -4,7 +4,7 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
   selector: 'card-footer',
   templateUrl: './card-footer.component.html',
   styleUrls: ['./card-footer.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class CardFooterComponent {
   @Input() totalHours!: number;

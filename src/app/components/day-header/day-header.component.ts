@@ -4,7 +4,7 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
   selector: 'app-day-header',
   templateUrl: './day-header.component.html',
   styleUrls: ['./day-header.component.scss'],
-  encapsulation: ViewEncapsulation.None,
+  encapsulation: ViewEncapsulation.Emulated,
 })
 export class DayHeaderComponent {
   @Input() day: undefined | number;

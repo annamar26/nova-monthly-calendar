@@ -4,7 +4,7 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
   selector: 'app-tooltip-calendar',
   templateUrl: './tooltip-calendar.component.html',
   styleUrls: ['./tooltip-calendar.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class TooltipCalendarComponent {
   @Input() tooltipText!: string;

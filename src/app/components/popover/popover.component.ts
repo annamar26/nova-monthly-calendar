@@ -8,7 +8,7 @@ import { OnMouseOverItemService } from 'src/app/services/item-popover/on-mouse-o
   selector: 'app-popover',
   templateUrl: './popover.component.html',
   styleUrls: ['./popover.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class PopoverComponent implements OnInit {
   isVisible: boolean = false;

@@ -46,7 +46,7 @@ describe('WarningDayComponent', () => {
   });
 
   it('should not display anything if hours are less than 0', () => {
-    component.hoursDay = -1;
+    component.hoursDay = undefined;
     fixture.detectChanges();
     expect(fixture.debugElement.nativeElement.querySelector('p')).toBeNull();
   });
