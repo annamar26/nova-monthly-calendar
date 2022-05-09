@@ -21,7 +21,8 @@ export class ModalButtonsComponent implements OnInit {
   handleClickModalButton(action: string):void {
     if (action === 'confirm') {
       this.message = 'yes';
-      this.snackbarService.showSnackbar();
+      this.snackbarService.showSnackBar();
+      this.snackbarService.setDataSnackbar()
     } else if (action === 'cancel') {
       this.message = 'no';
     }

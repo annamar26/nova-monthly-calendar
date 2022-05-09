@@ -21,4 +21,9 @@ describe('WeekRowComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+  it('should no render if cards is undefined', () => {
+    component.cards = undefined
+    expect(component).toBeTruthy();
+  });
+  
 });
