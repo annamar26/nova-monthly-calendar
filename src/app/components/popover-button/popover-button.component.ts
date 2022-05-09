@@ -6,7 +6,7 @@ import { ServiceDeleteModalService } from 'src/app/services/delete-modal/service
   selector: 'app-popover-button',
   templateUrl: './popover-button.component.html',
   styleUrls: ['./popover-button.component.scss'],
-  encapsulation: ViewEncapsulation.ShadowDom
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class PopoverButtonComponent {
   @Input() buttonText: string = 'update';

@@ -1,3 +1,4 @@
+import { FocusCardService } from 'src/app/services/focus-card/focus-card.service';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CardFooterHiddenItemsComponent } from './card-footer-hidden-items.component';
@@ -45,18 +46,16 @@ describe('CardFooterHiddenItemsComponent', () => {
     expect(element.querySelector('div')).toBeNull();
   });
 
-  // it('is Clicked function changes', () => {
-  //  const service : FocusCardService = new FocusCardService()
-  // const card : DayCardComponent = new DayCardComponent(service)
-  // card.ngOnInit()
-  // const hidden : CardFooterHiddenItemsComponent = new CardFooterHiddenItemsComponent(service)
-  //   const event= new MouseEvent('click');
-  //   hidden.hiddenItems = 2
-  //   const element = fixture.debugElement.query(By.css('.hidden-items')).nativeElement
-  //   element.dispatchEvent(event);
-  //   service.changeState(event);
-  //   fixture.detectChanges();
-
-  //   expect(component.clicked).toBe(!component.clicked);
-  // });
+  it('should run isClicked correctly', () => {
+    const service: FocusCardService = jasmine.createSpyObj([
+      'changeState',
+      'getState',
+    ]);
+    const myComponent: CardFooterHiddenItemsComponent =
+      new CardFooterHiddenItemsComponent(service);
+    const event: Event = new MouseEvent('click');
+    myComponent.isClicked(event);
+    expect(myComponent.focusCardService.changeState).toHaveBeenCalled();
+    expect(myComponent.focusCardService.getState).toHaveBeenCalled();
+  });
 });

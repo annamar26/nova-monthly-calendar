@@ -7,7 +7,7 @@ import { FocusCardService } from 'src/app/services/focus-card/focus-card.service
   selector: 'app-lista-dia',
   templateUrl: './lista-dia.component.html',
   styleUrls: ['./lista-dia.component.scss'],
-  encapsulation: ViewEncapsulation.ShadowDom
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class ListaDiaComponent implements OnInit {
   @Input() arrayDia!: Array<Activity> | undefined;

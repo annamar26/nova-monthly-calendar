@@ -5,7 +5,7 @@ import { ServiceDeleteModalService } from 'src/app/services/delete-modal/service
   selector: 'app-modal-buttons',
   templateUrl: './modal-buttons.component.html',
   styleUrls: ['./modal-buttons.component.scss'],
-  encapsulation: ViewEncapsulation.ShadowDom
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class ModalButtonsComponent implements OnInit {
   @Input() type: 'cancel' | 'confirm' | 'custom' = 'confirm';

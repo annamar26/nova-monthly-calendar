@@ -6,6 +6,7 @@ import {
   OnDestroy,
   OnInit,
   ViewChild,
+  ViewEncapsulation
 } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { Activity } from 'src/app/interfaces/data-interfaces';
@@ -15,17 +16,18 @@ import { FocusCardService } from 'src/app/services/focus-card/focus-card.service
   selector: 'app-day-card',
   templateUrl: './day-card.component.html',
   styleUrls: ['./day-card.component.scss'],
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class DayCardComponent implements OnInit, OnDestroy, AfterViewInit {
   @Input() data: Array<Activity> | undefined;
   @Input() day: undefined | number;
-  @Input() date: undefined | Date;
+  @Input() date: Date | undefined;
 
   totalHours: number = 0;
   hiddenItems!: number;
   state!: boolean;
   subscription!: Subscription;
-  element!: HTMLElement;
+  element?: EventTarget;
   elementSubscription!: Subscription;
   focusableElemenet!: HTMLElement;
 

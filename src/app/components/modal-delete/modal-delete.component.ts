@@ -6,7 +6,7 @@ import { ServiceDeleteModalService } from 'src/app/services/delete-modal/service
   selector: 'app-modal-delete',
   templateUrl: './modal-delete.component.html',
   styleUrls: ['./modal-delete.component.scss'],
-  encapsulation: ViewEncapsulation.ShadowDom
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class ModalDeleteComponent implements OnInit {
   isVisible: boolean = false;

@@ -7,7 +7,7 @@ import { OnMouseOverItemService } from 'src/app/services/item-popover/on-mouse-o
   selector: 'app-item-dia',
   templateUrl: './item-dia.component.html',
   styleUrls: ['./item-dia.component.scss'],
-  encapsulation: ViewEncapsulation.ShadowDom
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class ItemDiaComponent {
   @Input() data: Activity | undefined;

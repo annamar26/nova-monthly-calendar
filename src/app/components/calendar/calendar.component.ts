@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { Activity } from 'src/app/interfaces/data-interfaces';
 import { Card } from 'src/app/interfaces/input.interfaces';
 
@@ -6,6 +6,7 @@ import { Card } from 'src/app/interfaces/input.interfaces';
   selector: 'app-calendar',
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.scss'],
+  encapsulation: ViewEncapsulation.Emulated,
 })
 export class CalendarComponent {
   currentDate: Date = new Date();
@@ -103,53 +104,74 @@ export class CalendarComponent {
     const firstDayOfMonth: number = new Date(
       `${this.year}-${this.month + 1}-1`
     ).getDay();
-    const initialEmptyDays: Card[] = Array(firstDayOfMonth).fill({});
-    this.monthArr.push(...initialEmptyDays);
+    this.initialEmptyDays(firstDayOfMonth);
 
-    const isLeap: boolean =
-      this.year % 4 == 0 && this.year % 100 != 0
-        ? true
-        : this.year % 400 == 0
-        ? true
-        : false;
-    let daysOfMonth: number = 31;
-    if (this.month === 1) {
-      daysOfMonth = isLeap ? 29 : 28;
-    } else {
-      if (
-        this.month === 3 ||
-        this.month === 5 ||
-        this.month === 8 ||
-        this.month === 10
-      ) {
-        daysOfMonth = 30;
-      }
-    }
+    this.addActivities(this.month, this.year, this.srcData);
 
-    for (let index: number = 1; index < daysOfMonth + 1; index++) {
-      let dateActivities: Activity[] = this.srcData.filter(
+    this.finalEmptyDays(this.monthArr);
+
+    console.log(this.monthArr);
+  }
+
+  addActivities(
+    month: number,
+    year: number,
+    data: Activity[]
+  ): Card[] | undefined {
+    let day: Card = {};
+    for (
+      let index: number = 1;
+      index < this.daysOfMonth(month, year) + 1;
+      index++
+    ) {
+      let dateActivities: Activity[] = data.filter(
         (activity: Activity) =>
           activity.ActivityDate.substring(0, 10) ===
-          `${this.year}-${
-            this.month + 1 < 10 ? '0' + (this.month + 1) : this.month + 1
-          }-${index < 10 ? '0' + index : index}`
+          `${year}-${month + 1 < 10 ? '0' + (month + 1) : month + 1}-${
+            index < 10 ? '0' + index : index
+          }`
       );
 
-      let day: Card = {
+      day = {
         day: index,
         activities: dateActivities,
-        date: new Date(this.year, this.month, index),
+        date: new Date(year, month, index),
       };
       this.monthArr.push(day);
     }
+    return this.monthArr;
+  }
 
-    if (this.monthArr.length > 28) {
-      const finallEmptyDays: Card[] = Array(
-        this.monthArr.length > 35 ? 42 : 35 - this.monthArr.length
-      ).fill({});
-      this.monthArr.push(...finallEmptyDays);
+  finalEmptyDays(monthArr: Card[]): Card[] {
+    const finalEmptyDays: Card[] = Array(
+      monthArr.length > 35 ? 42 - monthArr.length : 35 - monthArr.length
+    ).fill({});
+    monthArr.push(...finalEmptyDays);
+    return finalEmptyDays;
+  }
+
+  initialEmptyDays(firstDayOfMonth: number) {
+    const initialEmptyDays: Card[] = Array(firstDayOfMonth).fill({});
+    this.monthArr.push(...initialEmptyDays);
+  }
+
+  daysOfMonth(month: number, year: number) {
+    let daysOfMonth: number = 31;
+    if (month === 1) {
+      daysOfMonth = this.isLeap(year) ? 29 : 28;
+    } else {
+      if (month === 3 || month === 5 || month === 8 || month === 10) {
+        daysOfMonth = 30;
+      }
     }
+    return daysOfMonth;
+  }
 
-    console.log(this.monthArr);
+  isLeap(year: number): boolean {
+    return year % 4 == 0 && year % 100 != 0
+      ? true
+      : year % 400 == 0
+      ? true
+      : false;
   }
 }
