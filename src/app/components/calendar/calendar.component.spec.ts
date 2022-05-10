@@ -17,6 +17,89 @@ describe('CalendarComponent', () => {
     fixture = TestBed.createComponent(CalendarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+    component.srcData = [
+      {
+        AccountName: 'Itexico',
+        ActivityDate: '2022-05-06T09:35:04',
+        ActivityID: 0,
+        CategoryName: 'Available',
+        Comments: 'string',
+        EmployeeID: 0,
+        ProjectColor: 'blue',
+        ProjectID: 0,
+        ProjectName: 'Delivery',
+        StepID: 0,
+        Task: 'esto es un ticket',
+        TypeID: 0,
+        value: 5,
+        activeInProject: false,
+      },
+      {
+        AccountName: 'Itexico',
+        ActivityDate: '2022-05-06T09:35:04',
+        ActivityID: 0,
+        CategoryName: 'Available',
+        Comments: 'string',
+        EmployeeID: 0,
+        ProjectColor: 'blue',
+        ProjectID: 0,
+        ProjectName: 'Delivery',
+        StepID: 0,
+        Task: 'esto es un ticket',
+        TypeID: 0,
+        value: 5,
+        activeInProject: false,
+      },
+      {
+        AccountName: 'Itexico',
+        ActivityDate: '2022-05-06T09:35:04',
+        ActivityID: 0,
+        CategoryName: 'Available',
+        Comments: 'string',
+        EmployeeID: 0,
+        ProjectColor: 'blue',
+        ProjectID: 0,
+        ProjectName: 'Delivery',
+        StepID: 0,
+        Task: 'esto es un ticket',
+        TypeID: 0,
+        value: 5,
+        activeInProject: false,
+      },
+      {
+        AccountName: 'Itexico',
+        ActivityDate: '2022-05-06T09:35:04',
+        ActivityID: 0,
+        CategoryName: 'Available',
+        Comments: 'string',
+        EmployeeID: 0,
+        ProjectColor: 'blue',
+        ProjectID: 0,
+        ProjectName: 'Delivery',
+        StepID: 0,
+        Task: 'esto es un ticket',
+        TypeID: 0,
+        value: 5,
+        activeInProject: false,
+      },
+      {
+        AccountName: 'Itexico',
+        ActivityDate: '2022-05-06T09:35:04',
+        ActivityID: 0,
+        CategoryName: 'Available',
+        Comments: 'string',
+        EmployeeID: 0,
+        ProjectColor: 'blue',
+        ProjectID: 0,
+        ProjectName: 'Delivery',
+        StepID: 0,
+        Task: 'esto es un ticket',
+        TypeID: 0,
+        value: 5,
+        activeInProject: false,
+      },
+    ];
+    component.currentDate = new Date();
   });
 
   it('should create', () => {
@@ -134,5 +217,6 @@ describe('CalendarComponent', () => {
       },
     ]
     expect(component.addActivities(11, 2000, data)!.length).toBeGreaterThan(28);
+    expect(component.addActivities(5, 2000, data)!.length).toBeGreaterThan(28);
   });
 });

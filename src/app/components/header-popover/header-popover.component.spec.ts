@@ -51,6 +51,6 @@ describe('HeaderPopoverComponent', () => {
       fixture.nativeElement.querySelector('p')
     );
     fixture.detectChanges();
-    expect(styles.height).toBe('31px');
+    expect(styles.height).toBe('30px');
   });
 });

@@ -11,7 +11,7 @@ import { OnMouseOverItemService } from 'src/app/services/item-popover/on-mouse-o
 })
 export class ItemDiaComponent {
   @Input() data: Activity | undefined;
-  isShown!: boolean;
+
   position!: Position;
 
   constructor(private onMouseOverItem: OnMouseOverItemService) {}
@@ -19,11 +19,12 @@ export class ItemDiaComponent {
   handleMouseover(element: HTMLElement): void {
   
     this.onMouseOverItem.showPopover(this.data!, element);
-    this.isShown = true;
+    
+ 
   }
 
   handleMouseout(): void {
     this.onMouseOverItem.hidePopover();
-    this.isShown = false;
+    
   }
 }

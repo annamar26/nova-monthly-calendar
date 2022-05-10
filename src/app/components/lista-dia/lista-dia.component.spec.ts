@@ -44,7 +44,7 @@ describe('ListaDiaComponent', () => {
     expect(fixture.nativeElement.querySelectorAll('li').length).toBe(3);
   });
 
-  it('should use subscribe when the subscription is created', () => {
+  it('INTEGRATION: should use subscribe when the subscription is created', () => {
     const service: FocusCardService = new FocusCardService();
     const myComponent: ListaDiaComponent = new ListaDiaComponent(service);
     myComponent.ngOnInit();

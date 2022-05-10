@@ -9,109 +9,25 @@ import { Card } from 'src/app/interfaces/input.interfaces';
   encapsulation: ViewEncapsulation.Emulated,
 })
 export class CalendarComponent {
+  @Input() currentDate: Date | undefined = new Date();
+  @Input() srcData: Activity[] | undefined;
 
-  currentDate: Date = new Date();
-  month!: number;
-  year!: number;
-  srcData: Activity[] = [
-    {
-      AccountName: 'Itexico',
-      ActivityDate: '2022-05-06T09:35:04',
-      ActivityID: 0,
-      CategoryName: 'Available',
-      Comments: 'string',
-      EmployeeID: 0,
-      ProjectColor: 'blue',
-      ProjectID: 0,
-      ProjectName: 'Delivery',
-      StepID: 0,
-      Task: 'esto es un ticket',
-      TypeID: 0,
-      value: 5,
-      activeInProject: false,
-    },
-    {
-      AccountName: 'Itexico',
-      ActivityDate: '2022-05-06T09:35:04',
-      ActivityID: 0,
-      CategoryName: 'Available',
-      Comments: 'string',
-      EmployeeID: 0,
-      ProjectColor: 'blue',
-      ProjectID: 0,
-      ProjectName: 'Delivery',
-      StepID: 0,
-      Task: 'esto es un ticket',
-      TypeID: 0,
-      value: 5,
-      activeInProject: false,
-    },
-    {
-      AccountName: 'Itexico',
-      ActivityDate: '2022-05-06T09:35:04',
-      ActivityID: 0,
-      CategoryName: 'Available',
-      Comments: 'string',
-      EmployeeID: 0,
-      ProjectColor: 'blue',
-      ProjectID: 0,
-      ProjectName: 'Delivery',
-      StepID: 0,
-      Task: 'esto es un ticket',
-      TypeID: 0,
-      value: 5,
-      activeInProject: false,
-    },
-    {
-      AccountName: 'Itexico',
-      ActivityDate: '2022-05-06T09:35:04',
-      ActivityID: 0,
-      CategoryName: 'Available',
-      Comments: 'string',
-      EmployeeID: 0,
-      ProjectColor: 'blue',
-      ProjectID: 0,
-      ProjectName: 'Delivery',
-      StepID: 0,
-      Task: 'esto es un ticket',
-      TypeID: 0,
-      value: 5,
-      activeInProject: false,
-    },
-    {
-      AccountName: 'Itexico',
-      ActivityDate: '2022-05-06T09:35:04',
-      ActivityID: 0,
-      CategoryName: 'Available',
-      Comments: 'string',
-      EmployeeID: 0,
-      ProjectColor: 'blue',
-      ProjectID: 0,
-      ProjectName: 'Delivery',
-      StepID: 0,
-      Task: 'esto es un ticket',
-      TypeID: 0,
-      value: 5,
-      activeInProject: false,
-    },
-  ];
+  month: number = this.currentDate!.getMonth();
+  year: number = this.currentDate!.getFullYear();
 
 	monthArr: Card[] = [];
 
   ngOnInit(): void {
     //If we receive the month to render else this code: //
-    this.month = this.currentDate.getMonth();
-    this.year = this.currentDate.getFullYear();
     const firstDayOfMonth: number = new Date(
       `${this.year}-${this.month + 1}-1`
     ).getDay();
     this.initialEmptyDays(firstDayOfMonth);
 
-    this.addActivities(this.month, this.year, this.srcData);
+    this.addActivities(this.month, this.year, this.srcData!);
 
     this.finalEmptyDays(this.monthArr);
 
-    console.log(this.monthArr);
   }
 
   addActivities(
@@ -125,7 +41,7 @@ export class CalendarComponent {
       index < this.daysOfMonth(month, year) + 1;
       index++
     ) {
-      let dateActivities: Activity[] = data.filter(
+      let dateActivities: Activity[] = data?.filter(
         (activity: Activity) =>
           activity.ActivityDate.substring(0, 10) ===
           `${year}-${month + 1 < 10 ? '0' + (month + 1) : month + 1}-${
