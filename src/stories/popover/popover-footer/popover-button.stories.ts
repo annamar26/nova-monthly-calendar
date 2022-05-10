@@ -1,5 +1,6 @@
 import { Meta, Story } from '@storybook/angular';
 import { PopoverButtonComponent } from 'src/app/components/popover-button/popover-button.component';
+import { screen, userEvent } from '@storybook/testing-library';
 
 export default {
     title: 'Popover/Popover Footer/Popover Button',
@@ -21,6 +22,10 @@ PopoverCloneButton.args = {
 };
 
 export const PopoverDeleteButton = Template.bind({});
+PopoverDeleteButton.play =async () => {
+    const button = screen.getByRole('button')
+    await userEvent.click(button)
+}
 PopoverDeleteButton.args = {
     buttonText: 'delete',
 };

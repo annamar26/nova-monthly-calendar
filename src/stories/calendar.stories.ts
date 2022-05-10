@@ -21,6 +21,7 @@ import { PopoverComponent } from 'src/app/components/popover/popover.component';
 import { TooltipCalendarComponent } from 'src/app/components/tooltip-calendar/tooltip-calendar.component';
 import { WarningDayComponent } from 'src/app/components/warning-day/warning-day.component';
 import { PItemDiaComponent } from 'src/app/components/p-item-dia/p-item-dia.component';
+import { screen, userEvent } from '@storybook/testing-library';
 
 export default {
   title: 'Calendar/Calendar',
@@ -66,6 +67,10 @@ const Template: Story<CalendarComponent> = (args: CalendarComponent) => ({
 });
 
 export const Calendar = Template.bind({});
+Calendar.play =async () => {
+  const button = screen.getByTestId('item-dia')
+  await userEvent.hover(button)
+}
 Calendar.args = {
   monthArr: 
     [
