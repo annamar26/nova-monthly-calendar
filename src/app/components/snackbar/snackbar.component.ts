@@ -32,10 +32,7 @@ export class SnackbarComponent implements OnInit, OnDestroy{
       this.type = res.type;
       this.success = res.success;
       this.backgroundColor = res.backgroundColor!;
-      setTimeout(() => {
-        this.snackbarService.hideSnackbar();
-      }, 3000);
-    });
+        });
   }
 
   getIsVisible() {

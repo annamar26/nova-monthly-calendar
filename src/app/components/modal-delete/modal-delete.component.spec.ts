@@ -54,12 +54,12 @@ describe('ModalDeleteComponent', () => {
     ).toBeTruthy();
   });
 
-  it('should modify the value of the subscription when action', () => {
+  it('INTEGRATION: should modify the value of the subscription when action', () => {
     const service: ServiceDeleteModalService = new ServiceDeleteModalService();
     const myComponent: ModalDeleteComponent = new ModalDeleteComponent(service);
     myComponent.ngOnInit();
     service.showModal();
     fixture.detectChanges();
-    expect(myComponent.modalState$).not.toBeFalsy();
+    expect(myComponent.isVisible).toBeTrue();
   });
 });

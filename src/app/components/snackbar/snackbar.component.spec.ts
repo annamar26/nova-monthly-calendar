@@ -1,7 +1,4 @@
-import { NgIf } from '@angular/common';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DataSnackbar } from 'src/app/interfaces/input.interfaces';
 import { SnackbarService } from 'src/app/services/snackbar/snackbar.service';
 
 import { SnackbarComponent } from './snackbar.component';
@@ -19,49 +16,51 @@ describe('SnackbarComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(SnackbarComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges()
-   
-  
+    fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
 
-    it('should show the snackbar', () => {
+  it('INTEGRATION: should show the snackbar', () => {
     const service: SnackbarService = new SnackbarService();
     const myComponent: SnackbarComponent = new SnackbarComponent(service);
-    
-    myComponent.ngOnInit()
-    service.showSnackBar()
-    
+    myComponent.ngOnInit();
+    service.showSnackBar();
     fixture.detectChanges();
-    
-    
-    
-    expect(myComponent.isVisible).toBeTrue()
-   
+
+    expect(myComponent.isVisible).toBeTrue();
   });
-  it('should set the snackbar data', () => {
+
+  it('INTEGRATION: should set the snackbar data', () => {
     const service: SnackbarService = new SnackbarService();
     const myComponent: SnackbarComponent = new SnackbarComponent(service);
-    
-    myComponent.ngOnInit()
+
+    myComponent.ngOnInit();
     service.setDataSnackbar({
-      message:"holi",
+      message: 'holi',
       backgroundColor: undefined,
       success: true,
-      type: 'default'
-    })
-    
+      type: 'default',
+    });
+
     fixture.detectChanges();
-    
-    
-    
-    expect(myComponent.message).toBeDefined()
-    expect(myComponent.success).toBeDefined()
-    expect(myComponent.type).toBeDefined()
-    
+
+    expect(myComponent.message).toBeDefined();
+    expect(myComponent.success).toBeDefined();
+    expect(myComponent.type).toBeDefined();
   });
- 
+
+  it('INTEGRATION: should set the snackbar data', () => {
+    jasmine.clock().install();
+    const service: SnackbarService = new SnackbarService();
+    const myComponent: SnackbarComponent = new SnackbarComponent(service);
+    myComponent.ngOnInit();
+    service.showSnackBar();
+    fixture.detectChanges();
+    jasmine.clock().tick(3000);
+
+    expect(myComponent.isVisible).toBeFalse();
+  });
 });

@@ -48,7 +48,7 @@ describe('PopoverComponent', () => {
     expect(styles.backgroundColor).toBe('rgb(38, 68, 220)');
   });
 
-  it('should change is visible when the observable changes', () => {
+  it('INTEGRATION: should change is visible when the observable changes', () => {
     const service: OnMouseOverItemService = new OnMouseOverItemService();
     const myComponent: PopoverComponent = new PopoverComponent(service);
     myComponent.isVisible = true;
@@ -58,7 +58,7 @@ describe('PopoverComponent', () => {
     expect(myComponent.isVisible).toBeTrue();
   });
 
-  it('should change data when the observable changes', () => {
+  it('INTEGRATION: should change data when the observable changes', () => {
     const service: OnMouseOverItemService = new OnMouseOverItemService();
     const myComponent: PopoverComponent = new PopoverComponent(service);
     const data = {
@@ -82,7 +82,7 @@ describe('PopoverComponent', () => {
     expect(myComponent.data.ProjectColor).toBe('red');
   });
 
-  it('should change position when the observable changes', () => {
+  it('INTEGRATION: should change position when the observable changes', () => {
     const service: OnMouseOverItemService = new OnMouseOverItemService();
     const myComponent: PopoverComponent = new PopoverComponent(service);
     myComponent.ngOnInit();
@@ -101,7 +101,7 @@ describe('PopoverComponent', () => {
     expect(component.isVisible).toBeFalse();
   });
 
-  it('should trigger handleMouseout on mouseout', () => {
+  it('should trigger handleMousemove on mousemove', () => {
     const service: OnMouseOverItemService = new OnMouseOverItemService();
     const myComponent: PopoverComponent = new PopoverComponent(service);
     spyOn(myComponent, 'handleMousemove');

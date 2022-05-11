@@ -33,7 +33,6 @@ describe('WarningDayComponent', () => {
   it('should display ! if the hours are less than 8 and greater than 0', () => {
     component.hoursDay = 6;
     fixture.detectChanges();
-    console.log('buenas')
     expect(
       fixture.debugElement.nativeElement.querySelector('p').textContent
     ).toContain('!');

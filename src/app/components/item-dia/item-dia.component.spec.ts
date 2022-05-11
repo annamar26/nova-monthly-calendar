@@ -1,6 +1,8 @@
 import { By } from '@angular/platform-browser';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ItemDiaComponent } from './item-dia.component';
+import { PopoverComponent } from '../popover/popover.component';
+import { OnMouseOverItemService } from 'src/app/services/item-popover/on-mouse-over-item.service';
 
 describe('ItemDiaComponent', () => {
   let component: ItemDiaComponent;
@@ -37,17 +39,6 @@ describe('ItemDiaComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  //asi es uno de integracion pasa el input desde el padre al hijo
-  /* it('should show TEST INPUT from the parentNode', () => {
-		component!.data.AccountName = 'Test AccountName';
-		component!.data.ProjectName = 'Test project';
-		component!.data.CategoryName = 'Test category';
-		const element = fixture.debugElement.query(By.css('app-p-item-dia')).nativeElement;
-		fixture.detectChanges();
-
-		expect(element.textContent).toBe('Test AccountName Test project - Test category');
-	}); */
-
   it('should change the color to the color name if the property exist in the input', () => {
     fixture.detectChanges();
     const element = fixture.nativeElement.querySelector('#colorFlag');
@@ -79,7 +70,7 @@ describe('ItemDiaComponent', () => {
     fixture.detectChanges();
     expect(component.handleMouseover).toHaveBeenCalled();
   });
-  
+
   it('should trigger handleMouseout on mouseout', () => {
     spyOn(component, 'handleMouseout');
     let element = fixture.debugElement.query(By.css('#itemDia'));
@@ -89,16 +80,48 @@ describe('ItemDiaComponent', () => {
   });
 
   it('should change isShonw when runnig handleMouseover or handleMouseout', () => {
-    const element = fixture.debugElement.query(
-      By.css('.p-item-dia')
-    ).nativeElement;
-    const event = new MouseEvent('mouseover');
-    element.dispatchEvent(event);
-    component.handleMouseover(element);
-    expect(component.isShown).toBeTrue();
-    const event2 = new MouseEvent('mouseout');
-    element.dispatchEvent(event2);
+    spyOn(component, 'handleMouseover');
+    let itemDia = fixture.debugElement.query(By.css('#itemDia'));
+    itemDia.triggerEventHandler('mouseover', null);
+    fixture.detectChanges();
+    expect(component.handleMouseover).toHaveBeenCalled();
+
+    spyOn(component, 'handleMouseout');
+    itemDia.triggerEventHandler('mouseout', null);
+    fixture.detectChanges();
+
+    expect(component.handleMouseout).toHaveBeenCalled();
+  });
+
+  it('should run andleMouseover or handleMouseouton native event', () => {
+    spyOn(component, 'handleMouseover');
+    let itemDia = fixture.debugElement.query(By.css('#itemDia'));
+    itemDia.triggerEventHandler('mouseover', null);
+    fixture.detectChanges();
+    expect(component.handleMouseover).toHaveBeenCalled();
+
+    spyOn(component, 'handleMouseout');
+    itemDia.triggerEventHandler('mouseout', null);
+    fixture.detectChanges();
+
+    expect(component.handleMouseout).toHaveBeenCalled();
+  });
+
+  it('INTEGRATION: should change state in service when runnig handleMouseover or handleMouseout', () => {
+    let service: OnMouseOverItemService = new OnMouseOverItemService();
+    let component: ItemDiaComponent = new ItemDiaComponent(service);
+    let component2: PopoverComponent = new PopoverComponent(service);
+
+    let itemDia = fixture.debugElement.query(By.css('#itemDia')).nativeElement;
+    component.handleMouseover(itemDia);
+    fixture.detectChanges();
+    expect(service.state).toBeTrue();
+
     component.handleMouseout();
-    expect(component.isShown).toBeFalse();
+    fixture.detectChanges();
+    expect(service.state).toBeFalse();
+
+    component2.ngOnInit();
+    expect(component2.isVisible).toBeDefined();
   });
 });

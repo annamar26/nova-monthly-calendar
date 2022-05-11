@@ -32,7 +32,7 @@ describe('DayCardComponent', () => {
     expect(fixture.debugElement.query(By.css('card-footer'))).toBeTruthy();
   });
 
-  it('should use subscribe when the subscription is created and change state', () => {
+  it('INTEGRATION: should use subscribe when the subscription is created and change state', () => {
     const service: FocusCardService = new FocusCardService();
     const myComponent: DayCardComponent = new DayCardComponent(service);
     myComponent.ngOnInit();
@@ -41,7 +41,7 @@ describe('DayCardComponent', () => {
     expect(myComponent.state).toBeTrue();
   });
 
-  it('should set hiddenItems correctly', () => {
+  it('INTEGRATION: should set hiddenItems correctly', () => {
     const service: FocusCardService = new FocusCardService();
     const myComponent: DayCardComponent = new DayCardComponent(service);
     myComponent.data = [
@@ -137,7 +137,7 @@ describe('DayCardComponent', () => {
     expect(component.hiddenItems).toBe(0);
   });
 
-  it('should set element when subscribing', () => {
+  it('INTEGRATION: should set element when subscribing', () => {
     const service: FocusCardService = new FocusCardService();
     const myComponent: DayCardComponent = new DayCardComponent(service);
     myComponent.ngOnInit();

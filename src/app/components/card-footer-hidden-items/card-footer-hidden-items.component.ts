@@ -20,7 +20,6 @@ export class CardFooterHiddenItemsComponent {
 
   isClicked(event?: Event): void {
     if (event) {
-      console.log(event.composedPath())
       this._focusCardService.changeState(event.composedPath()[5]);
     }
     this.clicked = this._focusCardService.getState();

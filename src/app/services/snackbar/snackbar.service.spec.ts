@@ -16,7 +16,6 @@ describe('SnackbarService', () => {
   });
 
   it('should changeState when the functions are called', () => {
-   
     service.showSnackBar();
     expect(service.isClicked).toBeTrue();
     service.hideSnackbar();
