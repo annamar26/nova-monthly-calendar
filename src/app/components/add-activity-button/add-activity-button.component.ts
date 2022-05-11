@@ -9,7 +9,7 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
 })
 export class AddActivityButtonComponent {
   @Input () type: 'general' | 'day' = 'general';
-  modalObservable: Observable = new Observable('addActivityModal');
+  modalObservable: Observable = new Observable('modal-state');
   isPublished: boolean = false;
 
   handleClick() {

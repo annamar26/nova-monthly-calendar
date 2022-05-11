@@ -24,8 +24,8 @@ export class OnMouseOverItemService {
       let coords = element.getBoundingClientRect();
       this.position = {
         positionX:
-          coords.x -257,
-        positionY: coords.y - 67,
+          coords.x -287,
+        positionY: coords.y - 63,
       };
     }
     this.position$.next(this.position);

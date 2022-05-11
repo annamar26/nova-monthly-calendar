@@ -1,14 +1,12 @@
+import en from '@angular/common/locales/en';
 import { DayCardComponent } from 'src/app/components/day-card/day-card.component';
 import { PopoverBodyTextComponent } from './components/popover-body-text/popover-body-text.component';
-import { NgModule } from '@angular/core';
+import { NgModule, Injector } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NZ_I18N } from 'ng-zorro-antd/i18n';
-import { en_US } from 'ng-zorro-antd/i18n';
 import { registerLocaleData } from '@angular/common';
-import en from '@angular/common/locales/en';
-import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WarningDayComponent } from './components/warning-day/warning-day.component';
@@ -34,6 +32,9 @@ import { PItemDiaComponent } from './components/p-item-dia/p-item-dia.component'
 import { WeekRowComponent } from './components/week-row/week-row.component';
 import { CalendarHeaderComponent } from './components/calendar-header/calendar-header.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
+import { createCustomElement } from '@angular/elements';
+import 'zone.js';
+import { APP_BASE_HREF } from '@angular/common';
 
 registerLocaleData(en);
 
@@ -43,7 +44,6 @@ registerLocaleData(en);
     WarningDayComponent,
     NumberDayComponent,
     CardFooterHoursComponent,
-    AddActivityButtonComponent,
     CardFooterComponent,
     PopoverButtonComponent,
     TooltipCalendarComponent,
@@ -77,7 +77,20 @@ registerLocaleData(en);
     HttpClientModule,
     BrowserAnimationsModule,
   ],
-  providers: [{ provide: NZ_I18N, useValue: en_US }],
-  bootstrap: [AppComponent],
+  entryComponents: [AppComponent, AddActivityButtonComponent],
+  providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
 })
-export class AppModule {}
+export class AppModule {
+  constructor(private injector: Injector) {}
+  ngDoBootstrap() {
+    const calendar = createCustomElement(AppComponent, {
+      injector: this.injector,
+    });
+    customElements.define('calendar-component', calendar);
+
+    const addButton = createCustomElement(AddActivityButtonComponent, {
+      injector: this.injector,
+    });
+    customElements.define('add-activity-button-component', addButton);
+  }
+}

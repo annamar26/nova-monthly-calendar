@@ -25,7 +25,7 @@
   border: solid 1px $gray;
   width: 16em;
   font-family: sans-serif;
-  height: 11em;
+  height: 9em;
   border-radius: 4px;
   left: 18px;
   z-index: 3;
@@ -39,10 +39,11 @@
     position: absolute;
   }
   .main {
+    padding-top: 1em;
     font-size: $font-size;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: stretch;
     align-items: space-between;
     width: 95%;
     height: 100%;
@@ -57,9 +58,10 @@
       max-height: 30%;
     }
     .comment {
-      min-height: 40%;
-      max-height: 50%;
+      min-height: 50%;
+      max-height: 60%;
       width: 100%;
+      
     }
     .popover-ticket-hours {
       width: 100%;

@@ -1,7 +1,10 @@
+@import "../../app.component.scss";
+
 * {
   box-sizing: border-box;
 }
 .snackbar-container {
+  font-family: $fontFamily;
   position: absolute;
   bottom: 20px;
   left: 30px;

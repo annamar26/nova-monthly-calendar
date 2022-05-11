@@ -22,6 +22,7 @@ export class DayCardComponent implements OnInit, OnDestroy, AfterViewInit {
   @Input() data: Array<Activity> | undefined;
   @Input() day: undefined | number;
   @Input() date: Date | undefined;
+  today: Date = new Date()
 
   totalHours: number = 0;
   hiddenItems!: number;
@@ -36,6 +37,7 @@ export class DayCardComponent implements OnInit, OnDestroy, AfterViewInit {
   constructor(private _focusCardService: FocusCardService) {}
 
   ngOnInit(): void {
+    console.log(this.date!, this.today)
     this.subscription = this._focusCardService
       .onSubscribe()
       .subscribe((state$) => (this.state = state$));

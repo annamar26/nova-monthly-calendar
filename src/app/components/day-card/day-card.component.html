@@ -1,10 +1,23 @@
 <div class="card-container">
-    <section #card class="day-card {{ state && focusableElemenet === element ? 'focused' : '' }}" aria-label="day card">
-
-        <div *ngIf="day" data-testid="day-card">
-            <app-day-header [day]="day" [hours]="totalHours" [date]="date"></app-day-header>
-            <app-lista-dia [arrayDia]="data"></app-lista-dia>
-            <card-footer [totalHours]="totalHours" [hiddenItems]="hiddenItems"></card-footer>
-        </div>
-    </section>
+  <section
+    #card
+    class="day-card {{
+      state && focusableElemenet === element ? 'focused' : ''
+    }}"
+    aria-label="day card"
+    [style.border]="today.toLocaleDateString()=== date?.toLocaleDateString() ? 'solid #3555C3 3px': 'solid #ededed 1px'"
+  >
+    <div *ngIf="day" data-testid="day-card">
+      <app-day-header
+        [day]="day"
+        [hours]="totalHours"
+        [date]="date"
+      ></app-day-header>
+      <app-lista-dia [arrayDia]="data"></app-lista-dia>
+      <card-footer
+        [totalHours]="totalHours"
+        [hiddenItems]="hiddenItems"
+      ></card-footer>
+    </div>
+  </section>
 </div>
