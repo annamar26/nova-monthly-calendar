@@ -1,0 +1,3 @@
+<div *ngIf="hiddenItems" (click)="isClicked($event)" class="hidden-items">
+  {{ !clicked ? hiddenItems + " more" : "close" }}
+</div>

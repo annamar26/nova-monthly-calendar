@@ -1,0 +1,31 @@
+<section
+  class="main-container"
+  [style.display]="isVisible ? 'flex' : 'none'"
+  (mousemove)="handleMousemove()"
+  (mouseout)="handleMouseout()"
+  [style.left.px]="position?.positionX"
+  [style.top.px]="position?.positionY"
+>
+  <div class="container">
+    <div class="colorFlag" [style.backgroundColor]="data.ProjectColor"></div>
+    <div class="main">
+      <app-header-popover [data]="data"></app-header-popover>
+
+      <app-popover-body-text
+        class="comment"
+        [type]="'comment'"
+        [content]="data.Comments"
+      ></app-popover-body-text>
+      <section class="popover-ticket-hours">
+        <app-popover-body-text
+          [type]="'task'"
+          [content]="data.Task"
+        ></app-popover-body-text>
+        <card-footer-hours [totalHours]="data.value"></card-footer-hours>
+      </section>
+      <app-popover-list-footer></app-popover-list-footer>
+    </div>
+  </div>
+  <div class="pointer"></div>
+  <div class="pointer2"></div>
+</section>

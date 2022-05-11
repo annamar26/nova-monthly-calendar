@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.warning-day {
+  width: fit-content;
+  position: relative;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.warning-day:hover app-tooltip-calendar {
+  display: inline-block;
+}
+
+app-tooltip-calendar {
+  display: none;
+}

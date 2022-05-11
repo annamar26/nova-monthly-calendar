@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap");
+@import "../../app.component.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.comment-text,
+.task-text {
+  font-family: "Roboto", sans-serif;
+}
+
+p {
+  margin: 0;
+}
+
+.comment-text {
+  color: $gray;
+  font-size: 0.9em;
+  height: fit-content;
+}
+.task-text {
+  color: $gray;
+  font-size: 12px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.comment-div {
+  width: inherit;
+  height: 95%;
+  overflow-y: scroll;
+}
+
+.comment-div::-webkit-scrollbar {
+  display: none;
+}
+
+.comment-div {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}

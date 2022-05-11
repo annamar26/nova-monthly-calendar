@@ -1,0 +1,15 @@
+@import "../../app.component.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.hidden-items {
+  color: $gray;
+}
+
+.hidden-items:hover {
+  cursor: pointer;
+}

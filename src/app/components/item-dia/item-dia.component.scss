@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
+@import "../../app.component.scss";
+
+.itemDia {
+  font-size: $font-size;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: flex-start;
+  width: 100%;
+  height: 1.5em;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.colorFlag {
+  position: absolute;
+  width: 5px;
+  height: 1.25em;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  font-family: sans-serif;
+  height: 1.5em;
+}
+
+app-p-item-dia{
+  position: relative;
+}

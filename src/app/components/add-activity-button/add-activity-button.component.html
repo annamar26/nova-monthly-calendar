@@ -1,0 +1,22 @@
+<button
+  id="add-button"
+  (click)="handleClick()"
+  class="{{ type }}-add-button"
+  aria-label="Add an activity for one or more days"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    width="16px"
+    height="16px"
+    viewBox="0 0 16 16"
+    version="1.1"
+  >
+    <g id="surface1">
+      <path
+        d="M 16 6.667969 L 9.332031 6.667969 L 9.332031 0 L 6.667969 0 L 6.667969 6.667969 L 0 6.667969 L 0 9.332031 L 6.667969 9.332031 L 6.667969 16 L 9.332031 16 L 9.332031 9.332031 L 16 9.332031 Z M 16 6.667969 "
+      />
+    </g>
+  </svg>
+  <app-tooltip-calendar *ngIf="type === 'general'" tooltipText="Add an activity for one or more days" id="tooltip-button"></app-tooltip-calendar>
+</button>

@@ -1,0 +1,13 @@
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+app-day-card {
+  width: 12%;
+}
