@@ -11,7 +11,8 @@ sharedMappings.register(
 module.exports = {
   output: {
     uniqueName: "novaMonthlyCalendar",
-    publicPath: "auto"
+    publicPath: "auto",
+    scriptType: "text/javascript"
   },
   optimization: {
     runtimeChunk: false
@@ -26,9 +27,9 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-        library: { type: "module" },
+        library: { type: "var", name:"calendar" },
 
-        name: "novaMonthlyCalendar",
+        name: "calendar",
         filename: "remoteEntry.js",
         exposes: {
             './Component': './/src/app/app.component.ts',
