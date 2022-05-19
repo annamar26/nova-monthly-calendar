@@ -1,3 +1,5 @@
+@import "../../app.component.scss";
+
 * {
   margin: 0;
   padding: 0;
@@ -9,6 +11,7 @@
   position: relative;
   font-size: 1em;
   font-weight: bold;
+  font-family: $fontFamily;
 }
 
 .warning-day:hover app-tooltip-calendar {
@@ -17,4 +20,6 @@
 
 app-tooltip-calendar {
   display: none;
+  left: 12px;
+  top: 20px;
 }

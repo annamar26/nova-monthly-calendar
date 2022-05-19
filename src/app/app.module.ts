@@ -44,7 +44,6 @@ registerLocaleData(en);
     WarningDayComponent,
     NumberDayComponent,
     CardFooterHoursComponent,
-    AddActivityButtonComponent,
     CardFooterComponent,
     PopoverButtonComponent,
     TooltipCalendarComponent,
@@ -78,15 +77,20 @@ registerLocaleData(en);
     HttpClientModule,
     BrowserAnimationsModule,
   ],
-  entryComponents: [CalendarComponent],
+  entryComponents: [AppComponent, AddActivityButtonComponent],
   providers: [{ provide: APP_BASE_HREF, useValue: '/' }],
 })
 export class AppModule {
   constructor(private injector: Injector) {}
   ngDoBootstrap() {
-    const el = createCustomElement(CalendarComponent, {
+    const el = createCustomElement(AppComponent, {
       injector: this.injector,
     });
     customElements.define('calendar-component', el);
+
+    const el2 = createCustomElement(AddActivityButtonComponent, {
+      injector: this.injector,
+    });
+    customElements.define('add-activity-button-component', el2);
   }
 }

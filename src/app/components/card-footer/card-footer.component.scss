@@ -1,5 +1,6 @@
 @import "../../app.component.scss";
 
+
 * {
   margin: 0;
   padding: 0;
@@ -9,4 +10,5 @@
 .card-footer {
   display: flex;
   justify-content: space-between;
+  font-family: $fontFamily;
 }

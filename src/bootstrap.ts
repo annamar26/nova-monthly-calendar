@@ -13,7 +13,13 @@ platformBrowserDynamic()
   .catch((err) => console.error(err));
 
 const element: HTMLElement = document.createElement('calendar-component');
+const element2: HTMLElement = document.createElement('add-activity-button-component');
 
-export const component = (): HTMLElement => {
-  return element;
+interface Elements {
+  calendar: HTMLElement,
+  button: HTMLElement
+}
+
+export const component = (): Elements => {
+  return {"calendar": element, "button": element2};
 };

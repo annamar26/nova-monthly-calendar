@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Observable } from 'windowed-observable';
+import { Component, Input, OnChanges, OnInit, SimpleChange, SimpleChanges } from '@angular/core';
 import { Activity } from './interfaces/data-interfaces';
 
 @Component({
@@ -6,91 +7,13 @@ import { Activity } from './interfaces/data-interfaces';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnChanges {
+  @Input() currentDate!: Date;
   title = 'nova-monthly-calendar';
-
-  currentDate: Date = new Date();
-  srcData: Activity[] = [
-    {
-      AccountName: 'Itexico',
-      ActivityDate: '2022-05-06T09:35:04',
-      ActivityID: 0,
-      CategoryName: 'Available',
-      Comments: 'string',
-      EmployeeID: 0,
-      ProjectColor: 'blue',
-      ProjectID: 0,
-      ProjectName: 'Delivery',
-      StepID: 0,
-      Task: 'esto es un ticket',
-      TypeID: 0,
-      value: 5,
-      activeInProject: false,
-    },
-    {
-      AccountName: 'Itexico',
-      ActivityDate: '2022-05-06T09:35:04',
-      ActivityID: 0,
-      CategoryName: 'Available',
-      Comments: 'string',
-      EmployeeID: 0,
-      ProjectColor: 'blue',
-      ProjectID: 0,
-      ProjectName: 'Delivery',
-      StepID: 0,
-      Task: 'esto es un ticket',
-      TypeID: 0,
-      value: 5,
-      activeInProject: false,
-    },
-    {
-      AccountName: 'Itexico',
-      ActivityDate: '2022-05-06T09:35:04',
-      ActivityID: 0,
-      CategoryName: 'Available',
-      Comments: 'string',
-      EmployeeID: 0,
-      ProjectColor: 'blue',
-      ProjectID: 0,
-      ProjectName: 'Delivery',
-      StepID: 0,
-      Task: 'esto es un ticket',
-      TypeID: 0,
-      value: 5,
-      activeInProject: false,
-    },
-    {
-      AccountName: 'Itexico',
-      ActivityDate: '2022-05-06T09:35:04',
-      ActivityID: 0,
-      CategoryName: 'Available',
-      Comments: 'string',
-      EmployeeID: 0,
-      ProjectColor: 'blue',
-      ProjectID: 0,
-      ProjectName: 'Delivery',
-      StepID: 0,
-      Task: 'esto es un ticket',
-      TypeID: 0,
-      value: 5,
-      activeInProject: false,
-    },
-    {
-      AccountName: 'Itexico',
-      ActivityDate: '2022-05-06T09:35:04',
-      ActivityID: 0,
-      CategoryName: 'Available',
-      Comments: 'string',
-      EmployeeID: 0,
-      ProjectColor: 'blue',
-      ProjectID: 0,
-      ProjectName: 'Delivery',
-      StepID: 0,
-      Task: 'esto es un ticket',
-      TypeID: 0,
-      value: 5,
-      activeInProject: false,
-    },
-  ];
+  @Input() srcData!: Activity[];
   // Insert cross-micro frontend communication
+
+  ngOnChanges(changes: SimpleChanges){
+    console.log(changes)
+  }
 }
