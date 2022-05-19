@@ -18,7 +18,7 @@
 			"prefix": "app",
 			"architect": {
 				"build": {
-					"builder": "ngx-build-plus:browser",
+					"builder": "ngx-build-plus:build",
 					"options": {
 						"outputPath": "dist/nova-monthly-calendar",
 						"index": "src/index.html",

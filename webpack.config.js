@@ -4,47 +4,70 @@ const path = require("path");
 const share = mf.share;
 
 const sharedMappings = new mf.SharedMappings();
-sharedMappings.register(
-  path.join(__dirname, 'tsconfig.json'),
-  [/* mapped paths to share */]);
+sharedMappings.register(path.join(__dirname, "tsconfig.json"), [
+  /* mapped paths to share */
+]);
 
 module.exports = {
   output: {
     uniqueName: "novaMonthlyCalendar",
     publicPath: "auto",
-    scriptType: "text/javascript"
+    scriptType: "text/javascript",
   },
   optimization: {
-    runtimeChunk: false
-  },   
+    runtimeChunk: false,
+  },
   resolve: {
     alias: {
       ...sharedMappings.getAliases(),
-    }
+    },
   },
   experiments: {
-    outputModule: true
+    outputModule: true,
+  },
+  module: {
+    rules: [
+      {
+        test: /\.s[ac]ss$/i,
+        exclude: /node_modules/,
+        use: ["style-loader","css-loader","sass-loader",],
+      },
+    ],
   },
   plugins: [
     new ModuleFederationPlugin({
-        library: { type: "var", name:"calendar" },
+      library: { type: "var", name: "calendar" },
+      name: "calendar",
+      filename: "remoteEntry.js",
+      exposes: {
+        "./Bootstrap": "./src/bootstrap.ts",
+        "./Module": ".//src/app/app.module.ts",
+      },
+      shared: share({
+        "@angular/core": {
+          singleton: true,
+          strictVersion: true,
+          requiredVersion: "auto",
+        },
+        "@angular/common": {
+          singleton: true,
+          strictVersion: true,
+          requiredVersion: "auto",
+        },
+        "@angular/common/http": {
+          singleton: true,
+          strictVersion: true,
+          requiredVersion: "auto",
+        },
+        "@angular/router": {
+          singleton: true,
+          strictVersion: true,
+          requiredVersion: "auto",
+        },
 
-        name: "calendar",
-        filename: "remoteEntry.js",
-        exposes: {
-            './Component': './/src/app/app.component.ts',
-        },        
-
-        shared: share({
-          "@angular/core": { singleton: true, strictVersion: true, requiredVersion: 'auto' }, 
-          "@angular/common": { singleton: true, strictVersion: true, requiredVersion: 'auto' }, 
-          "@angular/common/http": { singleton: true, strictVersion: true, requiredVersion: 'auto' }, 
-          "@angular/router": { singleton: true, strictVersion: true, requiredVersion: 'auto' },
-
-          ...sharedMappings.getDescriptors()
-        })
-        
+        ...sharedMappings.getDescriptors(),
+      }),
     }),
-    sharedMappings.getPlugin()
+    sharedMappings.getPlugin(),
   ],
 };
