@@ -1,4 +1,4 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { Activity } from 'src/app/interfaces/data-interfaces';
 import { Card } from 'src/app/interfaces/input.interfaces';
 
@@ -6,19 +6,21 @@ import { Card } from 'src/app/interfaces/input.interfaces';
   selector: 'app-calendar',
   templateUrl: './calendar.component.html',
   styleUrls: ['./calendar.component.scss'],
-  encapsulation: ViewEncapsulation.Emulated,
+  encapsulation: ViewEncapsulation.ShadowDom,
 })
-export class CalendarComponent {
-  @Input() currentDate: Date | undefined = new Date();
+export class CalendarComponent implements OnInit{
+  @Input() currentDate!: Date | undefined 
   @Input() srcData: Activity[] | undefined;
-
-  month: number = this.currentDate!.getMonth();
-  year: number = this.currentDate!.getFullYear();
+  year!: number
+  month!: number
 
 	monthArr: Card[] = [];
 
   ngOnInit(): void {
-    //If we receive the month to render else this code: //
+    if(!this.currentDate){
+      this.currentDate= new Date()
+    }this.month= this.currentDate.getMonth();
+  this.year = this.currentDate.getFullYear();
     const firstDayOfMonth: number = new Date(
       `${this.year}-${this.month + 1}-1`
     ).getDay();
