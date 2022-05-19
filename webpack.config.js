@@ -25,15 +25,7 @@ module.exports = {
   experiments: {
     outputModule: true,
   },
-  module: {
-    rules: [
-      {
-        test: /\.s[ac]ss$/i,
-        exclude: /node_modules/,
-        use: ["style-loader","css-loader","sass-loader",],
-      },
-    ],
-  },
+ 
   plugins: [
     new ModuleFederationPlugin({
       library: { type: "var", name: "calendar" },
