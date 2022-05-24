@@ -1,0 +1,22 @@
+"use strict";
+/*
+ * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+(globalThis["webpackChunknova_monthly_calendar"] = globalThis["webpackChunknova_monthly_calendar"] || []).push([["src_app_app_component_ts"],{
+
+/***/ "./src/app/app.component.ts":
+/*!**********************************!*\
+  !*** ./src/app/app.component.ts ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"AppComponent\": () => (/* binding */ AppComponent)\n/* harmony export */ });\n/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ \"webpack/sharing/consume/default/@angular/core/@angular/core\");\n/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_angular_core__WEBPACK_IMPORTED_MODULE_0__);\nvar _dec, _class;\n\nfunction _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }\n\n\nlet AppComponent = (_dec = (0,_angular_core__WEBPACK_IMPORTED_MODULE_0__.Component)({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.scss']\n}), _dec(_class = class AppComponent {\n  constructor() {\n    _defineProperty(this, \"title\", 'nova-monthly-calendar');\n\n    _defineProperty(this, \"currentDate\", new Date());\n\n    _defineProperty(this, \"srcData\", [{\n      AccountName: 'Itexico',\n      ActivityDate: '2022-05-06T09:35:04',\n      ActivityID: 0,\n      CategoryName: 'Available',\n      Comments: 'string',\n      EmployeeID: 0,\n      ProjectColor: 'blue',\n      ProjectID: 0,\n      ProjectName: 'Delivery',\n      StepID: 0,\n      Task: 'esto es un ticket',\n      TypeID: 0,\n      value: 5,\n      activeInProject: false\n    }, {\n      AccountName: 'Itexico',\n      ActivityDate: '2022-05-06T09:35:04',\n      ActivityID: 0,\n      CategoryName: 'Available',\n      Comments: 'string',\n      EmployeeID: 0,\n      ProjectColor: 'blue',\n      ProjectID: 0,\n      ProjectName: 'Delivery',\n      StepID: 0,\n      Task: 'esto es un ticket',\n      TypeID: 0,\n      value: 5,\n      activeInProject: false\n    }, {\n      AccountName: 'Itexico',\n      ActivityDate: '2022-05-06T09:35:04',\n      ActivityID: 0,\n      CategoryName: 'Available',\n      Comments: 'string',\n      EmployeeID: 0,\n      ProjectColor: 'blue',\n      ProjectID: 0,\n      ProjectName: 'Delivery',\n      StepID: 0,\n      Task: 'esto es un ticket',\n      TypeID: 0,\n      value: 5,\n      activeInProject: false\n    }, {\n      AccountName: 'Itexico',\n      ActivityDate: '2022-05-06T09:35:04',\n      ActivityID: 0,\n      CategoryName: 'Available',\n      Comments: 'string',\n      EmployeeID: 0,\n      ProjectColor: 'blue',\n      ProjectID: 0,\n      ProjectName: 'Delivery',\n      StepID: 0,\n      Task: 'esto es un ticket',\n      TypeID: 0,\n      value: 5,\n      activeInProject: false\n    }, {\n      AccountName: 'Itexico',\n      ActivityDate: '2022-05-06T09:35:04',\n      ActivityID: 0,\n      CategoryName: 'Available',\n      Comments: 'string',\n      EmployeeID: 0,\n      ProjectColor: 'blue',\n      ProjectID: 0,\n      ProjectName: 'Delivery',\n      StepID: 0,\n      Task: 'esto es un ticket',\n      TypeID: 0,\n      value: 5,\n      activeInProject: false\n    }]);\n  } // Insert cross-micro frontend communication\n\n\n}) || _class);\n\n//# sourceURL=webpack://nova-monthly-calendar/./src/app/app.component.ts?");
+
+/***/ })
+
+}]);
