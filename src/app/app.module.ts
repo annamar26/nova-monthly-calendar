@@ -83,14 +83,14 @@ registerLocaleData(en);
 export class AppModule {
   constructor(private injector: Injector) {}
   ngDoBootstrap() {
-    const el = createCustomElement(AppComponent, {
+    const calendar = createCustomElement(AppComponent, {
       injector: this.injector,
     });
-    customElements.define('calendar-component', el);
+    customElements.define('calendar-component', calendar);
 
-    const el2 = createCustomElement(AddActivityButtonComponent, {
+    const addButton = createCustomElement(AddActivityButtonComponent, {
       injector: this.injector,
     });
-    customElements.define('add-activity-button-component', el2);
+    customElements.define('add-activity-button-component', addButton);
   }
 }

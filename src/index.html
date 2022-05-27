@@ -9,10 +9,96 @@
   </head>
   <body>
     <app-root>
-      <calendar-component></calendar-component>
-      <add-activity-button-component></add-activity-button-component>
+      <calendar-component id="calendar"> ></calendar-component>
     </app-root>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/zone.js/0.9.1/zone.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/webcomponentsjs/2.2.10/custom-elements-es5-adapter.js"></script>
+    <script>
+      const calendar = document.getElementById("calendar");
+      const button = document.getElementById("addButon");
+      calendar.srcData = [
+        {
+          AccountName: "Itexico",
+          ActivityDate: "2022-05-06T09:35:04",
+          ActivityID: 0,
+          CategoryName: "Available",
+          Comments: "string",
+          EmployeeID: 0,
+          ProjectColor: "blue",
+          ProjectID: 0,
+          ProjectName: "Delivery",
+          StepID: 0,
+          Task: "esto es un ticket",
+          TypeID: 0,
+          value: 5,
+          activeInProject: false,
+        },
+        {
+          AccountName: "Itexico",
+          ActivityDate: "2022-05-06T09:35:04",
+          ActivityID: 0,
+          CategoryName: "Available",
+          Comments: "string",
+          EmployeeID: 0,
+          ProjectColor: "blue",
+          ProjectID: 0,
+          ProjectName: "Delivery",
+          StepID: 0,
+          Task: "esto es un ticket",
+          TypeID: 0,
+          value: 5,
+          activeInProject: false,
+        },
+        {
+          AccountName: "Itexico",
+          ActivityDate: "2022-05-06T09:35:04",
+          ActivityID: 0,
+          CategoryName: "Available",
+          Comments: "string",
+          EmployeeID: 0,
+          ProjectColor: "blue",
+          ProjectID: 0,
+          ProjectName: "Delivery",
+          StepID: 0,
+          Task: "esto es un ticket",
+          TypeID: 0,
+          value: 5,
+          activeInProject: false,
+        },
+        {
+          AccountName: "Itexico",
+          ActivityDate: "2022-05-06T09:35:04",
+          ActivityID: 0,
+          CategoryName: "Available",
+          Comments: "string",
+          EmployeeID: 0,
+          ProjectColor: "blue",
+          ProjectID: 0,
+          ProjectName: "Delivery",
+          StepID: 0,
+          Task: "esto es un ticket",
+          TypeID: 0,
+          value: 5,
+          activeInProject: false,
+        },
+        {
+          AccountName: "Itexico",
+          ActivityDate: "2022-05-06T09:35:04",
+          ActivityID: 0,
+          CategoryName: "Available",
+          Comments: "string",
+          EmployeeID: 0,
+          ProjectColor: "blue",
+          ProjectID: 0,
+          ProjectName: "Delivery",
+          StepID: 0,
+          Task: "esto es un ticket",
+          TypeID: 0,
+          value: 5,
+          activeInProject: false,
+        },
+      ];
+      calendar.currentDate = new Date();
+    </script>
   </body>
 </html>

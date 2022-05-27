@@ -12,8 +12,8 @@ platformBrowserDynamic()
   .bootstrapModule(AppModule)
   .catch((err) => console.error(err));
 
-const element: HTMLElement = document.createElement('calendar-component');
-const element2: HTMLElement = document.createElement('add-activity-button-component');
+const calendar: HTMLElement = document.createElement('calendar-component');
+const addButton: HTMLElement = document.createElement('add-activity-button-component');
 
 interface Elements {
   calendar: HTMLElement,
@@ -21,5 +21,5 @@ interface Elements {
 }
 
 export const component = (): Elements => {
-  return {"calendar": element, "button": element2};
+  return {"calendar": calendar, "button": addButton};
 };
