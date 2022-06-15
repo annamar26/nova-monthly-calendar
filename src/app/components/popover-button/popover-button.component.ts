@@ -28,7 +28,7 @@ export class PopoverButtonComponent {
       this.modalObservable.publish(true);
       this.modalTitle.publish(this.message);
     } else if (action === 'clone') {
-      this.message = 'Clone an Activity';
+      this.message = 'Clone Activity';
       this.modalObservable.publish(true);
       this.modalTitle.publish(this.message);
     } else if (action === 'delete') {

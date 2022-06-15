@@ -22,13 +22,13 @@ export class CalendarComponent implements OnInit, OnChanges{
   }
 
   ngOnChanges(changes: SimpleChanges){
-    console.log(changes);
+    
     this.calendarLogic();
   }
 
   calendarLogic() {
 
-    console.log(this.currentDate);
+  
     this.monthArr = [];
     this.year = this.currentDate!.getFullYear();
     this.month = this.currentDate!.getMonth();
@@ -76,7 +76,7 @@ export class CalendarComponent implements OnInit, OnChanges{
       monthArr.length > 35 ? 42 - monthArr.length : 35 - monthArr.length
     ).fill({});
     monthArr.push(...finalEmptyDays);
-    console.log(monthArr)
+  
     return finalEmptyDays;
   }
 
