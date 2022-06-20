@@ -1,4 +1,4 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { Activity } from 'src/app/interfaces/data-interfaces';
 import { Position } from 'src/app/interfaces/popover.interface';
 import { OnMouseOverItemService } from 'src/app/services/item-popover/on-mouse-over-item.service';
@@ -9,14 +9,15 @@ import { OnMouseOverItemService } from 'src/app/services/item-popover/on-mouse-o
   styleUrls: ['./item-dia.component.scss'],
   encapsulation: ViewEncapsulation.Emulated
 })
-export class ItemDiaComponent {
+export class ItemDiaComponent{
   @Input() data: Activity | undefined;
+
 
   position!: Position;
 
   constructor(private onMouseOverItem: OnMouseOverItemService) {}
 
-  handleMouseover(element: HTMLElement): void {
+    handleMouseover(element: HTMLElement): void {
   
     this.onMouseOverItem.showPopover(this.data!, element);
     

@@ -1,6 +1,6 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { ServiceDeleteModalService } from 'src/app/services/delete-modal/service-delete-modal.service';
-import { SnackbarService } from 'src/app/services/snackbar/snackbar.service';
+import { Observable } from 'windowed-observable';
 
 @Component({
   selector: 'app-modal-buttons',
@@ -13,15 +13,16 @@ export class ModalButtonsComponent{
   @Input() backgroundColor!: string;
   @Input() color!: string;
   message!: string;
+ deleteObservable = new Observable('delete-observable')
 
 
-  constructor(private ServiceDeleteModalService: ServiceDeleteModalService, private snackbarService:SnackbarService) {}
+  constructor(private ServiceDeleteModalService: ServiceDeleteModalService) {}
 
   handleClickModalButton(action: string):void {
     if (action === 'confirm') {
       this.message = 'yes';
-      this.snackbarService.showSnackBar();
-      this.snackbarService.setDataSnackbar()
+      this.deleteObservable.publish(true)
+
     } else if (action === 'cancel') {
       this.message = 'no';
     }

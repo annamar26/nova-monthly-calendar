@@ -14,6 +14,6 @@ export class AppComponent implements OnChanges {
   // Insert cross-micro frontend communication
 
   ngOnChanges(changes: SimpleChanges){
-    console.log(changes)
+    
   }
 }

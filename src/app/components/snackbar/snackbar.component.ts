@@ -1,7 +1,6 @@
 
-import { Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
-import { Subscription } from 'rxjs';
-import { SnackbarService } from 'src/app/services/snackbar/snackbar.service';
+import { Component, OnInit, ViewEncapsulation} from '@angular/core';
+import { Observable } from 'windowed-observable';
 
 @Component({
   selector: 'app-snackbar',
@@ -9,43 +8,27 @@ import { SnackbarService } from 'src/app/services/snackbar/snackbar.service';
   styleUrls: ['./snackbar.component.scss'],
   encapsulation: ViewEncapsulation.Emulated
 })
-export class SnackbarComponent implements OnInit, OnDestroy{
+export class SnackbarComponent implements OnInit{
   message!: string;
   type!: 'default' | 'custom';
   backgroundColor: string |undefined;
   success!: boolean;
-  isClicked$!: Subscription;
-  data$!: Subscription;
+ 
   isVisible:boolean | undefined;
-
-  constructor(private snackbarService: SnackbarService){}
+  snackbarObservable = new Observable('snackbar-observable')
+  constructor(){}
  
   ngOnInit():void{
-    this.getIsVisible();
-    this.getData();
    
+   this.snackbarObservable.subscribe((res)=>{
+    this.message = res.message;
+    this.type= res.type;
+    this.success= res.success;
+    this.isVisible = true
+    setTimeout(() => {
+     this.isVisible = false
+    }, 3000);
+   })
   }
 
-  getData() {
-    this.data$ = this.snackbarService.getDataSnackbar$().subscribe(res => {
-      this.message = res.message;
-      this.type = res.type;
-      this.success = res.success;
-      this.backgroundColor = res.backgroundColor!;
-        });
-  }
-
-  getIsVisible() {
-    this.isClicked$ = this.snackbarService.getIsClick$().subscribe(res => {
-      this.isVisible = res;
-      setTimeout(() => {
-        this.snackbarService.hideSnackbar();
-      }, 3000);
-    });
-  }
-
-  ngOnDestroy(): void {
-    this.isClicked$.unsubscribe();
-    this.data$.unsubscribe();
-  }
-}
+ }
