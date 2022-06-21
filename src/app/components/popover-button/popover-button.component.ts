@@ -1,5 +1,5 @@
 import { Observable } from 'rxjs';
-import { Observable as Wobservable }  from 'windowed-observable';
+import { Observable as Wobservable } from 'windowed-observable';
 import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { ServiceDeleteModalService } from 'src/app/services/delete-modal/service-delete-modal.service';
 import { Activity } from 'src/app/interfaces/data-interfaces';
@@ -8,7 +8,7 @@ import { Activity } from 'src/app/interfaces/data-interfaces';
   selector: 'app-popover-button',
   templateUrl: './popover-button.component.html',
   styleUrls: ['./popover-button.component.scss'],
-  encapsulation: ViewEncapsulation.Emulated
+  encapsulation: ViewEncapsulation.Emulated,
 })
 export class PopoverButtonComponent {
   @Input() buttonText: string = 'update';
@@ -17,7 +17,15 @@ export class PopoverButtonComponent {
   modalState$!: Observable<boolean>;
   modalTitle: Wobservable = new Wobservable('modal-title');
   modalObservable: Wobservable = new Wobservable('modal-state');
-  activityToDeleteObservable: Wobservable = new Wobservable('activity-to-delete')
+  activityToDeleteObservable: Wobservable = new Wobservable(
+    'activity-to-delete'
+  );
+  activityToCloneObservable: Wobservable = new Wobservable(
+    'activity-to-clone'
+  );
+  activityToUpdateObservable: Wobservable = new Wobservable(
+    'activity-to-update'
+  );
   message!: string;
   @Input() data: Activity = {
     AccountName: '',
@@ -37,20 +45,22 @@ export class PopoverButtonComponent {
 
   constructor(private ServiceDeleteModalService: ServiceDeleteModalService) {}
 
-
-
   handleClickPopoverButton(action: string) {
     if (action === 'update') {
       this.message = 'Update Activity';
       this.modalObservable.publish(true);
       this.modalTitle.publish(this.message);
+      this.activityToUpdateObservable.publish(this.data);
     } else if (action === 'clone') {
       this.message = 'Clone Activity';
       this.modalObservable.publish(true);
       this.modalTitle.publish(this.message);
+      this.activityToCloneObservable.publish(this.data);
+
     } else if (action === 'delete') {
+      console.log(this.data);
       this.ServiceDeleteModalService.showModal();
-      this.activityToDeleteObservable.publish(this.data)
-            }
+      this.activityToDeleteObservable.publish(this.data);
+    }
   }
 }

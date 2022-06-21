@@ -1,5 +1,11 @@
-
-import { Component, Input, OnChanges, OnInit, SimpleChanges, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  Input,
+  OnChanges,
+  OnInit,
+  SimpleChanges,
+  ViewEncapsulation,
+} from '@angular/core';
 import { Activity } from 'src/app/interfaces/data-interfaces';
 import { Card } from 'src/app/interfaces/input.interfaces';
 
@@ -9,26 +15,23 @@ import { Card } from 'src/app/interfaces/input.interfaces';
   styleUrls: ['./calendar.component.scss'],
   encapsulation: ViewEncapsulation.Emulated,
 })
-export class CalendarComponent implements OnInit, OnChanges{
+export class CalendarComponent implements OnInit, OnChanges {
   @Input() currentDate!: Date;
   @Input() srcData: Activity[] | undefined;
-  
-  year!: number
-  month!: number
-	monthArr!: Card[] ;
+
+  year!: number;
+  month!: number;
+  monthArr!: Card[];
 
   ngOnInit(): void {
     this.calendarLogic();
   }
 
-  ngOnChanges(changes: SimpleChanges){
-    
+  ngOnChanges(changes: SimpleChanges) {
     this.calendarLogic();
   }
 
   calendarLogic() {
-
-  
     this.monthArr = [];
     this.year = this.currentDate!.getFullYear();
     this.month = this.currentDate!.getMonth();
@@ -36,9 +39,7 @@ export class CalendarComponent implements OnInit, OnChanges{
       `${this.year}-${this.month + 1}-1`
     ).getDay();
     this.initialEmptyDays(firstDayOfMonth);
-
     this.addActivities(this.month, this.year, this.srcData!);
-
     this.finalEmptyDays(this.monthArr);
   }
 
@@ -76,7 +77,7 @@ export class CalendarComponent implements OnInit, OnChanges{
       monthArr.length > 35 ? 42 - monthArr.length : 35 - monthArr.length
     ).fill({});
     monthArr.push(...finalEmptyDays);
-  
+
     return finalEmptyDays;
   }
 
