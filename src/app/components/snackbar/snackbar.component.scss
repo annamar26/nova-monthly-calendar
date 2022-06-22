@@ -5,7 +5,8 @@
 }
 .snackbar-container {
   font-family: $fontFamily;
-  position: absolute;
+  position: sticky;
+  z-index: 10;
   bottom: 20px;
   left: 30px;
   width: max-content;
