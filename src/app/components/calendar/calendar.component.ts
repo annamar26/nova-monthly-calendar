@@ -8,6 +8,7 @@ import {
 } from '@angular/core';
 import { Activity } from 'src/app/interfaces/data-interfaces';
 import { Card } from 'src/app/interfaces/input.interfaces';
+import { Observable } from 'windowed-observable';
 
 @Component({
   selector: 'app-calendar',
@@ -22,6 +23,8 @@ export class CalendarComponent implements OnInit, OnChanges {
   year!: number;
   month!: number;
   monthArr!: Card[];
+  totalHours: number = 0;
+  monthHours$ = new Observable("month-hours");
 
   ngOnInit(): void {
     this.calendarLogic();
@@ -29,6 +32,7 @@ export class CalendarComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
     this.calendarLogic();
+    this.calculateTotalHours();
   }
 
   calendarLogic() {
@@ -104,5 +108,14 @@ export class CalendarComponent implements OnInit, OnChanges {
       : year % 400 == 0
       ? true
       : false;
+  }
+  calculateTotalHours() {
+    this.totalHours = 0;
+    this.monthArr.forEach((day: Card) =>
+      day.activities?.forEach((activity) => {
+        this.totalHours += activity.value;
+      })
+    );
+    this.monthHours$.publish(this.totalHours)
   }
 }
